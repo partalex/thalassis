@@ -1,0 +1,56 @@
+---
+const approaches: ApproachItem[] = [
+    {
+        title: "Scope",
+        subTitle1: null,
+        desc1: "Each engagement starts with a Scope of Work (SOW)—a shared understanding of what we're solving. We break down your goals into tangible deliverables called Units of Work (UOW).",
+        subTitle2: null,
+        desc2: "We break down your goals into tangible deliverables called Units of Work (UOW).",
+    },
+    {
+        title: "Estimate",
+        subTitle1: null,
+        desc1: "Each UOW is estimated in Full Stack Days (FSDs): one day of coordinated output from a core contributor and supporting team, rather than just an average (blended) rate.",
+        subTitle2: null,
+        desc2: "We break down your goals into tangible deliverables called Units of Work (UOW).",
+    },
+    {
+        title: "Choose Pricing Model",
+        subTitle1: "Fixed Billing:",
+        desc1: "Pay the upper bound of our estimate (the pessimistic case). You cap risk and lock in a known cost.",
+        subTitle2: "Flexible Billing:",
+        desc2: "Pay only for the actual FSDs used. If a UOW takes less time, you pay less. If it takes more, you’re billed only for what was actually consumed.",
+    },
+    {
+        title: "Deliver",
+        subTitle1: null,
+        desc1: "Every month, you get a clear invoice—our line items are deliverables (UOWs), not resources.",
+        subTitle2: null,
+        desc2: null,
+
+    }
+]
+---
+<div class="row">
+
+    {approaches.map((approach, index) => (
+            <div class="col-6">
+                <div class="card rounded-4 shadow">
+                    <div class="card-header bg-white p-4 pb-0 border-0">
+                        <h4 class="card-title mb-3">{approach.title}</h4>
+                    </div>
+                    <div class="card-body p-4 pt-0">
+                        {approach.subTitle1 && <h5 class="card-subtitle mb-2 text-dark">{approach.subTitle1}</h5>}
+                        <p class="card-text mb-4">{approach.desc1}</p>
+                        {approach.subTitle2 && <h5 class="card-subtitle mb-2 text-dark">{approach.subTitle2}</h5>}
+                        {approach.desc2 && <p class="card-text">{approach.desc2}</p>}
+                    </div>
+                    <div class="card-footer bg-secondary text-white p-1 rounded-bottom-4 border-0">
+                        <span class="fs-1 fw-bold">0{index + 1}</span>
+                    </div>
+                </div>
+            </div>
+    ))}
+
+</div>
+

@@ -1,8 +1,9 @@
 ---
+title: 'The greatest post of all time'
+author: 'Ben'
 
-title: Hey there
+
+heading: 'The greatest post of all time'
 ---
 
-# Hello
-
-This is **styled** content.
+Here is my _great_ post!
