@@ -1,5 +1,94 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const caseStudies: CaseStudy[] = [
+    {
+        title: "Meinhardt Group",
+        subtitle: 'Asia’s Largest Privately-Held Engineering Consultancy',
+        image: 'https://picsum.photos/200',
+        challenge: {
+            desc: "A Gulf-state government asked Meinhardt Group to modernize a nationwide school system—over 400 campuses  —under a unified smart-city-grade mandate.",
+            bullets: [],
+        },
+        role: {
+            desc: "In close collaboration with Meinhardt’s domain experts, we led the concept and design of a unified Built Environment  Management Tool. The platform connected BIM models, procurement systems, site telemetry, FM tickets, and carbon  data into a single interface.",
+            bullets: [],
+
+        },
+        outcome: {
+            desc: "A validated solution blueprint, clickable prototype, and phased roadmap. The client adopted our specifications and  issued their formal proposal based directly on our work.",
+            bullets: [],
+        }
+    },
+    {
+        title: "360 JetFuel",
+        subtitle: "Global Aviation Fuel and Ground Handling Platform",
+        image: 'https://picsum.photos/200',
+        challenge: {
+            desc: "The client needed modern infrastructure to support global refueling and ground handling operations—delivering  real-time traceability, compliance, and automated payments.",
+            bullets: [],
+        },
+        role: {
+            desc: "Over the course of a year, we built three core systems:",
+            bullets: [
+                {
+                    title: "SAF Registry",
+                    desc: " – One of the world’s first operational book-and-claim registries for Sustainable Aviation Fuel,  designed for audit-grade traceability;"
+                },
+                {
+                    title: "Ground Handling Suite",
+                    desc: " – Contract, inventory, and transaction management with real-time payments and duty  calculation;",
+                },
+                {
+                    title: "Fuel Platform 2.0",
+                    desc: "– A fully automated quote-to-pay platform with card issuance and multicurrency settlement.",
+                }
+            ],
+        },
+        outcome: {
+            desc: "The SAF registry is now used by a Gulf-state national oil company to manage its entire SAF operation. The client's  handling operations are now fully automated (with near-zero dispatch intervention), and Fuel Platform 2.0 is on track  for a live launch in the coming months.",
+            bullets: [],
+        }
+    },
+    {
+        title: "Bankwards",
+        subtitle: 'Multi-Currency Treasury Wallet with Fixed-Fee Global Payments',
+        image: 'https://picsum.photos/200',
+        challenge: {
+            desc: "Businesses moving large volumes of money across borders faced unpredictable fees, fragmented systems, and limited  cash visibility. The goal: one wallet to manage payments, permissions, and reconciliation—without losing control or  transparency.",
+            bullets: [],
+        },
+        role: {
+            desc: "We delivered a production-grade treasury platform with full financial operations (FinOps) capabilities: Multi-Currency",
+            bullets: [
+                {
+                    title: "Multi-Currency Wallet",
+                    desc: " – Fixed-fee global payments with real-time FX visibility;",
+                },
+                {
+                    title: "Accounting Integrations",
+                    desc: " – Seamless syncing with external systems for simplified reporting; Permissions & Spend",
+                },
+                {
+                    title: "Permissions & Spend Management",
+                    desc: " – Role-based controls, limits, and approval workflows;",
+                },
+                {
+                    title: "Open Banking Connectivity",
+                    desc: " – Direct bank integrations for improved liquidity and faster settlements;",
+                },
+                {
+                    title: "Automated Reconciliation",
+                    desc: " – Real-time matching of inflows/outflows to internal and external ledgers.",
+                },
+            ],
+        },
+        outcome: {
+            desc: "In its first quarter post-launch, the platform processed over €80 million in transactions. Clients now benefit from predictable cost structures, reduced operational load, and real-time financial oversight.",
+            bullets: [],
+        }
+    }
+]
 ---
 
 <Layout>
