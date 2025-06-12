@@ -6,6 +6,11 @@ type NavLink = {
     name: string;
 };
 
+type WhyUs = {
+    title: string;
+    desc: string;
+}
+
 type Service = {
     title: string;
     image: string;

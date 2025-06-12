@@ -1,0 +1,44 @@
+---
+const whyUs: WhyUs[] = [
+    {
+        title: "You Pay for Results, Not Hours",
+        desc: "We don’t charge by time or role.  We bill based on completed  work—using a single unit called a Full Stack Day (FSD). It keeps everything simple and trackable.",
+    },
+    {
+        title: "Senior Teams from Day One",
+        desc: "No junior staff learning on your  time. You work directly with  experienced consultants,  engineers, and architects who  know how to deliver.",
+    },
+    {
+        title: "Strategy and Delivery Under One Roof",
+        desc: "We don’t hand off work between  teams. The same people who  help you define the solution are  the ones who build it—start to  finish.",
+    },
+    {
+        title: "Clear Pricing, No Surprises",
+        desc: "Every invoice ties back to specific work done, with links to working deliverables. No vague time logs. No hidden fees",
+    },
+    {
+        title: "Built For Complex, High-Stakes Systems",
+        desc: "We’ve shipped software in sectors where things can’t break—like aviation, payments, and infrastructure. We know how to build systems that last",
+    },
+
+]
+---
+
+<h1>Why Thalassis</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {whyUs.map((item, index) => (
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start mb-2">
+                            <div class="badge bg-dark me-3 fs-5">{index + 1}</div>
+                            <h5 class="card-title mb-0">{item.title}</h5>
+                        </div>
+                        <p class="card-text">{item.desc}</p>
+                    </div>
+                </div>
+            </div>
+    ))}
+
+</div>

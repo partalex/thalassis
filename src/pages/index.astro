@@ -3,66 +3,33 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Services from "../components/Services.astro";
 import Approaches from "../components/Approaches.astro";
+import WhatWeDo from "../components/WhatWeDo.astro";
+import Carousel from "../components/Carousel.astro";
+import HrDelimiter from "../components/HrDelimiter.astro";
+import First from "../components/First.astro";
 ---
 
 <Layout>
     <!--<Welcome welcome="Hey" />-->
     <!--<Welcome />-->
 
-
-    <h3>Tech Consulting That</h3>
-    <h3>Makes Waves</h3>
-
-    <br>
-
-    <h5> From Ripple to Rollout—Strategy That Ships.</h5>
-
-    <br>
-
-    Thalassis is a boutique strategy and engineering firm trusted by global
-    enterprises to design, build, and run mission-critical platforms—on time, on
-    budget, with purpose.
-    <br>
-
-    Radical accountability is in our DNA—from the way we work, to the way we bill,
-    ensuring you get the same quality of service on day 1 and day 1000.
-
-    <hr>
-
-    Thalassis was founded on a simple idea: strategy is worthless until it ships.
-    <br>
-    <br>
-
-    We help medium-to-large enterprises build software that moves the business forward. Whether you're launching
-    something new, fixing what's broken, or upgrading outdated systems, we bring the clarity, accountability, and
-    execution to deliver.
-    <br>
-    <br>
-
-    Our teams combine senior consultants, architects, engineers, and product experts to deliver from strategy through
-    execution, with full accountability at every stage.
-    <br>
-    <br>
-
-    We’ve supported clients across regulated and operationally intensive sectors — including aviation, payments, capital
-    markets, construction, energy, and healthcare — where reliability, compliance, and time-to-market are critical.
-
-    <br>
-    <br>
-
-    <h3 class="text-center"> Have a project in mind?</h3>
-
-    <!--bootstrap button =-->
-    <a class="btn btn-dark btn-lg d-block mx-auto" href="/contact" type="button">
-        Contact Us
-    </a>
+    <First></First>
+    <HrDelimiter></HrDelimiter>
 
 
-    <br>
-    <br>
+    <WhatWeDo></WhatWeDo>
+    <HrDelimiter></HrDelimiter>
+
+
+    <Carousel></Carousel>
+    <HrDelimiter></HrDelimiter>
 
 
     <Services></Services>
+    <HrDelimiter></HrDelimiter>
+
+
     <Approaches></Approaches>
+    <HrDelimiter></HrDelimiter>
 
 </Layout>
