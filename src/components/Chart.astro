@@ -17,18 +17,25 @@
     }
 
     .step {
-        background-color: #d1e7dd;
+        background-color: white;
+        border-radius: 10px;
     }
 
     .decision {
         background-color: #fff3cd;
         width: 220px;
+        height: 220px;
         transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
     }
 
-    .decision div {
+    .decision > div {
         transform: rotate(-45deg);
-        width: 100%;
+        width: 150px;
+        text-align: center;
     }
 
     .connector {
@@ -38,20 +45,32 @@
         margin: -10px 0;
     }
 
-    .horizontal {
-        width: 60px;
+    .horizontal-line {
+        width: 100px;
         height: 2px;
         background-color: #000;
+        position: relative;
+        margin: 0 20px;
     }
 
-    .label {
+    .label-left, .label-right {
         position: absolute;
         top: -25px;
         font-weight: bold;
         background-color: #fff;
+        padding: 0 5px;
+    }
+
+    .label-left {
+        left: 0;
+        transform: rotate(-45deg);
+    }
+
+    .label-right {
+        right: 0;
+        transform: rotate(45deg);
     }
 </style>
-<body>
 <div class="flowchart">
 
     <div class="step">
@@ -68,11 +87,31 @@
     </div>
     <div class="connector"></div>
 
-    <!-- diamond -->
+    <!-- Decision Diamond -->
+    <div class="decision" style="margin-top: 50px">
+        <div>
+            <strong>1 - Scope</strong><br>
+            Each engagement starts with a Scope of Work (SOW)—a shared under-standing of what we’re solving.
+        </div>
+    </div>
 
-    <!-- fixed -->
+    <!-- Horizontal connectors with labels -->
+    <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+        <div class="horizontal-line">
+            <div class="label-left">Fixed</div>
+        </div>
+        <div style="width: 80px;"></div>
+        <div class="horizontal-line">
+            <div class="label-right">Flexible</div>
+        </div>
+    </div>
 
-    <!-- flexible-->
+    <!-- Bottom steps for Fixed and Flexible -->
+    <div style="display: flex; justify-content: center;">
+        <div class="step">Fixed Path Content</div>
+        <div style="width: 80px;"></div>
+        <div class="step">Flexible Path Content</div>
+    </div>
 
     <div class="step">
         1 - Scope
@@ -80,5 +119,4 @@
         Each engagement starts with a Scope of Work (SOW)—a shared under-standing of what we’re solving.
     </div>
 
-    <div class="step">Output: Display the bonus amount</div>
 </div>
