@@ -6,6 +6,14 @@ type NavLink = {
     name: string;
 };
 
+type Service = {
+    title: string;
+    image: string;
+    subtitle: string;
+    desc1: string;
+    desc2: string;
+}
+
 type ApproachItem = {
     title: string;
     subTitle1: string | null;

@@ -41,7 +41,7 @@ const caseStudies: CaseStudy[] = [
                 },
                 {
                     title: "Fuel Platform 2.0",
-                    desc: "– A fully automated quote-to-pay platform with card issuance and multicurrency settlement.",
+                    desc: " – A fully automated quote-to-pay platform with card issuance and multicurrency settlement.",
                 }
             ],
         },
@@ -87,10 +87,145 @@ const caseStudies: CaseStudy[] = [
             desc: "In its first quarter post-launch, the platform processed over €80 million in transactions. Clients now benefit from predictable cost structures, reduced operational load, and real-time financial oversight.",
             bullets: [],
         }
+    },
+    {
+        title: "National Electrical Company of Serbia (EPS)",
+        subtitle: "Smart Grid and Meter Data Management System",
+        image: "https://picsum.photos/200",
+        challenge: {
+            desc: "EPS needed a large-scale modernization of its national grid infrastructure. The platform had to support real-time monitoring, predictive maintenance, fraud detection, and Distributed Energy Resources integration across the Western Balkans.",
+            bullets: [],
+        },
+        role: {
+            desc: "In partnership with NITES Group, we led the deployment of the region’s largest Smart Grid and MDM platform:",
+            bullets: [
+                {
+                    title: "Unified Grid Platform",
+                    desc: " – AI-powered analytics for predictive maintenance and grid fault detection;",
+                },
+                {
+                    title: "DER Orchestration System",
+                    desc: " – Real-time integration of solar, wind, storage, and flexible demand sources;",
+                },
+                {
+                    title: "Energy Trading Engine",
+                    desc: " – Market optimization tools to maximize returns and participation.",
+                },
+            ],
+        },
+        outcome: {
+            desc: "EPS now manages national grid operations with real-time asset visibility, enabling loss detection and increased resilience. The system is a regional benchmark for DER integration and smart energy infrastructure.",
+            bullets: [],
+        },
+    },
+    {
+        title: "Fis Securities Finance Trading and Collateral Platform",
+        subtitle: "Enterprise Platform for Securities Lending and Collateral Management",
+        image: "https://picsum.photos/200", // Replace with actual image URL
+        challenge: {
+            desc: "FIS needed to modernize trading infrastructure for securities lending, improving front-to-back workflows and ensuring global compliance for margin management and collateral optimization.",
+            bullets: [],
+        },
+        role: {
+            desc: "As part of the core engineering team, we helped design and build:",
+            bullets: [
+                {
+                    title: "Securities Lending Module",
+                    desc: " – Unified processing of Loans, Borrows, and Borrow vs. Cash (BvC) transactions",
+                },
+                {
+                    title: "Margin Call Engine",
+                    desc: " – Automated call generation and real-time collateral tracking",
+                },
+                {
+                    title: "Inventory Optimization",
+                    desc: " – Real-time visibility into inventory, shorts, and collateral usage",
+                },
+                {
+                    title: "Unified Web Interface",
+                    desc: " – Angular-based frontend with scalable Java microservices",
+                },
+            ],
+        },
+        outcome: {
+            desc: "The platform now supports complex trading across global desks—boosting liquidity utilization, compliance, and operational efficiency for clients ranging from Tier 1 banks to prime brokers.",
+            bullets: [],
+        },
+    },
+    {
+        title: "Healthcare Provider (NDA)",
+        subtitle: "Real-Time AI-Powered Risk Detection for Prescriptions",
+        image: "https://picsum.photos/200", // Replace with the actual image URL if needed
+        challenge: {
+            desc: "Healthcare providers needed a secure, efficient system to flag drug interactions at the point of care—without compromising speed, clinical accuracy, or regulatory compliance.",
+            bullets: [],
+        },
+        role: {
+            desc: "We designed and deployed a scalable, privacy-first interaction engine for use across EU and Balkan eHealth systems:",
+            bullets: [
+                {
+                    title: "AI-Powered Interaction Engine",
+                    desc: " – Uses LLMs to detect contraindications, red flags, and interaction risks",
+                },
+                {
+                    title: "ePrescription Integration",
+                    desc: " – Embedded into national prescription systems for seamless access",
+                },
+                {
+                    title: "NLP Risk Detection",
+                    desc: " – Natural language input support for flexible clinician workflows",
+                },
+                {
+                    title: "Data Privacy by Design",
+                    desc: " – Full compliance with GDPR and HIPAA, with audit logging and pseudonymization",
+                },
+            ],
+        },
+        outcome: {
+            desc: "The platform enables clinicians to catch and address high-risk prescriptions before they’re issued—improving patient safety and reducing clinical and regulatory risk across healthcare systems.",
+            bullets: [],
+        },
     }
 ]
 ---
 
 <Layout>
-    <h1>Case Studies</h1>
+    <div class="container py-5">
+        {caseStudies.map((cs) => (
+                <div class="row mb-5">
+                    <div class="col-md-9">
+                        <h2 class="fw-bold">{cs.title}</h2>
+                        <h5 class="fw-semibold">{cs.subtitle}</h5>
+
+                        <div class="mt-4">
+                            <h6 class="fw-bold">The Challenge</h6>
+                            <p class="text-muted">{cs.challenge.desc}</p>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6 class="fw-bold">Our Role</h6>
+                            <p>{cs.role.desc}</p>
+                            <ul class="ps-3">
+                                {cs.role.bullets.map((b) => (
+                                        <li>
+                                            <span class="fw-semibold">{b.title}</span>{b.desc}
+                                        </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6 class="fw-bold">The Outcome</h6>
+                            <p class="text-muted">{cs.outcome.desc}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-end">
+                        <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
+                    </div>
+
+                    <hr class="mt-4"/>
+                </div>
+        ))}
+    </div>
 </Layout>

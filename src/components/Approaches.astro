@@ -27,14 +27,14 @@ const approaches: ApproachItem[] = [
         desc1: "Every month, you get a clear invoice—our line items are deliverables (UOWs), not resources.",
         subTitle2: null,
         desc2: null,
-
     }
 ]
 ---
-<div class="row">
+<div class="row row-cols-1 row-cols-md-2 g-4">
 
     {approaches.map((approach, index) => (
-            <div class="col-6">
+            <div class="col">
+
                 <div class="card rounded-4 shadow">
                     <div class="card-header bg-white p-4 pb-0 border-0">
                         <h4 class="card-title mb-3">{approach.title}</h4>
@@ -49,8 +49,8 @@ const approaches: ApproachItem[] = [
                         <span class="fs-1 fw-bold">0{index + 1}</span>
                     </div>
                 </div>
+
             </div>
     ))}
-
 </div>
 
