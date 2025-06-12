@@ -17,12 +17,10 @@
     }
 
     .step {
-        background-color: white;
         border-radius: 10px;
     }
 
     .decision {
-        background-color: #fff3cd;
         width: 220px;
         height: 220px;
         transform: rotate(45deg);
@@ -70,6 +68,49 @@
         right: 0;
         transform: rotate(45deg);
     }
+
+    .branch-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        margin-top: 20px;
+    }
+
+    .branch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .branch-label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .vertical-line {
+        width: 2px;
+        height: 80px;
+        background-color: #000;
+        margin: 0 auto;
+    }
+
+    .horizontal-connector {
+        height: 2px;
+        width: 100px;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+    }
+
+    .horizontal-left {
+        left: -100px;
+    }
+
+    .horizontal-right {
+        right: -100px;
+    }
 </style>
 <div class="flowchart">
 
@@ -88,29 +129,29 @@
     <div class="connector"></div>
 
     <!-- Decision Diamond -->
-    <div class="decision" style="margin-top: 50px">
+    <div class="decision" style="margin-top: 50px; position: relative;">
         <div>
             <strong>1 - Scope</strong><br>
-            Each engagement starts with a Scope of Work (SOW)—a shared under-standing of what we’re solving.
+            Each engagement starts with a Scope of Work (SOW)—a shared understanding of what we’re solving.
         </div>
+
+        <!-- Horizontal lines extending left and right -->
+        <div class="horizontal-connector horizontal-left"></div>
+        <div class="horizontal-connector horizontal-right"></div>
     </div>
 
-    <!-- Horizontal connectors with labels -->
-    <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
-        <div class="horizontal-line">
-            <div class="label-left">Fixed</div>
+    <!-- Split branches from left and right of the diamond -->
+    <div class="branch-wrapper">
+        <div class="branch">
+            <div class="vertical-line"></div>
+            <div class="branch-label">Fixed</div>
+            <div class="vertical-line"></div>
         </div>
-        <div style="width: 80px;"></div>
-        <div class="horizontal-line">
-            <div class="label-right">Flexible</div>
+        <div class="branch">
+            <div class="vertical-line"></div>
+            <div class="branch-label">Flexible</div>
+            <div class="vertical-line"></div>
         </div>
-    </div>
-
-    <!-- Bottom steps for Fixed and Flexible -->
-    <div style="display: flex; justify-content: center;">
-        <div class="step">Fixed Path Content</div>
-        <div style="width: 80px;"></div>
-        <div class="step">Flexible Path Content</div>
     </div>
 
     <div class="step">
