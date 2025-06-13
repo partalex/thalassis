@@ -1,9 +1,12 @@
-:root {
-    --bs-font-sans-serif: 'Brush Script MT', cursive, sans-serif;
-    /*--bs-font-sans-serif: 'Source Sans 5', sans-serif;*/
-    /*font: 1rem/1.5 var(--bs-font-sans-serif);*/
-    /*--bs-body-color: red;*/
+body {
+    font-family: "Your Custom Font", sans-serif;
 }
 
-/* Aleksandar's styles */
+/************ Aleksandar's styles ************/
+
+/* should be set like this*/
+/*:root {*/
+/*    --bs-font-sans-serif: 'Brush Script MT', cursive, sans-serif;*/
+/*}*/
+
 
