@@ -4,27 +4,27 @@ import CenteredButton from "./CenteredButton.astro";
 
 const items: CarouselItem[] = [
     {
-        link: "/company-logos/EPS/EPS.svg",
+        imagePath: "/company-logos/EPS/EPS.svg",
         alt: "EPS logo",
     },
     {
-        link: "/company-logos/360 JetFuel/360 JetFuel - Black.svg",
+        imagePath: "/company-logos/360 JetFuel/360 JetFuel - Black.svg",
         alt: "360 - jetfuel logo",
     },
     {
-        link: "/company-logos/Bankwards Box/Bankwards Box - Black.svg",
+        imagePath: "/company-logos/Bankwards Box/Bankwards Box - Black.svg",
         alt: "Bankwards Box logo",
     },
     {
-        link: "/company-logos/FIS/5. FIS.svg",
+        imagePath: "/company-logos/FIS/5. FIS.svg",
         alt: "FIS logo",
     },
     {
-        link: "/company-logos/Meinhardt/Meinhardt - Black.svg",
+        imagePath: "/company-logos/Meinhardt/Meinhardt - Black.svg",
         alt: "Meinhardt logo",
     },
     {
-        link: "/company-logos/NDA/NDA - Black.svg",
+        imagePath: "/company-logos/NDA/NDA - Black.svg",
         alt: "NDA logo",
     }
 ]
@@ -45,12 +45,12 @@ const items: CarouselItem[] = [
 
 <script type="module" is:inline>
   window.carouselItems = [
-    { link: "/company-logos/EPS/EPS.svg", alt: "EPS logo" },
-    { link: "/company-logos/360 JetFuel/360 JetFuel - Black.svg", alt: "360 - jetfuel logo" },
-    { link: "/company-logos/Bankwards Box/Bankwards Box - Black.svg", alt: "Bankwards Box logo" },
-    { link: "/company-logos/FIS/5. FIS.svg", alt: "FIS logo" },
-    { link: "/company-logos/Meinhardt/Meinhardt - Black.svg", alt: "Meinhardt logo" },
-    { link: "/company-logos/NDA/NDA - Black.svg", alt: "NDA logo" }
+    { imagePath: "/company-logos/EPS/EPS.svg", alt: "EPS logo" },
+    { imagePath: "/company-logos/360 JetFuel/360 JetFuel - Black.svg", alt: "360 - jetfuel logo" },
+    { imagePath: "/company-logos/Bankwards Box/Bankwards Box - Black.svg", alt: "Bankwards Box logo" },
+    { imagePath: "/company-logos/FIS/5. FIS.svg", alt: "FIS logo" },
+    { imagePath: "/company-logos/Meinhardt/Meinhardt - Black.svg", alt: "Meinhardt logo" },
+    { imagePath: "/company-logos/NDA/NDA - Black.svg", alt: "NDA logo" }
   ];
 </script>
 
@@ -151,7 +151,7 @@ const items: CarouselItem[] = [
 
       li.className = classMap[i];
       li.innerHTML = `
-        <img src="${item.link}" alt="${item.alt}" style="width:100%; height:100%; object-fit:contain;" />
+        <img src="${item.imagePath}" alt="${item.alt}" style="width:100%; height:100%; object-fit:contain;" />
       `;
     });
   }

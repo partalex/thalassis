@@ -23,7 +23,7 @@ type WhyUs = {
 }
 
 type CarouselItem = {
-    link: string;
+    imagePath: string;
     alt: string;
 }
 
