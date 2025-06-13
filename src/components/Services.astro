@@ -1,28 +1,28 @@
 ---
 const services: Service[] = [
     {
-        image: "https://picsum.photos/200/300",
+        image: "/icons/2.svg",
         title: "Architecture & Advisory",
         subtitle: "When you know what you want built-but not how to make it happen.",
         desc1: "We turn concepts into executable technical plans.",
         desc2: "From system architecture and dependency mapping to delivery sequencing, we help you bring your vision to life with clarity and confidence."
     },
     {
-        image: "https://picsum.photos/200/300",
+        image: "/icons/1. End-To-End Technology Strategy - Black Icon.svg",
         title: "End to End Technology Strategy",
         subtitle: "When you know there’s a problem—but not how to fix it.",
         desc1: "We help you define the right path forward.",
         desc2: "From uncovering pain points to aligning stakeholders and mapping your options, we guide you toward a focused product or platform strategy.",
     },
     {
-        image: "https://picsum.photos/200/300",
+        image: "/icons/3. System Modernisation - Black Icon.svg",
         title: "System Modernization",
         subtitle: "When your existing systems are holding you back.",
         desc1: "We modernize legacy platforms without disrupting operations.",
         desc2: "From technical due diligence to phased rebuilds, we help your team move forward with minimal risk and downtime.",
     },
     {
-        image: "https://picsum.photos/200/300",
+        image: "/icons/2. Full-Cycle Software Delivery - Black Icon.svg",
         title: "Full-Cycle Software Delivery",
         subtitle: "When you’re ready to build and ship a new product.",
         desc1: "We handle full-stack delivery end to end.",
@@ -48,8 +48,7 @@ const services: Service[] = [
                 <div class="card p-4 shadow-sm border rounded-4">
                     <div class="card-body">
                         <div class="mb-3 text-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1827/1827370.png"
-                                 alt="Architecture Icon" style="width: 40px; height: 40px;">
+                            <img src={service.image} alt={service.title} style="width: 40px; height: 40px;">
                         </div>
                         <div class="mb-3">
                             <i class="bi bi-clipboard" style="font-size: 2rem;"></i>
