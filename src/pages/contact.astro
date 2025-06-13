@@ -1,87 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DarkButton from "../components/DarkButton.astro";
+import Form from "../components/Form.astro";
+import CenteredButton from "../components/CenteredButton.astro";
+
+const socials: Social[] = [
+    {
+        icon: "bi-envelope",
+        link: "hello@thalassis.co"
+    },
+    {
+        icon: "bi-linkedin",
+        link: "linkedin.com/company/thalassis-consulting"
+    }
+];
 ---
 <Layout>
-
-    <br>
     <br>
 
-
-    <div class="row">
-        <div class="col-6 mx-auto">
-            <DarkButton label="More Comfortable Talking?" link="/contact"></DarkButton>
-        </div>
-    </div>
-
+    <CenteredButton>
+        <DarkButton label="More Comfortable Writing In?" link=""></DarkButton>
+    </CenteredButton>
     <br>
     <br>
 
     <div class="row">
 
         <div class="col-6">
-            <h1>Contact Us</h1>
-            <p>Outcomes start with a conversation.</p>
-            <p>Let’s talk.</p>
+            <h1 class="text-end">Contact Us</h1>
+            <h6 class="text-end">Outcomes start with a conversation.</h6>
+            <h6 class="text-end">Let’s talk.</h6>
+            {Array.from({length: 3}).map(() => <br/>)}
+
+            <div class="d-flex justify-content-end">
+                {socials.map((social) => (
+                        <a class="btn btn-outline-dark btn-lg me-2" href={social.link} target="_blank">
+                            <i class={`bi ${social.icon}`}></i>
+                        </a>
+                ))}
+            </div>
+
         </div>
 
 
         <div class="col-6">
-            <form>
-                <div class="mb-3">
-                    <label for="fullName" class="form-label">Full Name*</label>
-                    <input type="text" class="form-control" id="fullName" placeholder="write your full name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="emailAddress" class="form-label">E-mail Address*</label>
-                    <input type="email" class="form-control" id="emailAddress" placeholder="write your e-mail address"
-                           required>
-                </div>
-                <div class="mb-3">
-                    <label for="companyName" class="form-label">Company Name*</label>
-                    <input type="text" class="form-control" id="companyName" placeholder="write your company name"
-                           required>
-                </div>
-                <div class="mb-3">
-                    <label for="timeline" class="form-label">Timeline*</label>
-                    <select class="form-select" id="timeline" required>
-                        <option selected disabled value="">e.g. Fixed</option>
-                        <option>Fixed</option>
-                        <option>Flexible</option>
-                        <option>Ongoing</option>
-                    </select>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="startDate" class="form-label">Start-Date*</label>
-                        <div class="input-group">
-                            <input type="date" class="form-control" id="startDate" placeholder="e.g. 06/06/2025"
-                                   required>
-                            <span class="input-group-text"><i class="bi bi-calendar"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="endDate" class="form-label">End-Date*</label>
-                        <div class="input-group">
-                            <input type="date" class="form-control" id="endDate" placeholder="e.g. 06/12/2025" required>
-                            <span class="input-group-text"><i class="bi bi-calendar"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="budget" class="form-label">Budget*</label>
-                    <select class="form-select" id="budget" required>
-                        <option selected disabled value="">e.g. 150 - 250 k</option>
-                        <option>100k - 200k</option>
-                        <option>200k - 300k</option>
-                        <option>300k+</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="note" class="form-label">Note</label>
-                    <textarea class="form-control" id="note" rows="5" placeholder="write your message"></textarea>
-                </div>
-            </form>
+            <Form></Form>
         </div>
 
 
@@ -104,7 +67,6 @@ import DarkButton from "../components/DarkButton.astro";
         </div>
 
     </div>
-
     <br>
     <br>
 

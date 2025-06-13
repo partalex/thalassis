@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.5.4",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/ts-plugin": "^1.10.4",
     "astro": "^5.9.2",
     "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
     "typescript": "^5.8.3"
   }
 }

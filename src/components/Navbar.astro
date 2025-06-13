@@ -28,7 +28,9 @@ const logoPath = "/public/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
 </style>
 
 <nav class="navbar">
-    <img src={logoPath} alt="Thalassis Consulting Logo" class="logo"/>
+    <a class="navbar-brand" href="/">
+        <img src={logoPath} alt="Thalassis Consulting Logo" class="logo"/>
+    </a>
     <ul class="nav-list">
         {navLinks.map(link => (
                 <li>

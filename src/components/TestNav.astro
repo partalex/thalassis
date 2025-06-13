@@ -7,17 +7,6 @@ const navLinks: NavLink[] = [
 const logoPath = "/public/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
 ---
 <style>
-    @import url("https://fonts.googleapis.com/css?family=Varela+Round");
-
-    *,
-    *:before,
-    *:after {
-        box-sizing: inherit;
-        padding: 0;
-        margin: 0;
-        letter-spacing: 1px;
-    }
-
     .menu li {
         width: 125px;
         height: 50px;
@@ -27,7 +16,6 @@ const logoPath = "/public/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
 
     .menu li a {
         font-size: 22px;
-        //color: #777;
         text-decoration: none;
         transition: all 0.45s;
     }
@@ -45,25 +33,28 @@ const logoPath = "/public/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
         margin-right: 30px;
     }
 
-    img {
-        height: 200px;
-    }
-
     @keyframes line {
         0% {
             background-position-x: 390px;
         }
-    }
-</style>
+    }</style>
 
+<img src={logoPath} alt="Thalassis Consulting Logo"/>
 
-<nav>
-    <img src={logoPath} alt="Thalassis Consulting Logo"/>
-    <ul class="menu">
-        {navLinks.map(link => (
-                <li>
-                    <a href={link.href}>{link.name}</a>
-                </li>
-        ))}
-    </ul>
-</nav>
+<ul class="menu nav justify-content-end">
+    {navLinks.map(link => (
+            <li class="nav-item">
+                <a class="nav-link" href={link.href}>{link.name}</a>
+            </li>
+    ))}
+</ul>
+
+<ul class="nav justify-content-end">
+
+    {navLinks.map(link => (
+            <li class="nav-item">
+                <a class="nav-link" href={link.href}>{link.name}</a>
+            </li>
+    ))}
+
+</ul>

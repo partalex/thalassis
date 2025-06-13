@@ -1,19 +1,18 @@
 ---
-const footerItems = [
+const socials: Social[] = [
   {
     icon: "bi-geo-alt",
-    text: "160 Robinson Road, Singapore (068914)"
+    link: "160 Robinson Road, Singapore (068914)"
   },
   {
     icon: "bi-envelope",
-    text: "hello@thalassis.co"
+    link: "hello@thalassis.co"
   },
   {
     icon: "bi-linkedin",
-    text: "linkedin.com/company/thalassis-consulting"
+    link: "linkedin.com/company/thalassis-consulting"
   }
 ];
-import DarkButton from "./DarkButton.astro";
 import LightFullButton from "./LightFullButton.astro";
 ---
 
@@ -32,10 +31,10 @@ import LightFullButton from "./LightFullButton.astro";
       <!-- Middle Section -->
       <div class="col-md-4 mb-4 mb-md-0">
         <ul class="list-unstyled">
-          {footerItems.map((item) => (
+          {socials.map((item) => (
             <li class="mb-2 d-flex align-items-center">
               <i class={`bi ${item.icon} me-2`}></i>
-              {item.text}
+              {item.link}
             </li>
           ))}
         </ul>
