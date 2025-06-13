@@ -5,7 +5,7 @@ h1 {
 
 @font-face {
     font-family: 'Source Sans 3';
-    src: url('/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+    src: url('public/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
     font-weight: 200 900;
     font-style: normal;
 }
