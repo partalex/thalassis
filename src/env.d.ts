@@ -6,6 +6,12 @@ type NavLink = {
     name: string;
 };
 
+type Appointment ={
+    name: string;
+    desc: string;
+    link: string;
+}
+
 type WhyUs = {
     title: string;
     desc: string;

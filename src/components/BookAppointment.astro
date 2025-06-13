@@ -1,9 +1,66 @@
 ---
+import PrimaryButton from "./PrimaryButton.astro";
 
-import PrimaryButton from "./PrimaryButton.astro";---
+const appointments: Appointment[] = [
+    {
+        name: "Free consultation",
+        desc: "30 minutes",
+        link: "https://calendly.com/thalassis/30min",
+    },
+    {
+        name: "Basic service",
+        desc: "1 hour @ $99.00",
+        link: "https://calendly.com/thalassis/1hour-basic-service",
+    },
+    {
+        name: "Advanced service",
+        desc: "1 hour @ $199.00",
+        link: "https://calendly.com/thalassis/1hour-advanced-service",
+    }
+];
+---
 
 <div class="row">
     <div class="col mx-auto">
         <PrimaryButton label="More Comfortable Writing In?" link=""></PrimaryButton>
     </div>
+</div>
+
+<div class="row">
+
+    <div class="col-6">
+        <!--so-->
+        <h1 class="text-end">Book an</h1>
+        <h1 class="text-end">Appointment</h1>
+        <br>
+
+        <h2 class="text-end">More comfortable talking?</h2>
+        <h2 class="text-end">No problem. Schedule a 30-min intro</h2>
+        <h2 class="text-end">call with Thalassis to chat about your</h2>
+        <h2 class="text-end">inquiry.</h2>
+
+
+        <!--LinkedIn and email icon-->
+
+    </div>
+
+    <div class="col-6">
+        <h6 class="text-center">Select Appointment</h6>
+
+
+        <div class="card shadow-sm p-4">
+            {appointments.map((app, index) => (
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <h5 class="mb-0">{app.name}</h5>
+                            <small class="text-muted">{app.desc}</small>
+                        </div>
+                        <a class="btn btn-dark" href={app.link}>Book</a>
+                    </div>
+                    <hr>
+            ))}
+        </div>
+
+    </div>
+
 </div>
