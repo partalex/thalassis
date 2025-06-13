@@ -1,8 +1,7 @@
 ---
-import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar2 from "../components/Navbar2.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -12,13 +11,12 @@ import Navbar2 from "../components/Navbar2.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
     <meta name="generator" content={Astro.generator}/>
     <title>Thalassis</title>
-    <link rel="stylesheet" href="/public/global.css" />
+    <link rel="stylesheet" href="/public/global.css"/>
 </head>
 <body class="container">
-<Navbar/>
-<Navbar2/>
+<Navbar></Navbar>
 <slot/>
-<Footer/>
+<Footer></Footer>
 <script>
     import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 </script>
