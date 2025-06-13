@@ -1,0 +1,26 @@
+---
+const navLinks: NavLink[] = [
+    {href: "/about", name: "About Us"},
+    {href: "/case-studies", name: "Case Studies"},
+    {href: "/contact", name: "Contact Us"},
+];
+
+const logoPath = "/public/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
+---
+
+<style>
+
+</style>
+
+<nav>
+
+    <img src={logoPath} alt="Thalassis Consulting Logo" class="logo"/>
+
+    <div class="d-flex justify-content-end">
+        {navLinks.map(link => (
+                <a href={link.href}>{link.name}</a>
+        ))}
+    </div>
+
+</nav>
+

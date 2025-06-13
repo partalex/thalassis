@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar2 from "../components/Navbar2.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -15,8 +16,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 </head>
 <body class="container">
 <Navbar/>
+<Navbar2/>
 <slot/>
 <Footer/>
+<script>
+    import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+</script>
 </body>
 </html>
 
