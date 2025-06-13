@@ -8,7 +8,7 @@ import Carousel from "../components/Carousel.astro";
 import HrDelimiter from "../components/HrDelimiter.astro";
 import First from "../components/First.astro";
 import Chart from "../components/Chart.astro";
-import WhyUs from "../components/WhyUs.astro";
+import WhyThalassis from "../components/WhyThalassis.astro";
 import Delimiter from "../components/Delimiter.astro";
 ---
 <Layout>
@@ -31,20 +31,20 @@ import Delimiter from "../components/Delimiter.astro";
     <HrDelimiter></HrDelimiter>
 
 
-    <WhyUs></WhyUs>
-    <HrDelimiter></HrDelimiter>
-
     <!--hide on mobile-->
     <div class="d-none d-md-block">
         <Chart></Chart>
-        <Delimiter></Delimiter>
+        <HrDelimiter></HrDelimiter>
     </div>
 
 
     <!--show only on larger of small screens-->
     <div class="d-block d-md-none">
         <Approaches></Approaches>
-        <Delimiter></Delimiter>
+        <HrDelimiter></HrDelimiter>
     </div>
+
+    <WhyThalassis></WhyThalassis>
+    <Delimiter></Delimiter>
 
 </Layout>
