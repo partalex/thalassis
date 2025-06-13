@@ -3,7 +3,7 @@ import LightButton from "../components/LightButton.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import Layout from "../layouts/Layout.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
-
+import Delimiter from "../components/Delimiter.astro";
 const appointments: Appointment[] = [
     {
         name: "Free consultation",
@@ -25,55 +25,58 @@ const appointments: Appointment[] = [
 
 <Layout>
 
-<CenteredButton>
-    <LargeDarkButton label="More Comfortable Writing In?" link="/contact"></LargeDarkButton>
-</CenteredButton>
-<br>
-<br>
+    <CenteredButton>
+        <LargeDarkButton label="More Comfortable Writing In?" link="/contact"></LargeDarkButton>
+    </CenteredButton>
+    <br>
+    <br>
 
-<div class="row">
+    <div class="row">
 
-    <div class="col-6">
-        <!--so-->
-        <h1 class="fw-bold text-end">Book an</h1>
-        <h1 class="fw-bold text-end">Appointment</h1>
-        <br>
+        <div class="col-6">
+            <!--so-->
+            <h1 class="fw-bold text-end">Book an</h1>
+            <h1 class="fw-bold text-end">Appointment</h1>
+            <br>
 
-        <h5 class="text-end">More comfortable talking?</h5>
-        <h5 class="text-end">No problem. Schedule a 30-min intro</h5>
-        <h5 class="text-end">call with Thalassis to chat about your</h5>
-        <h5 class="text-end">inquiry.</h5>
-
-
-        <!--LinkedIn and email icon-->
-
-    </div>
-
-    <div class="col-6">
-        <!--TODO: add icon-->
-        <h6 class="text-center">Select Appointment</h6>
+            <h5 class="text-end">More comfortable talking?</h5>
+            <h5 class="text-end">No problem. Schedule a 30-min intro</h5>
+            <h5 class="text-end">call with Thalassis to chat about your</h5>
+            <h5 class="text-end">inquiry.</h5>
 
 
-        <div class="card shadow-sm p-4">
-            {appointments.map((app, index) => (
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div>
-                            <h5 class="mb-0">{app.name}</h5>
-                            <small class="text-muted">{app.desc}</small>
-                        </div>
-                        <a class="btn btn-dark" href={app.link}>Book</a>
-                    </div>
-                    <hr>
-            ))}
+            <!--LinkedIn and email icon-->
+
         </div>
 
+        <div class="col-6">
+            <!--TODO: add icon-->
+            <h6 class="text-center">Select Appointment</h6>
+
+
+            <div class="card shadow-sm p-4">
+                {appointments.map((app, index) => (
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <h5 class="mb-0">{app.name}</h5>
+                                <small class="text-muted">{app.desc}</small>
+                            </div>
+                            <a class="btn btn-dark" href={app.link}>Book</a>
+                        </div>
+                        <hr>
+                ))}
+            </div>
+
+        </div>
+
+        <div class="mt-5"></div>
+
+        <div class="offset-8 col-4">
+            <LightButton label="Back" link="/"></LightButton>
+        </div>
+
+        <div class="mt-4"></div>
+
     </div>
-
-    <div class="offset-8 col-4">
-        <LightButton label="Back" link="/"></LightButton>
-    </div>
-
-
-</div>
 
 </Layout>
