@@ -1,8 +1,9 @@
 ---
-
-import PrimaryButton from "./PrimaryButton.astro";---
+import PrimaryButton from "./PrimaryButton.astro";
+---
 
 <h1>What we do</h1>
+<br>
 
 <p>Thalassis was founded on a simple idea: strategy is worthless until it ships.</p>
 <br>
@@ -20,7 +21,8 @@ import PrimaryButton from "./PrimaryButton.astro";---
 </p>
 <br>
 
-<p>We’ve supported clients across regulated and operationally intensive sectors — including aviation, payments, capital
+<p>
+    We’ve supported clients across regulated and operationally intensive sectors — including aviation, payments, capital
     markets, construction, energy, and healthcare — where reliability, compliance, and time-to-market are critical.
 </p>
 <br>
@@ -29,4 +31,8 @@ import PrimaryButton from "./PrimaryButton.astro";---
 <h3 class="text-center"> Have a project in mind?</h3>
 
 <!--bootstrap button =-->
-<PrimaryButton label="Contact Us" link="/contact"></PrimaryButton>
+<div class="row">
+    <div class=offset-5 col-4 mx-auto>
+        <PrimaryButton label="Contact Us" link="/contact"></PrimaryButton>
+    </div>
+</div>
