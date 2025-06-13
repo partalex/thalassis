@@ -2,10 +2,29 @@ h1 {
     background: white;
 }
 
+:root {
+	--bg-color: #f1f1f1;
+	--card-width: 300px;
+	--card-height: 400px;
+	--black: #080808;
+	--white: #fafafa;
+	--accent: #ff2d55;
+	--grid-color: rgba(0, 0, 0, 0.08);
+	--frame-color: rgba(8, 8, 8, 0.8);
+	--transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	--transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'Source Sans 3';
     src: url('/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-    font-weight: 200;
+    font-weight: 200 900;
     font-style: normal;
 }
 
@@ -17,9 +36,14 @@ body {
     background: #fff;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, a, span {
+body, p, a, span {
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
 }
 
 .carousel {

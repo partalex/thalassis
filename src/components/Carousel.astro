@@ -4,29 +4,239 @@ import PrimaryButton from "./PrimaryButton.astro";---
 
 <h1>Who We Have Worked With</h1>
 
+<div class="carousel">
+	<div class="carousel-track">
+		<!-- Card 1: Pregnancy Due Date Calculator -->
+		<article class="deconstructed-card">
+			<div class="card-layer card-image">
+				<img src="/company-logos/EPS/EPS.svg" alt="EPS logo" class="company-logo" />
+			</div>
+		</article>
 
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://picsum.photos/600" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="https://picsum.photos/600" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="https://picsum.photos/600" class="d-block w-100" alt="...">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+		<!-- Card 2: Baby Eye Color Calculator -->
+		<article class="deconstructed-card">
+			<div class="card-layer card-image">
+				<img src="/company-logos/360 JetFuel/360 JetFuel - Black.svg" alt="360 - jetfuel logo" class="company-logo" />
+			</div>
+		</article>
+
+		<!-- Card 3: Percentage Calculator -->
+		<article class="deconstructed-card text-card">
+			<div class="card-layer card-image">
+				<img src="/company-logos/Bankwards Box/Bankwards Box - Black.svg" alt="Bankwards Box logo" class="company-logo" />
+			</div>
+		</article>
+
+		<!-- Card 4: Perfect Boiled Egg Calculator -->
+		<article class="deconstructed-card text-card">
+			<div class="card-layer card-image">
+				<img src="/company-logos/FIS/5. FIS.svg" alt="FIS logo" class="company-logo" />
+			</div>
+		</article>
+
+		<!-- Card 5: Sleep Cycle Calculator -->
+		<article class="deconstructed-card">
+			<div class="card-layer card-image">
+				<img src="/company-logos/Meinhardt/Meinhardt - Black.svg" alt="Meinhardt logo" class="company-logo" />
+			</div>
+		</article>
+
+		<!-- Card 6: Age Calculator -->
+		<article class="deconstructed-card">
+			<div class="card-layer card-image">
+				<img src="/company-logos/NDA/NDA - Black.svg" alt="NDA logo" class="company-logo" />
+			</div>
+		</article>
+	</div>
+
+	<div class="carousel-controls">
+		<button class="carousel-button prev">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="15 18 9 12 15 6"></polyline>
+			</svg>
+		</button>
+		<button class="carousel-button next">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="9 18 15 12 9 6"></polyline>
+			</svg>
+		</button>
+	</div>
+
+	<div class="dots-container"></div>
 </div>
 
-<PrimaryButton label="Find Out More" link="/"></PrimaryButton>
+<div class="attribution">
+	<a href="https://calculatequick.com" target="_blank">calculatequick.com</a>
+</div>
+
+<div class="carousel-button-wrapper">
+  <PrimaryButton label="Find Out More" link="/" />
+</div>
+
+
+<script type="module">
+document.addEventListener("DOMContentLoaded", () => {
+	const track = document.querySelector(".carousel-track");
+	const cards = document.querySelectorAll(".deconstructed-card");
+	const prevBtn = document.querySelector(".carousel-button.prev");
+	const nextBtn = document.querySelector(".carousel-button.next");
+	const dotsContainer = document.querySelector(".dots-container");
+
+	cards.forEach((_, index) => {
+		const dot = document.createElement("div");
+		dot.classList.add("dot");
+		if (index === 0) dot.classList.add("active");
+		dot.addEventListener("click", () => goToCard(index));
+		dotsContainer.appendChild(dot);
+	});
+
+	const dots = document.querySelectorAll(".dot");
+
+	const cardWidth = cards[0].offsetWidth;
+	const cardMargin = 40;
+	const totalCardWidth = cardWidth + cardMargin;
+
+	let currentIndex = 0;
+
+	cards.forEach((card) => {
+		card.addEventListener("mousemove", (e) => {
+			const rect = card.getBoundingClientRect();
+			const x = (e.clientX - rect.left) / rect.width;
+			const y = (e.clientY - rect.top) / rect.height;
+			const xDeg = (y - 0.5) * 8;
+			const yDeg = (x - 0.5) * -8;
+			card.style.transform = `perspective(1200px) rotateX(${xDeg}deg) rotateY(${yDeg}deg)`;
+			const layers = card.querySelectorAll(".card-layer");
+			layers.forEach((layer, index) => {
+				const depth = 30 * (index + 1);
+				const translateZ = depth;
+				const offsetX = (x - 0.5) * 10 * (index + 1);
+				const offsetY = (y - 0.5) * 10 * (index + 1);
+				layer.style.transform = `translate3d(${offsetX}px, ${offsetY}px, ${translateZ}px)`;
+			});
+			const waveSvg = card.querySelector(".wave-svg");
+			if (waveSvg) {
+				const moveX = (x - 0.5) * -20;
+				const moveY = (y - 0.5) * -20;
+				waveSvg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+				const wavePaths = waveSvg.querySelectorAll("path:not(:first-child)");
+				wavePaths.forEach((path, index) => {
+					const factor = 1 + index * 0.5;
+					const waveX = moveX * factor * 0.5;
+					const waveY = moveY * factor * 0.3;
+					path.style.transform = `translate(${waveX}px, ${waveY}px)`;
+				});
+			}
+			const bgObjects = card.querySelectorAll(".bg-object");
+			bgObjects.forEach((obj, index) => {
+				const factorX = (index + 1) * 10;
+				const factorY = (index + 1) * 8;
+				const moveX = (x - 0.5) * factorX;
+				const moveY = (y - 0.5) * factorY;
+				if (obj.classList.contains("square")) {
+					obj.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
+				} else if (obj.classList.contains("triangle")) {
+					obj.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) scale(1)`;
+				} else {
+					obj.style.transform = `translate(${moveX}px, ${moveY}px)`;
+				}
+			});
+		});
+
+		card.addEventListener("mouseleave", () => {
+			card.style.transform = "";
+			const layers = card.querySelectorAll(".card-layer");
+			layers.forEach((layer) => {
+				layer.style.transform = "";
+			});
+			const waveSvg = card.querySelector(".wave-svg");
+			if (waveSvg) {
+				waveSvg.style.transform = "";
+				const wavePaths = waveSvg.querySelectorAll("path:not(:first-child)");
+				wavePaths.forEach((path) => {
+					path.style.transform = "";
+				});
+			}
+			const bgObjects = card.querySelectorAll(".bg-object");
+			bgObjects.forEach((obj) => {
+				if (obj.classList.contains("square")) {
+					obj.style.transform = "rotate(45deg) translateY(-20px)";
+				} else if (obj.classList.contains("triangle")) {
+					obj.style.transform = "translate(-50%, -50%) scale(0.5)";
+				} else {
+					obj.style.transform = "translateY(20px)";
+				}
+			});
+		});
+	});
+
+	function goToCard(index) {
+		index = Math.max(0, Math.min(index, cards.length - 1));
+
+		currentIndex = index;
+		updateCarousel();
+	}
+
+	function updateCarousel() {
+		const translateX = -currentIndex * totalCardWidth;
+
+		track.style.transform = `translateX(${translateX}px)`;
+
+		dots.forEach((dot, index) => {
+			dot.classList.toggle("active", index === currentIndex);
+		});
+	}
+
+	prevBtn.addEventListener("click", () => {
+		goToCard(currentIndex - 1);
+	});
+
+	nextBtn.addEventListener("click", () => {
+		goToCard(currentIndex + 1);
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "ArrowLeft") {
+			goToCard(currentIndex - 1);
+		} else if (e.key === "ArrowRight") {
+			goToCard(currentIndex + 1);
+		}
+	});
+
+	let touchStartX = 0;
+	let touchEndX = 0;
+
+	track.addEventListener("touchstart", (e) => {
+		touchStartX = e.changedTouches[0].screenX;
+	});
+
+	track.addEventListener("touchend", (e) => {
+		touchEndX = e.changedTouches[0].screenX;
+		handleSwipe();
+	});
+
+	function handleSwipe() {
+		if (touchStartX - touchEndX > 50) {
+			goToCard(currentIndex + 1);
+		} else if (touchEndX - touchStartX > 50) {
+			goToCard(currentIndex - 1);
+		}
+	}
+
+	window.addEventListener("resize", () => {
+		const newCardWidth = cards[0].offsetWidth;
+		const newTotalCardWidth = newCardWidth + cardMargin;
+
+		const translateX = -currentIndex * newTotalCardWidth;
+		track.style.transition = "none";
+		track.style.transform = `translateX(${translateX}px)`;
+
+		setTimeout(() => {
+			track.style.transition = "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+		}, 50);
+	});
+
+	updateCarousel();
+});
+
+</script>
