@@ -9,6 +9,7 @@ import HrDelimiter from "../components/HrDelimiter.astro";
 import First from "../components/First.astro";
 import Chart from "../components/Chart.astro";
 import WhyUs from "../components/WhyUs.astro";
+import Delimiter from "../components/Delimiter.astro";
 ---
 <Layout>
     <!--<Welcome welcome="Hey" />-->
@@ -36,14 +37,14 @@ import WhyUs from "../components/WhyUs.astro";
     <!--hide on mobile-->
     <div class="d-none d-md-block">
         <Chart></Chart>
-        <HrDelimiter></HrDelimiter>
+        <Delimiter></Delimiter>
     </div>
 
 
     <!--show only on larger of small screens-->
     <div class="d-block d-md-none">
         <Approaches></Approaches>
-        <HrDelimiter></HrDelimiter>
+        <Delimiter></Delimiter>
     </div>
 
 </Layout>
