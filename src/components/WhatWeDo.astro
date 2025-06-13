@@ -1,5 +1,6 @@
 ---
-import PrimaryButton from "./PrimaryButton.astro";
+import DarkButton from "./DarkButton.astro";
+import CenteredButton from "./CenteredButton.astro";
 ---
 
 <h1>What we do</h1>
@@ -30,9 +31,6 @@ import PrimaryButton from "./PrimaryButton.astro";
 
 <h3 class="text-center"> Have a project in mind?</h3>
 
-<!--bootstrap button =-->
-<div class="row">
-    <div class=offset-5 col-4 mx-auto>
-        <PrimaryButton label="Contact Us" link="/contact"></PrimaryButton>
-    </div>
-</div>
+<CenteredButton>
+    <DarkButton label="Contact Us" link="/contact"></DarkButton>
+</CenteredButton>

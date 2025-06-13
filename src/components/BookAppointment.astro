@@ -1,5 +1,6 @@
 ---
-import PrimaryButton from "./PrimaryButton.astro";
+import LightButton from "./LightButton.astro";
+import CenteredButton from "./CenteredButton.astro";
 
 const appointments: Appointment[] = [
     {
@@ -20,11 +21,10 @@ const appointments: Appointment[] = [
 ];
 ---
 
-<div class="row">
-    <div class="col mx-auto">
-        <PrimaryButton label="More Comfortable Writing In?" link=""></PrimaryButton>
-    </div>
-</div>
+
+<CenteredButton>
+    <LightButton label="More Comfortable Writing In?" link=""></LightButton>
+</CenteredButton>
 
 <div class="row">
 
@@ -63,5 +63,10 @@ const appointments: Appointment[] = [
         </div>
 
     </div>
+
+    <div class="offset-8 col-4">
+        <LightButton label="Back" link="/"></LightButton>
+    </div>
+
 
 </div>

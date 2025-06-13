@@ -1,6 +1,7 @@
 ---
 
-import PrimaryButton from "./PrimaryButton.astro";---
+import DarkButton from "./DarkButton.astro";
+import CenteredButton from "./CenteredButton.astro";---
 
 <h1>Who We Have Worked With</h1>
 
@@ -69,9 +70,13 @@ import PrimaryButton from "./PrimaryButton.astro";---
 <!--	<a href="https://calculatequick.com" target="_blank">calculatequick.com</a>-->
 <!--</div>-->
 
-<div class="carousel-button-wrapper">
-  <PrimaryButton label="Find Out More" link="/" />
-</div>
+<!--<div class="carousel-button-wrapper">-->
+<!--  <DarkButton label="Find Out More" link="/" />-->
+<!--</div>-->
+
+<CenteredButton>
+	<DarkButton label="Find Out More" link="/" />
+</CenteredButton>
 
 
 <script type="module">
