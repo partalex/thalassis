@@ -1,32 +1,9 @@
-h1 {
-    background: white;
+:root {
+    --bs-font-sans-serif: 'Brush Script MT', cursive, sans-serif;
+    /*--bs-font-sans-serif: 'Source Sans 5', sans-serif;*/
+    /*font: 1rem/1.5 var(--bs-font-sans-serif);*/
+    /*--bs-body-color: red;*/
 }
-
-
-@font-face {
-    font-family: 'Source Sans 3';
-    src: url('fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-    font-weight: 200 900;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 200;
-    color: #222;
-    line-height: 1.6;
-    background: #fff;
-}
-
-body, p, a, span {
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 200;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 700;
-}
-
 
 /* Aleksandar's styles */
+

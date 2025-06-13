@@ -1,7 +1,8 @@
 ---
-import LightButton from "./LightButton.astro";
-import CenteredButton from "./CenteredButton.astro";
-import DarkButton from "./DarkButton.astro";
+import LightButton from "../components/LightButton.astro";
+import CenteredButton from "../components/CenteredButton.astro";
+import DarkButton from "../components/DarkButton.astro";
+import Layout from "../layouts/Layout.astro";
 
 const appointments: Appointment[] = [
     {
@@ -22,9 +23,10 @@ const appointments: Appointment[] = [
 ];
 ---
 
+<Layout>
 
 <CenteredButton>
-    <DarkButton label="More Comfortable Writing In?" link=""></DarkButton>
+    <DarkButton label="More Comfortable Writing In?" link="/book-app"></DarkButton>
 </CenteredButton>
 <br>
 <br>
@@ -73,3 +75,5 @@ const appointments: Appointment[] = [
 
 
 </div>
+
+</Layout>

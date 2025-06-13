@@ -8,7 +8,6 @@ import Carousel from "../components/Carousel.astro";
 import HrDelimiter from "../components/HrDelimiter.astro";
 import First from "../components/First.astro";
 import Chart from "../components/Chart.astro";
-import BookAppointment from "../components/BookAppointment.astro";
 import WhyUs from "../components/WhyUs.astro";
 ---
 <Layout>
@@ -34,16 +33,17 @@ import WhyUs from "../components/WhyUs.astro";
     <WhyUs></WhyUs>
     <HrDelimiter></HrDelimiter>
 
-
-    <BookAppointment></BookAppointment>
-    <HrDelimiter></HrDelimiter>
-
-
-    <Chart></Chart>
-    <HrDelimiter></HrDelimiter>
+    <!--hide on mobile-->
+    <div class="d-none d-md-block">
+        <Chart></Chart>
+        <HrDelimiter></HrDelimiter>
+    </div>
 
 
-    <Approaches></Approaches>
-    <HrDelimiter></HrDelimiter>
+    <!--show only on larger of small screens-->
+    <div class="d-block d-md-none">
+        <Approaches></Approaches>
+        <HrDelimiter></HrDelimiter>
+    </div>
 
 </Layout>
