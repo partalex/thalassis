@@ -17,6 +17,11 @@ type WhyUs = {
     desc: string;
 }
 
+type CarouselItem = {
+    link: string;
+    alt: string;
+}
+
 type Service = {
     title: string;
     image: string;

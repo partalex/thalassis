@@ -1,6 +1,7 @@
 ---
 import LightButton from "./LightButton.astro";
 import CenteredButton from "./CenteredButton.astro";
+import DarkButton from "./DarkButton.astro";
 
 const appointments: Appointment[] = [
     {
@@ -23,8 +24,10 @@ const appointments: Appointment[] = [
 
 
 <CenteredButton>
-    <LightButton label="More Comfortable Writing In?" link=""></LightButton>
+    <DarkButton label="More Comfortable Writing In?" link=""></DarkButton>
 </CenteredButton>
+<br>
+<br>
 
 <div class="row">
 
@@ -34,10 +37,10 @@ const appointments: Appointment[] = [
         <h1 class="text-end">Appointment</h1>
         <br>
 
-        <h2 class="text-end">More comfortable talking?</h2>
-        <h2 class="text-end">No problem. Schedule a 30-min intro</h2>
-        <h2 class="text-end">call with Thalassis to chat about your</h2>
-        <h2 class="text-end">inquiry.</h2>
+        <h4 class="text-end">More comfortable talking?</h4>
+        <h4 class="text-end">No problem. Schedule a 30-min intro</h4>
+        <h4 class="text-end">call with Thalassis to chat about your</h4>
+        <h4 class="text-end">inquiry.</h4>
 
 
         <!--LinkedIn and email icon-->
