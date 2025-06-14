@@ -1,5 +1,25 @@
 ---
-const {label, link} = Astro.props;
+const { label, link } = Astro.props;
 ---
 
-<a href={link} class="btn btn-dark">{label}</a>
+<a href={link} class="custom-btn">{label}</a>
+
+<style>
+  .custom-btn {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 0.75rem 2rem;  /* lepa širina i visina */
+    border: none;
+    border-radius: 6px;     /* blago zaobljeno */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-btn:hover {
+    background-color: #333; /* blago posvetljenje na hover */
+    text-decoration: none;
+    color: white;
+  }
+</style>
