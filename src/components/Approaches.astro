@@ -30,6 +30,38 @@ const approaches: ApproachItem[] = [
     }
 ]
 ---
+<style>
+    .accordion-button {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    .accordion-button::after {
+        filter: invert(1); /* strelica bela */
+    }
+
+    .accordion-body {
+        background-color: black;
+        color: white;
+    }
+
+    .accordion-item {
+        margin-bottom: 15px; /* Dodaje prostor između accordion elemenata */
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .accordion-item:first-of-type {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .accordion-item:last-of-type {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+</style>
+
 <h1 class="fw-bold"> Our Approach</h1>
 <br>
 
@@ -70,10 +102,9 @@ const approaches: ApproachItem[] = [
                         {index + 1}. {app.title}
                     </button>
                 </h2>
-                <!--<div id={`flush-collapse${index}`} class="accordion-collapse collapse"-->
-                <div id={`flush-collapse${index}`} class="accordion-collapse"
-                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">{app.desc1}</div>
+                <div id={`flush-collapse${index}`} class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">{app.desc1}</div>
                 </div>
             </div>
     ))}

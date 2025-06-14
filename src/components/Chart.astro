@@ -1,162 +1,175 @@
-<style>
-    .flowchart {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-family: Arial, sans-serif;
-    }
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Perfect Flowchart</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
 
-    .step, .decision {
-        border: 1px solid #000;
-        padding: 10px;
-        margin: 10px;
-        text-align: center;
-        width: 200px;
-        position: relative;
-    }
+            .flowchart {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-    .step {
-        border-radius: 10px;
-    }
+            .step,
+            .decision {
+                border: 1px solid #000;
+                padding: 15px;
+                text-align: center;
+                width: 250px;
+                border-radius: 10px;
+                background: #fff;
+            }
 
-    .decision {
-        width: 220px;
-        height: 220px;
-        transform: rotate(45deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 10px;
-    }
+            .connector {
+                width: 2px;
+                height: 40px;
+                background: #000;
+            }
 
-    .decision > div {
-        transform: rotate(-45deg);
-        width: 150px;
-        text-align: center;
-    }
+            .decision {
+                width: 250px;
+                height: 250px;
+                transform: rotate(45deg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                margin: 40px 0;
+            }
 
-    .connector {
-        width: 2px;
-        height: 40px;
-        background-color: #000;
-        margin: -10px 0;
-    }
+            .decision-content {
+                transform: rotate(-45deg);
+                width: 180px;
+            }
 
-    .horizontal-line {
-        width: 100px;
-        height: 2px;
-        background-color: #000;
-        position: relative;
-        margin: 0 20px;
-    }
+            /* Branch lines */
+            .h-line,
+            .v-line {
+                position: absolute;
+                background: #000;
+            }
 
-    .label-left, .label-right {
-        position: absolute;
-        top: -25px;
-        font-weight: bold;
-        background-color: #fff;
-        padding: 0 5px;
-    }
+            .h-line {
+                height: 2px;
+                width: 100px;
+                top: calc(50% + 35px);
+            }
 
-    .label-left {
-        left: 0;
-        transform: rotate(-45deg);
-    }
+            .h-line.left {
+                left: calc(50% - 273px);
+            }
 
-    .label-right {
-        right: 0;
-        transform: rotate(45deg);
-    }
+            .h-line.right {
+                right: calc(50% - 273px);
+            }
 
-    .branch-wrapper {
-        display: flex;
-        justify-content: space-between;
-        width: 500px;
-        margin-top: 20px;
-    }
+            .v-line {
+                width: 1px;
+                height: 400px;
+                top: calc(50% + 35px);
+            }
 
-    .branch {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+            .v-line.left {
+                left: calc(50% - 273px);
+            }
 
-    .branch-label {
-        font-weight: bold;
-        margin-bottom: 10px;
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-    }
+            .v-line.right {
+                right: calc(50% - 273px);
+            }
 
-    .vertical-line {
-        width: 2px;
-        height: 80px;
-        background-color: #000;
-        margin: 0 auto;
-    }
+            .h1-line {
+                position: absolute;
+                height: 2px;
+                width: 149px;
+                background: #000;
+                top: calc(50% + 435px);
+            }
 
-    .horizontal-connector {
-        height: 2px;
-        width: 100px;
-        background-color: #000;
-        position: absolute;
-        top: 50%;
-    }
+            .h1-line.left {
+                left: calc(50% - 273px);
+            }
 
-    .horizontal-left {
-        left: -100px;
-    }
+            .h1-line.right {
+                right: calc(50% - 273px);
+            }
 
-    .horizontal-right {
-        right: -100px;
-    }
-</style>
-<div class="flowchart">
+            .label {
+                position: absolute;
+                writing-mode: vertical-rl;
+                font-weight: bold;
+                font-size: 50px; /* ← POVEĆAJ VELIČINU TEKSTA */
+                line-height: 1.2; /* ← RAZMAK IZMEĐU SLOVA */
+            }
 
-    <div class="step">
-        1 - Scope
-        <br>
-        Each engagement starts with a Scope of Work (SOW)—a shared under-standing of what we’re solving.
-    </div>
-    <div class="connector"></div>
+            .label.left {
+                left: calc(50% - 330px);
+                top: calc(68%);
+                transform: rotate(180deg);
+            }
 
-    <div class="step">
-        1 - Scope
-        <br>
-        Each engagement starts with a Scope of Work (SOW)—a shared under-standing of what we’re solving.
-    </div>
-    <div class="connector"></div>
+            .label.right {
+                right: calc(50% - 330px);
+                top: calc(65%);
+            }
 
-    <!-- Decision Diamond -->
-    <div class="decision" style="margin-top: 50px; position: relative;">
-        <div>
-            <strong>1 - Scope</strong><br>
-            Each engagement starts with a Scope of Work (SOW)—a shared understanding of what we’re solving.
+            .bottom-step {
+                margin-top: 160px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flowchart">
+            <!-- Top step -->
+            <div class="step">
+                <strong>1 - Scope</strong><br />
+                Each engagement starts with a Scope of Work (SOW)—a shared understanding
+                of what we’re solving.
+            </div>
+
+            <div class="connector"></div>
+
+            <!-- Middle step -->
+            <div class="step">
+                <strong>1 - Scope</strong><br />
+                Each engagement starts with a Scope of Work (SOW)—a shared understanding
+                of what we’re solving.
+            </div>
+
+            <div class="connector"></div>
+
+            <!-- Diamond -->
+            <div class="decision">
+                <div class="decision-content">
+                    <strong>1 - Scope</strong><br />
+                    Each engagement starts with a Scope of Work (SOW)—a shared understanding
+                    of what we’re solving.
+                </div>
+            </div>
+
+            <!-- Branch lines -->
+            <div class="h-line left"></div>
+            <div class="h-line right"></div>
+
+            <div class="v-line left"></div>
+            <div class="v-line right"></div>
+
+            <div class="label left">Fixed</div>
+            <div class="label right">Flexible</div>
+
+            <div class="h1-line left"></div>
+            <div class="h1-line right"></div>
+
+            <!-- Bottom step -->
+            <div class="step bottom-step">
+                <strong>1 - Scope</strong><br />
+                Each engagement starts with a Scope of Work (SOW)—a shared understanding
+                of what we’re solving.
+            </div>
         </div>
-
-        <!-- Horizontal lines extending left and right -->
-        <div class="horizontal-connector horizontal-left"></div>
-        <div class="horizontal-connector horizontal-right"></div>
-    </div>
-
-    <!-- Split branches from left and right of the diamond -->
-    <div class="branch-wrapper">
-        <div class="branch">
-            <div class="vertical-line"></div>
-            <div class="branch-label">Fixed</div>
-            <div class="vertical-line"></div>
-        </div>
-        <div class="branch">
-            <div class="vertical-line"></div>
-            <div class="branch-label">Flexible</div>
-            <div class="vertical-line"></div>
-        </div>
-    </div>
-
-    <div class="step">
-        1 - Scope
-        <br>
-        Each engagement starts with a Scope of Work (SOW)—a shared under-standing of what we’re solving.
-    </div>
-
-</div>
+    </body>
+</html>

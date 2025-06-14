@@ -2,38 +2,94 @@
 import DarkButton from "./DarkButton.astro";
 import CenteredButton from "./CenteredButton.astro";
 
+const carouselItems = [
+  { imagePath: "/company-logos/EPS/EPS.svg", alt: "EPS logo" },
+  {
+    imagePath: "/company-logos/360 JetFuel/360 JetFuel - Black.svg",
+    alt: "360 - jetfuel logo",
+  },
+  {
+    imagePath: "/company-logos/Bankwards Box/Bankwards Box - Black.svg",
+    alt: "Bankwards Box logo",
+  },
+  { imagePath: "/company-logos/FIS/5. FIS.svg", alt: "FIS logo" },
+  {
+    imagePath: "/company-logos/Meinhardt/Meinhardt - Black.svg",
+    alt: "Meinhardt logo",
+  },
+  { imagePath: "/company-logos/NDA/NDA - Black.svg", alt: "NDA logo" },
+];
 ---
 
 <h1 class="fw-bold">Who We Have Worked With</h1>
 
-<div class="section-slider">
+<!-- ✅ Custom slider for desktop -->
+<div class="section-slider custom-carousel">
   <ul class="list">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li></li><li></li><li></li><li></li><li></li>
   </ul>
   <div class="swipe"></div>
 </div>
 
+<!-- ✅ Bootstrap Carousel for mobile -->
+<div
+  id="mobileCarousel"
+  class="carousel slide bootstrap-carousel"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    {
+      carouselItems.map((item, index) => (
+        <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+          <img src={item.imagePath} class="d-block w-100" alt={item.alt} />
+        </div>
+      ))
+    }
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#mobileCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#mobileCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<CenteredButton>
+  <DarkButton label="Find Out More" link="/" />
+</CenteredButton>
+
 <script type="module" is:inline>
   window.carouselItems = [
     { imagePath: "/company-logos/EPS/EPS.svg", alt: "EPS logo" },
-    { imagePath: "/company-logos/360 JetFuel/360 JetFuel - Black.svg", alt: "360 - jetfuel logo" },
-    { imagePath: "/company-logos/Bankwards Box/Bankwards Box - Black.svg", alt: "Bankwards Box logo" },
+    {
+      imagePath: "/company-logos/360 JetFuel/360 JetFuel - Black.svg",
+      alt: "360 - jetfuel logo",
+    },
+    {
+      imagePath: "/company-logos/Bankwards Box/Bankwards Box - Black.svg",
+      alt: "Bankwards Box logo",
+    },
     { imagePath: "/company-logos/FIS/5. FIS.svg", alt: "FIS logo" },
-    { imagePath: "/company-logos/Meinhardt/Meinhardt - Black.svg", alt: "Meinhardt logo" },
-    { imagePath: "/company-logos/NDA/NDA - Black.svg", alt: "NDA logo" }
+    {
+      imagePath: "/company-logos/Meinhardt/Meinhardt - Black.svg",
+      alt: "Meinhardt logo",
+    },
+    { imagePath: "/company-logos/NDA/NDA - Black.svg", alt: "NDA logo" },
   ];
 </script>
 
-<CenteredButton>
-  <DarkButton label="Find Out More" link="/"/>
-</CenteredButton>
-
 <style>
-    .section-slider {
+  .section-slider {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,9 +97,9 @@ import CenteredButton from "./CenteredButton.astro";
 
     margin-top: 4rem;
     padding-bottom: 2rem;
-    }
+  }
 
-    .list {
+  .list {
     display: flex;
     position: relative;
     gap: 1rem;
@@ -51,64 +107,150 @@ import CenteredButton from "./CenteredButton.astro";
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    }
+  }
 
-    .swipe {
+  .swipe {
     width: 270px;
     height: 50px;
     background-color: transparent;
     border-radius: 2px;
     opacity: 0.1; /* test vidljivosti */
-    }
+  }
 
-    .list li {
+  .list li {
     list-style-type: none;
-    
+
     width: 200px;
     height: 200px;
-    opacity: .25;
+    opacity: 0.25;
     position: absolute;
     left: 50%;
     margin-left: -100px;
     border-radius: 2px;
     background: transparent;
-    transition: transform 1s, opacity 1s;
-    }
+    transition:
+      transform 1s,
+      opacity 1s;
+  }
 
-    .list .act {
+  .list .act {
     opacity: 1;
-    }
+  }
 
-    .list .prev,
-    .list .next {
+  .list .prev,
+  .list .next {
     cursor: pointer;
-    }
+  }
 
-    .list .prev {
-    transform: translateX(-220px) scale(.85);
-    }
+  .list .prev {
+    transform: translateX(-220px) scale(0.85);
+  }
 
-    .list .next {
-    transform: translateX(220px) scale(.85);
-    }
+  .list .next {
+    transform: translateX(220px) scale(0.85);
+  }
 
-    .list .hide {
-    transform: translateX(-420px) scale(.85);
-    }
+  .list .hide {
+    transform: translateX(-420px) scale(0.85);
+  }
 
-    .list .new-next {
-    transform: translateX(420px) scale(.85);
-    }
+  .list .new-next {
+    transform: translateX(420px) scale(0.85);
+  }
 
-    .list .hide,
-    .list .new-next {
+  .list .hide,
+  .list .new-next {
     opacity: 0;
-    transition: opacity .5s, transform .5s;
+    transition:
+      opacity 0.5s,
+      transform 0.5s;
+  }
+
+  /* Desktop: show custom, hide bootstrap */
+  .custom-carousel {
+    display: block;
+  }
+
+  .bootstrap-carousel {
+    display: none;
+  }
+
+  #mobileCarousel {
+    max-width: 400px; /* optional: ograniči širinu */
+    margin: 0 auto; /* centriraj */
+  }
+
+  #mobileCarousel .carousel-inner {
+    height: 350px; /* FIKSNA visina karusela */
+    display: flex;
+    align-items: center;
+  }
+
+  #mobileCarousel .carousel-item {
+    height: 100%;
+  }
+
+  #mobileCarousel .carousel-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* zadrži proporcije */
+  }
+
+  #mobileCarousel .carousel-item img {
+    max-width: 300px; /* ili koliko želiš */
+    max-height: 300px;
+    margin: 0 auto;
+  }
+
+  /* Pozicioniraj strelice pored slike, spolja */
+  #mobileCarousel .carousel-control-prev,
+  #mobileCarousel .carousel-control-next {
+    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black; /* po želji: kontrast */
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+
+  #mobileCarousel .carousel-control-prev {
+    left: calc(50% - 200px); /* gura levo od slike */
+  }
+
+  #mobileCarousel .carousel-control-next {
+    right: calc(50% - 200px); /* gura desno od slike */
+  }
+
+  #mobileCarousel .carousel-control-prev,
+  #mobileCarousel .carousel-control-next {
+    width: 40px; /* kvadrat */
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black; /* ili po želji */
+    border-radius: 4px; /* blagi ugao */
+    opacity: 1; /* uvek vidljivo */
+  }
+
+  #mobileCarousel .carousel-control-prev-icon,
+  #mobileCarousel .carousel-control-next-icon {
+    background-size: 60% 60%; /* manja strelica unutar kvadrata */
+  }
+
+  /* Mobile: show bootstrap, hide custom */
+  @media (max-width: 768px) {
+    .custom-carousel {
+      display: none;
     }
+
+    .bootstrap-carousel {
+      display: block;
+    }
+  }
 </style>
 
 <script type="module" is:inline>
-  import Hammer from 'https://cdn.skypack.dev/hammerjs';
+  import Hammer from "https://cdn.skypack.dev/hammerjs";
 
   const listEls = document.querySelectorAll(".list li");
   let currentIndex = 2; // start from center
@@ -136,7 +278,9 @@ import CenteredButton from "./CenteredButton.astro";
   }
 
   function prev() {
-    currentIndex = (currentIndex - 1 + window.carouselItems.length) % window.carouselItems.length;
+    currentIndex =
+      (currentIndex - 1 + window.carouselItems.length) %
+      window.carouselItems.length;
     renderCarousel();
   }
 
