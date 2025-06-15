@@ -187,44 +187,54 @@ const caseStudies: CaseStudy[] = [
 ]
 ---
 
-<h1 class="fw-bold">Case Studies</h1>
+<h1 class="fw-bold mb-5">Case Studies</h1>
 
-<br>
-<div class="container py-5">
+<div class="row mb-5">
     {caseStudies.map((cs) => (
-            <div class="row mb-5">
-                <div class="col-md-9">
-                    <h2 class="fw-bold">{cs.title}</h2>
-                    <h5 class="fw-semibold">{cs.subtitle}</h5>
 
-                    <div class="mt-4">
-                        <h6 class="fw-bold">The Challenge</h6>
-                        <p class="text-muted">{cs.challenge.desc}</p>
-                    </div>
-
-                    <div class="mt-4">
-                        <h6 class="fw-bold">Our Role</h6>
-                        <p>{cs.role.desc}</p>
-                        <ul class="ps-3">
-                            {cs.role.bullets.map((b) => (
-                                    <li>
-                                        <span class="fw-semibold">{b.title}</span>{b.desc}
-                                    </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div class="mt-4">
-                        <h6 class="fw-bold">The Outcome</h6>
-                        <p class="text-muted">{cs.outcome.desc}</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 text-end">
-                    <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
-                </div>
-
-                <hr class="mt-4"/>
+            <div class="col-12 d-md-none text-center mb-4">
+                <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
             </div>
+
+
+            <div class="col-md-9">
+
+                <h2 class="fw-bold mb-md-5">{cs.title}</h2>
+                <h5 class="fw-semibold">{cs.subtitle}</h5>
+
+            </div>
+
+            <div class="d-none d-md-block col-md-3 text-end">
+                <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
+            </div>
+
+            <div class="col-md-12">
+
+                <div class="mt-4">
+                    <h6 class="fw-bold">The Challenge</h6>
+                    <p class="text-muted">{cs.challenge.desc}</p>
+                </div>
+
+                <div class="mt-4">
+                    <h6 class="fw-bold">Our Role</h6>
+                    <p class="text-muted">{cs.role.desc}</p>
+                    <ul class="ps-3">
+                        {cs.role.bullets.map((b) => (
+                                <li>
+                                    <span class="fw-semibold">{b.title}</span>
+                                    <span class="text-muted"> {b.desc}</span>
+
+                                </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="mt-4">
+                    <h6 class="fw-bold">The Outcome</h6>
+                    <p class="text-muted">{cs.outcome.desc}</p>
+                </div>
+            </div>
+
+            <hr class="mt-4"/>
     ))}
 </div>
