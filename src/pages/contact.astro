@@ -23,19 +23,14 @@ const socials: Social[] = [
     <CenteredButton>
         <LargeDarkButton label="More comfortable talking?" link="/book-app"></LargeDarkButton>
     </CenteredButton>
-    <br>
-    <br>
 
-    <div class="row">
+    <div class="row mt-3 mt-md-5">
 
-        <div class="col-md-6">
-            <!--<h1 class="fw-bold text-end">Contact Us</h1>-->
-            <!--<h6 class="text-end">Outcomes start with a conversation.</h6>-->
-
-            <h1 class="fw-bold text-center text-md-end">Contact Us</h1>
-            <h6 class="text-center text-md-end">Outcomes start with a conversation.</h6>
-            <h6 class="text-center text-md-end">Let’s talk.</h6>
-            {Array.from({length: 3}).map(() => <br/>)}
+        <div class="col-md-5">
+            <h1 class="fw-bold text-start text-md-end mb-md-5">Contact Us</h1>
+            <h6 class="text-start text-md-end">Outcomes start with a conversation.</h6>
+            <h6 class="text-start text-md-end mb-3 mb-md-5">Let’s talk.</h6>
+            <!--{Array.from({length: 3}).map(() => <br/>)}-->
 
             <div class="d-flex justify-content-start justify-content-md-end">
                 {socials.map((social) => (
@@ -47,18 +42,19 @@ const socials: Social[] = [
 
         </div>
 
+        <div class="col-md-1"></div>
 
         <div class="col-md-6">
             <Form></Form>
         </div>
 
 
-        <div class="col-md-2">
+        <div class="col-6 text-center">
             <LightButton label="Back" link="/"></LightButton>
         </div>
 
 
-        <div class="col-md-2">
+        <div class="col-6 text-center">
             <button class="btn btn-dark btn-lg" type="submit">
                 Submit
             </button>
