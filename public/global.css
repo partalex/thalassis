@@ -1,18 +1,37 @@
 @font-face {
-  font-family: "Source Sans 3";
-  src: url("/fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
+    font-family: "Source Sans 3";
+    src: url("/fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
 }
 
 :root {
-  --bs-body-font-family: "Source Sans 3", sans-serif;
+    --bs-body-font-family: "Source Sans 3", sans-serif;
 }
 
 body {
-  font-family: var(--bs-body-font-family)!important;
+    font-family: var(--bs-body-font-family) !important;
 }
 
+.mobile-menu-links a {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mobile-logo {
+    max-height: 200px;
+}
+
+.mobile-tagline {
+  font-size: 1rem;
+  color: #999;  /* ili #666, kako želiš */
+  text-align: center;
+  max-width: 80%;
+  margin-top: auto; /* 🔑 OVO GURA TAGLINE NA DNO */
+  padding-top: 2rem; /* opcionalno za prostor */
+}
 
 /************ Aleksandar's styles ************5/
 
@@ -20,5 +39,3 @@ body {
 /*:root {*/
 /*    --bs-font-sans-serif: 'Brush Script MT', cursive, sans-serif;*/
 /*}*/
-
-
