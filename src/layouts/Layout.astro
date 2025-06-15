@@ -19,7 +19,9 @@ import TestNav from "../components/TestNav.astro";
 <body class="container">
 <!-- <TestNav></TestNav> -->
 <Navbar></Navbar>
-<slot/>
+<div class="px-5 px-md-0">
+    <slot/>
+</div>
 <Footer></Footer>
 <script>
     import 'bootstrap/dist/js/bootstrap.bundle.min.js'

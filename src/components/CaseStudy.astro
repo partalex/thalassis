@@ -1,10 +1,11 @@
 ---
 import HrDelimiter from "./HrDelimiter.astro";
+import Delimiter from "./Delimiter.astro";
 const caseStudies: CaseStudy[] = [
     {
         title: "Meinhardt Group",
         subtitle: 'Asia’s Largest Privately-Held Engineering Consultancy',
-        image: '/company-logos/Meinhardt/Meinhardt - Black.svg',
+        image: '/company-logos/Meinhardt/1. Meinhardt Remastered Square.svg',
         challenge: {
             desc: "A Gulf-state government asked Meinhardt Group to modernize a nationwide school system—over 400 campuses  —under a unified smart-city-grade mandate.",
             bullets: [],
@@ -52,7 +53,7 @@ const caseStudies: CaseStudy[] = [
     {
         title: "Bankwards",
         subtitle: 'Multi-Currency Treasury Wallet with Fixed-Fee Global Payments',
-        image: '/company-logos/Meinhardt/Meinhardt - Black.svg',
+        image: '/company-logos/Meinhardt/1. Meinhardt Remastered Square.svg',
         challenge: {
             desc: "Businesses moving large volumes of money across borders faced unpredictable fees, fragmented systems, and limited  cash visibility. The goal: one wallet to manage payments, permissions, and reconciliation—without losing control or  transparency.",
             bullets: [],
@@ -190,53 +191,54 @@ const caseStudies: CaseStudy[] = [
 
 <h1 class="fw-bold mb-5">Case Studies</h1>
 
+<Delimiter></Delimiter>
+
 <div class="row mb-5">
-    {caseStudies.map((cs) => (
-
-            <div class="col-12 d-md-none text-center mb-4">
-                <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
-            </div>
-
-
-            <div class="col-md-9">
-
-                <h2 class="fw-bold mb-md-5">{cs.title}</h2>
-                <h5 class="fw-semibold">{cs.subtitle}</h5>
-
-            </div>
-
-            <div class="d-none d-md-block col-md-3 text-end">
-                <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
-            </div>
-
-            <div class="col-md-12">
-
-                <div class="mt-4">
-                    <h6 class="fw-bold">The Challenge</h6>
-                    <p class="text-muted">{cs.challenge.desc}</p>
+    {caseStudies.map((cs, index) => (
+            <>
+                <div class="col-12 d-md-none text-center mb-4">
+                    <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
                 </div>
 
-                <div class="mt-4">
-                    <h6 class="fw-bold">Our Role</h6>
-                    <p class="text-muted">{cs.role.desc}</p>
-                    <ul class="ps-3">
-                        {cs.role.bullets.map((b) => (
-                                <li>
-                                    <span class="fw-semibold">{b.title}</span>
-                                    <span class="text-muted"> {b.desc}</span>
 
-                                </li>
-                        ))}
-                    </ul>
+                <div class="col-md-9">
+
+                    <h2 class="fw-bold mb-md-5">{cs.title}</h2>
+                    <h5 class="fw-semibold">{cs.subtitle}</h5>
+
                 </div>
 
-                <div class="mt-4">
-                    <h6 class="fw-bold">The Outcome</h6>
-                    <p class="text-muted">{cs.outcome.desc}</p>
+                <div class="d-none d-md-block col-md-3 text-end">
+                    <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
                 </div>
-            </div>
 
-            <HrDelimiter></HrDelimiter>
+                <div class="col-md-12">
 
+                    <div class="mt-5">
+                        <h6 class="fw-bold">The Challenge</h6>
+                        <p class="text-muted">{cs.challenge.desc}</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="fw-bold mt-5">Our Role</h6>
+                        <p class="text-muted">{cs.role.desc}</p>
+                        <ul class="ps-3">
+                            {cs.role.bullets.map((b) => (
+                                    <li>
+                                        <span class="fw-semibold">{b.title}</span>
+                                        <span class="text-muted"> {b.desc}</span>
+                                    </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div class="mt-5 mb-5">
+                        <h6 class="fw-bold">The Outcome</h6>
+                        <p class="text-muted">{cs.outcome.desc}</p>
+                    </div>
+                </div>
+                {index < caseStudies.length - 1 &&
+                        <HrDelimiter></HrDelimiter>}
+            </>
     ))}
 </div>
