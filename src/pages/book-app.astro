@@ -3,20 +3,19 @@ import LightButton from "../components/LightButton.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import Layout from "../layouts/Layout.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
-import Delimiter from "../components/Delimiter.astro";
 const appointments: Appointment[] = [
     {
-        name: "Free consultation",
+        name: "Free Consultation",
         desc: "30 minutes",
         link: "https://calendly.com/thalassis/30min",
     },
     {
-        name: "Basic service",
+        name: "Basic Service",
         desc: "1 hour @ $99.00",
         link: "https://calendly.com/thalassis/1hour-basic-service",
     },
     {
-        name: "Advanced service",
+        name: "Advanced Service",
         desc: "1 hour @ $199.00",
         link: "https://calendly.com/thalassis/1hour-advanced-service",
     }
@@ -54,7 +53,7 @@ const appointments: Appointment[] = [
             <h6 class="text-center">Select Appointment</h6>
 
 
-            <div class="card shadow-sm p-4">
+            <div class="card shadow-sm p-5">
                 {appointments.map((app, index) => (
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <div>

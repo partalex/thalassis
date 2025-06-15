@@ -1,5 +1,5 @@
 ---
-const { label, link } = Astro.props;
+const {label, link} = Astro.props;
 ---
 
 <!--<style>-->
@@ -24,5 +24,17 @@ const { label, link } = Astro.props;
 
 <!--<a href={link} class="custom-btn">{label}</a>-->
 <!-- <a href={link} class="btn btn-dark btn-lg">{label}</a>-->
- <a href={link} class="btn btn-dark btn-lg">{label}</a>
+
+
+<style>
+    //set font weight on button to 300
+    .a {
+        font-weight: 300;
+        max-width: 200px !important;
+        width: 150px !important;
+    }
+
+</style>
+
+<a href={link} class="btn btn-dark btn-lg">{label}</a>
 
