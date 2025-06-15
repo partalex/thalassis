@@ -126,26 +126,20 @@ const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
 
 <script is:inline>
   window.addEventListener("DOMContentLoaded", () => {
-    const offcanvasElement = document.getElementById("offcanvasNavbar");
-    const navLinks = document.querySelectorAll(".offcanvas .nav-link");
-    const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+    // ✅ Defensive check
+    if (typeof bootstrap !== "undefined") {
+      const offcanvasElement = document.getElementById("offcanvasNavbar");
+      const navLinks = document.querySelectorAll(".offcanvas .nav-link");
+      const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
 
-    navLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-        
-        // Check if link is /#about AND we are on home page
-        if (href === "/#about" && window.location.pathname === "/") {
-          e.preventDefault();
-          const target = document.querySelector("#about");
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
-        }
-
-        // Always close offcanvas
-        offcanvasInstance.hide();
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          offcanvasInstance.hide();
+        });
       });
-    });
+    } else {
+      console.warn("⚠️ Bootstrap JS is not loaded. Offcanvas links won't close automatically.");
+    }
   });
 </script>
+
