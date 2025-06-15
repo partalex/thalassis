@@ -1,32 +1,25 @@
 @font-face {
     font-family: "Source Sans 3";
-    src: url("/fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+    src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
     font-weight: 100 900;
     font-style: normal;
 }
 
 body {
-    font-family: "Source Sans 3" !important;
-} 
+    font-family: "Source Sans 3", sans-serif !important;
+}
 
 h1 {
-    font-weight: 900!important;
+    font-weight: 900 !important;
 }
 
 h2 {
     font-weight: 500;
-}   
+}
 
 h3 {
     font-weight: 600;
 }
-
-/************ Aleksandar's styles ************5/
-
-/* should be set like this*/
-/*:root {*/
-/*    --bs-font-sans-serif: 'Brush Script MT', cursive, sans-serif;*/
-/*}*/
 
 
 
