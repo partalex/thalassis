@@ -32,8 +32,8 @@
             }
 
             .decision {
-                width: 250px;
-                height: 250px;
+                width: 370px;
+                height: 370px;
                 transform: rotate(45deg);
                 display: flex;
                 align-items: center;
@@ -44,92 +44,101 @@
 
             .decision-content {
                 transform: rotate(-45deg);
-                width: 180px;
+                width: 300px;
             }
 
-            /* Branch lines */
             .h-line,
             .v-line {
                 position: absolute;
                 background: #000;
             }
 
+            .parent {
+                position: relative;
+            }
+
             .h-line {
-                height: 2px;
                 width: 100px;
-                top: calc(50% + 35px);
+                height: 2px;
+                background: black;
             }
 
             .h-line.left {
-                left: calc(50% - 273px);
+                top: -227px;
+                left: calc(50% + 257px);
             }
 
             .h-line.right {
-                right: calc(50% - 273px);
+                top: -227px;
+                right: calc(50% + 257px);
             }
 
             .v-line {
                 width: 1px;
-                height: 400px;
-                top: calc(50% + 35px);
+                height: 450px;
+                top: -227px;
             }
 
             .v-line.left {
-                left: calc(50% - 273px);
+                left: calc(50% - 358px);
             }
 
             .v-line.right {
-                right: calc(50% - 273px);
+                right: calc(50% - 358px);
             }
 
             .h1-line {
                 position: absolute;
                 height: 2px;
-                width: 149px;
+                width: 234px;
                 background: #000;
-                top: calc(50% + 435px);
+                top: 223px;
             }
 
             .h1-line.left {
-                left: calc(50% - 273px);
+                left: calc(50% - 358px);
             }
 
             .h1-line.right {
-                right: calc(50% - 273px);
+                right: calc(50% - 358px);
             }
 
             .label {
                 position: absolute;
                 writing-mode: vertical-rl;
                 font-weight: bold;
-                font-size: 50px; /* ← POVEĆAJ VELIČINU TEKSTA */
-                line-height: 1.2; /* ← RAZMAK IZMEĐU SLOVA */
+                font-size: 40px;
+                line-height: 1.2;
+                top: -50px;
             }
 
             .label.left {
-                left: calc(50% - 330px);
-                top: calc(68%);
+                left: calc(55% - 430px);
                 transform: rotate(180deg);
             }
 
             .label.right {
-                right: calc(50% - 330px);
-                top: calc(65%);
+                right: calc(55% - 430px);
             }
 
             .bottom-step {
                 margin-top: 160px;
             }
+
+            .decision-content .sub-heading {
+                font-weight: 600;
+                display: inline;
+            }
         </style>
     </head>
     <body>
         <h1 class="fw-bold">Our Approach</h1>
-        <br>
+        <br />
         <p>
             Here’s how we scope, price, and deliver work—from the first
             conversation to the final invoice.
         </p>
-        <br>
+        <br />
         <div class="flowchart">
             <!-- Top step -->
             <div class="step">
@@ -142,9 +151,11 @@
 
             <!-- Middle step -->
             <div class="step">
-                <strong>1 - Scope</strong><br />
-                Each engagement starts with a Scope of Work (SOW)—a shared understanding
-                of what we’re solving.
+                <strong>2 - Estimate</strong><br />
+                Each UOW is estimated in Full Stack Days (FSDs): one day of coordinated
+                output from a core contributor and supporting team, rather than just
+                an average (blended) rate. You’ll see your entire project—scope,
+                delivery, and cost—measured in the same unit.
             </div>
 
             <div class="connector"></div>
@@ -152,30 +163,39 @@
             <!-- Diamond -->
             <div class="decision">
                 <div class="decision-content">
-                    <strong>1 - Scope</strong><br />
-                    Each engagement starts with a Scope of Work (SOW)—a shared understanding
-                    of what we’re solving.
+                    <strong>3 - Choose Pricing Model</strong><br /><br />
+
+                    <span class="sub-heading">Fixed Billing:</span><br />
+                    Pay the upper bound of our estimate (the pessimistic case). You
+                    cap risk and lock in a known cost.
+                    <br /><br />
+
+                    <span class="sub-heading">Flexible Billing:</span><br />
+                    Pay only for the actual FSDs used. If a UOW takes less time,
+                    you pay less. If it takes more, you’re billed only for what was
+                    actually consumed.
                 </div>
             </div>
 
             <!-- Branch lines -->
-            <div class="h-line left"></div>
-            <div class="h-line right"></div>
+            <div class="parent">
+                <div class="h-line left"></div>
+                <div class="h-line right"></div>
+        
+                <div class="v-line left"></div>
+                <div class="v-line right"></div>
+            
+                <div class="label left">Fixed</div>
+                <div class="label right">Flexible</div>
 
-            <div class="v-line left"></div>
-            <div class="v-line right"></div>
-
-            <div class="label left">Fixed</div>
-            <div class="label right">Flexible</div>
-
-            <div class="h1-line left"></div>
-            <div class="h1-line right"></div>
-
+                <div class="h1-line left"></div>
+                <div class="h1-line right"></div>
+            </div>
             <!-- Bottom step -->
             <div class="step bottom-step">
-                <strong>1 - Scope</strong><br />
-                Each engagement starts with a Scope of Work (SOW)—a shared understanding
-                of what we’re solving.
+                <strong>4 - Deliver</strong><br />
+                Every month, you get a clear invoice—our line items are deliverables
+                (UOWs), not resources.
             </div>
         </div>
     </body>
