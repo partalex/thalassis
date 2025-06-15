@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Form from "../components/Form.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
+import DarkButton from "../components/DarkButton.astro";
+import LightButton from "../components/LightButton.astro";
 
 const socials: Social[] = [
     {
@@ -26,13 +28,16 @@ const socials: Social[] = [
 
     <div class="row">
 
-        <div class="col-6">
-            <h1 class="fw-bold text-end">Contact Us</h1>
-            <h6 class="text-end">Outcomes start with a conversation.</h6>
-            <h6 class="text-end">Let’s talk.</h6>
+        <div class="col-md-6">
+            <!--<h1 class="fw-bold text-end">Contact Us</h1>-->
+            <!--<h6 class="text-end">Outcomes start with a conversation.</h6>-->
+
+            <h1 class="fw-bold text-center text-md-end">Contact Us</h1>
+            <h6 class="text-center text-md-end">Outcomes start with a conversation.</h6>
+            <h6 class="text-center text-md-end">Let’s talk.</h6>
             {Array.from({length: 3}).map(() => <br/>)}
 
-            <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-start justify-content-md-end">
                 {socials.map((social) => (
                         <a class="btn btn-outline-dark btn-lg me-2" href={social.link} target="_blank">
                             <i class={`bi ${social.icon}`}></i>
@@ -43,30 +48,23 @@ const socials: Social[] = [
         </div>
 
 
-        <div class="col-6">
+        <div class="col-md-6">
             <Form></Form>
         </div>
 
 
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-2 offset-2">
-            <a class="btn btn-outline-dark btn-lg" href="#">
-                Back
-            </a>
+        <div class="col-md-2">
+            <LightButton label="Back" link="/"></LightButton>
         </div>
 
 
-        <div class="col-2 offset-4">
+        <div class="col-md-2">
             <button class="btn btn-dark btn-lg" type="submit">
                 Submit
             </button>
         </div>
-
     </div>
+
     <br>
     <br>
 
