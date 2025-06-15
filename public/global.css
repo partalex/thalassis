@@ -24,14 +24,6 @@ body {
     max-height: 200px;
 }
 
-.mobile-tagline {
-  font-size: 1rem;
-  color: #999;  /* ili #666, kako želiš */
-  text-align: center;
-  max-width: 80%;
-  margin-top: auto; /* 🔑 OVO GURA TAGLINE NA DNO */
-  padding-top: 2rem; /* opcionalno za prostor */
-}
 
 /************ Aleksandar's styles ************5/
 
@@ -39,3 +31,6 @@ body {
 /*:root {*/
 /*    --bs-font-sans-serif: 'Brush Script MT', cursive, sans-serif;*/
 /*}*/
+
+
+

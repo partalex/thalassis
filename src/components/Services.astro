@@ -35,7 +35,8 @@ const services: Service[] = [
 <br>
 
 <p>
-    Our service pillars are designed to meet clients where they are—whether the problem is still being defined, or the solution just needs to ship.
+    Our service pillars are designed to meet clients where they are—whether the problem is still being defined, or the
+    solution just needs to ship.
 </p>
 <br>
 <br>
@@ -44,14 +45,14 @@ const services: Service[] = [
     {services.map(service => (
             <div class="col">
 
-                <div class="card p-4 shadow-sm border rounded-4">
+                <div class="card h-100 p-4 shadow-sm border rounded-4">
                     <div class="card-body">
                         <div class="mb-3 text-center">
                             <img src={service.image} alt={service.title} style="width: 40px; height: 40px;">
                         </div>
-                        <h5 class="card-title fw-bold">{service.title}</h5>
-                        <h6 class="card-subtitle mb-3 text-muted">{service.subtitle}</h6>
-                        <p class="text-muted mb-1">{service.desc1}</p>
+                        <h5 class="card-title fw-bold mb-5">{service.title}</h5>
+                        <h6 class="card-subtitle mb-4">{service.subtitle}</h6>
+                        <p class="text-muted mb-4">{service.desc1}</p>
                         <p class="text-muted">{service.desc2}</p>
                     </div>
                 </div>

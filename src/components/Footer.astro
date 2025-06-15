@@ -14,112 +14,82 @@ const socials: Social[] = [
     },
 ];
 import LightFullButton from "./LightFullButton.astro";
+
+const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
 ---
 
-<style>
-    .footer-desktop {
-        display: block;
-    }
 
-    .footer-mobile {
-        display: none;
-    }
+<footer class="bg-black">
 
-    @media (max-width: 768px) {
-        .footer-desktop {
-            display: none;
-        }
+    <!-- PC view -->
+    <div class="row text-center d-none d-lg-flex pt-4 text-light">
 
-        .footer-mobile {
-            display: block;
-        }
-    }
-    .socials-list li {
-        font-size: 1rem;
-    }
+        <div class="col-4 text-light">
+            <h5 class="fw-bold mb-3">Got a project in mind?</h5>
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+        </div>
 
-    .socials-list li i {
-        font-size: 1.25rem;
-        flex-shrink: 0;
-    }
-
-    .socials-list li span {
-        display: inline-block;
-        font-weight: 200;
-    }
-</style>
-
-<footer class="footer-desktop bg-black text-white py-5">
-    <div class="container">
-        <div class="row align-items-center text-md-start">
-            <!-- Left -->
-            <div class="col-md-4 mb-4 mb-md-0 text-center">
-                <h5 class="fw-bold mb-3">Got a project in mind?</h5>
-                <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
-            </div>
-
-            <!-- Middle -->
-            <div class="col-md-4 mb-4 mb-md-0">
-                <ul class="list-unstyled socials-list">
-                    {
-                        socials.map((item) => (
-                            <li class="mb-3 d-flex align-items-center">
-                                <i class={`bi ${item.icon} me-3 fs-3`} />
+        <div class="col-4">
+            <ul class="list-unstyled socials-list mb-4 text-start">
+                {
+                    socials.map((item) => (
+                            <li class="mb-3 d-flex align-items-center justify-content-center">
+                                <i class={`bi ${item.icon} me-3 fs-3`}/>
                                 <span>{item.link}</span>
                             </li>
-                        ))
-                    }
-                </ul>
-            </div>
+                    ))
+                }
+            </ul>
+        </div>
 
-            <!-- Right -->
-            <div class="col-md-4 d-flex flex-column align-items-center justify-content-start">
-                <img
+        <div class="col-4">
+            <img class="img-fluid mb-4"
                     src="/logo/png/Thalassis Consulting-02 - White.png"
                     alt="Thalassis Consulting Logo"
                     style="max-width: 300px; height: auto;"
-                />
-                <p class="small" style="margin-top: 55px;">
-                    &copy; 2025 Thalassis Consulting Pte. Ltd. All rights
-                    reserved.
-                </p>
-            </div>
+            />
+            <p class="small mt-5">{copyright}</p>
         </div>
+
     </div>
-</footer>
 
-<!-- Mobile Footer -->
-<footer class="footer-mobile bg-black text-white py-5">
-    <div class="container d-flex flex-column align-items-center text-center">
-        <!-- Logo -->
-        <img
-            src="/logo/png/Thalassis Consulting-02 - White.png"
-            alt="Thalassis Consulting Logo"
-            style="max-width: 250px; height: auto;"
-            class="mb-4"
-        />
+    <!-- Mobile View  -->
+    <div class="row d-lg-none text-center pt-4 text-light">
 
-        <!-- Links -->
-        <ul class="list-unstyled socials-list mb-4">
-            {
-                socials.map((item) => (
-                    <li class="mb-3 d-flex align-items-center justify-content-center">
-                        <i class={`bi ${item.icon} me-3 fs-3`} />
-                        <span>{item.link}</span>
-                    </li>
-                ))
-            }
-        </ul>
+        <div class="col-12 mb-4">
+            <!--logo-->
+            <img
+                    src="/logo/png/Thalassis Consulting-02 - White.png"
+                    alt="Thalassis Consulting Logo"
+                    style="max-width: 300px; height: auto;"
+                    class="mb-4">
 
-        <!-- CTA -->
-        <div class="mb-4">
+        </div>
+
+        <div class="col-12 mb-4">
+            <!--social-->
+            <ul class="list-unstyled socials-list mb-3">
+                {
+                    socials.map((item) => (
+                            <li class="mb-3 d-flex justify-content-center align-items-center">
+                                <i class={`bi ${item.icon} me-3 fs-3`}/>
+                                <span>{item.link}</span>
+                            </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div class="col-12 mb-4">
             <h5 class="fw-bold mb-3">Got a project in mind?</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
-        <!-- Copyright -->
-        <p class="small mb-0">
-            &copy; 2025 Thalassis Consulting Pte. Ltd. All rights reserved.
-        </p>
+        <div class="col-12 pb-4">
+            <p class="small mb-0">{copyright}</p>
+        </div>
+
     </div>
+
 </footer>
+

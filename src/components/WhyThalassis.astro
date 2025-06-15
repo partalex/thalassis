@@ -1,4 +1,5 @@
 ---
+import Delimiter from "./Delimiter.astro";
 const whyUs: WhyUs[] = [
     {
         title: "You Pay for Results, Not Hours",
@@ -25,6 +26,8 @@ const whyUs: WhyUs[] = [
 ---
 
 <h1 class="fw-bold">Why Thalassis?</h1>
+
+<Delimiter></Delimiter>
 
 <div class="row row-cols-1 row-cols-md-3 g-1 px-1">
     {whyUs.map((item, index) => (
