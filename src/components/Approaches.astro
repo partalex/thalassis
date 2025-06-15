@@ -41,8 +41,8 @@ const approaches: ApproachItem[] = [
     }
 
     .accordion-body {
-        background-color: black;
-        color: white;
+        //background-color: black;
+        //color: white;
     }
 
     .accordion-item {
@@ -68,29 +68,6 @@ const approaches: ApproachItem[] = [
 <p>Here’s how we scope, price, and deliver work—from the first conversation to the final invoice.</p>
 <br>
 
-<!--<div class="row row-cols-1 row-cols-md-2 g-4 px-4">-->
-
-<!--    {approaches.map((app, index) => (-->
-<!--            <div class="col">-->
-
-<!--                <div class="card rounded-4 shadow">-->
-<!--                    <div class="card-header bg-white p-4 pb-0 border-0">-->
-<!--                        <h4 class="card-title mb-3">{app.title}</h4>-->
-<!--                    </div>-->
-<!--                    <div class="card-body p-4 pt-0">-->
-<!--                        {app.subTitle1 && <h5 class="card-subtitle mb-2 text-dark">{app.subTitle1}</h5>}-->
-<!--                        <p class="card-text mb-4">{app.desc1}</p>-->
-<!--                        {app.subTitle2 && <h5 class="card-subtitle mb-2 text-dark">{app.subTitle2}</h5>}-->
-<!--                        {app.desc2 && <p class="card-text">{app.desc2}</p>}-->
-<!--                    </div>-->
-<!--                    <div class="card-footer bg-secondary text-white p-1 rounded-bottom-4 border-0">-->
-<!--                        <span class="ps-3 fs-1 fw-bold">0{index + 1}</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--    ))}-->
-<!--</div>-->
 
 <div class="accordion accordion-flush" id="accordionFlushExample">
     {approaches.map((app, index) => (
