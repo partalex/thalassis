@@ -5,6 +5,7 @@ import CenteredButton from "../components/CenteredButton.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
 import DarkButton from "../components/DarkButton.astro";
 import LightButton from "../components/LightButton.astro";
+import Delimiter from "../components/Delimiter.astro";
 
 const socials: Social[] = [
     {
@@ -24,7 +25,10 @@ const socials: Social[] = [
         <LargeDarkButton label="More comfortable talking?" link="/book-app"></LargeDarkButton>
     </CenteredButton>
 
-    <div class="row mt-3 mt-md-5">
+    <Delimiter></Delimiter>
+
+    <div class="row">
+        <!--<div class="row mt-3 mt-md-5">-->
 
         <div class="col-md-5">
             <h1 class="fw-bold text-start text-md-end mb-md-5">Contact Us</h1>
@@ -44,17 +48,17 @@ const socials: Social[] = [
 
         <div class="col-md-1"></div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 mb-3">
             <Form></Form>
         </div>
 
 
-        <div class="col-6 text-center">
+        <div class="col-12 col-md 6 text-center mb-md-0 order-2 order-md-1">
             <LightButton label="Back" link="/"></LightButton>
         </div>
 
 
-        <div class="col-6 text-center">
+        <div class="col-12 col-md-6 mb-2 text-center order-1 order-md-2">
             <button class="btn btn-dark btn-lg" type="submit">
                 Submit
             </button>
