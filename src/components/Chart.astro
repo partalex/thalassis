@@ -1,254 +1,243 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Perfect Flowchart</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
 
-            .flowchart {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+    .flowchart {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .step,
-            .decision {
-                border: 1px solid #000;
-                padding: 15px;
-                text-align: center;
-                width: 250px;
-                border-radius: 10px;
-                background-color: #f0f0f0;
-                transition: background-color 0.3s ease;
-            }
+    .step,
+    .decision {
+        border: 1px solid #000;
+        padding: 15px;
+        text-align: center;
+        width: 250px;
+        border-radius: 10px;
+        background-color: #A9A9A9;
+        transition: background-color 0.3s ease;
+    }
 
-            .step:hover,
-            .decision:hover {
-                background-color: #ffffff;
-            }
+    .step:hover,
+    .decision:hover {
+        background-color: #ffffff;
+    }
 
-            .step-content {
-                transform: scale(0);
-                opacity: 0;
-                transition:
-                    transform 0.5s ease,
-                    opacity 0.5s ease;
-            }
+    .step-content {
+        transform: scale(0);
+        opacity: 0;
+        transition: transform 0.5s ease,
+        opacity 0.5s ease;
+    }
 
-            .step:hover .step-content {
-                transform: scale(1);
-                opacity: 1;
-            }
+    .step:hover .step-content {
+        transform: scale(1);
+        opacity: 1;
+    }
 
-            .connector {
-                width: 2px;
-                height: 40px;
-                background: #000;
-            }
+    .connector {
+        width: 2px;
+        height: 40px;
+        background: #000;
+    }
 
-            .decision {
-                width: 370px;
-                height: 370px;
-                transform: rotate(45deg);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                margin: 40px 0;
-            }
+    .decision {
+        width: 370px;
+        height: 370px;
+        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 40px 0;
+    }
 
-            .decision-inner {
-                transform: rotate(-45deg);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                width: 300px;
-                position: relative;
-            }
+    .decision-inner {
+        transform: rotate(-45deg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 300px;
+        position: relative;
+    }
 
 
-            .decision-title {
-                width: 300px;
-            }
+    .decision-title {
+        width: 300px;
+    }
 
-            .decision-content {
-                transform: rotate(-45deg) scale(0);
-                opacity: 0;
-                transition:
-                    transform 0.5s ease,
-                    opacity 0.5s ease;
-                width: 300px;
-            }
+    .decision-content {
+        transform: rotate(-45deg) scale(0);
+        opacity: 0;
+        transition: transform 0.5s ease,
+        opacity 0.5s ease;
+        width: 300px;
+    }
 
-            .decision:hover .decision-content {
-                transform: scale(1);
-                opacity: 1;
-            }
+    .decision:hover .decision-content {
+        transform: scale(1);
+        opacity: 1;
+    }
 
-            .h-line,
-            .v-line {
-                position: absolute;
-                background: #000;
-            }
+    .h-line,
+    .v-line {
+        position: absolute;
+        background: #000;
+    }
 
-            .parent {
-                position: relative;
-            }
+    .parent {
+        position: relative;
+    }
 
-            .h-line {
-                width: 100px;
-                height: 2px;
-                background: black;
-            }
+    .h-line {
+        width: 100px;
+        height: 2px;
+        background: black;
+    }
 
-            .h-line.left {
-                top: -227px;
-                left: calc(50% + 257px);
-            }
+    .h-line.left {
+        top: -227px;
+        left: calc(50% + 257px);
+    }
 
-            .h-line.right {
-                top: -227px;
-                right: calc(50% + 257px);
-            }
+    .h-line.right {
+        top: -227px;
+        right: calc(50% + 257px);
+    }
 
-            .v-line {
-                width: 1px;
-                height: 450px;
-                top: -227px;
-            }
+    .v-line {
+        width: 1px;
+        height: 450px;
+        top: -227px;
+    }
 
-            .v-line.left {
-                left: calc(50% - 358px);
-            }
+    .v-line.left {
+        left: calc(50% - 358px);
+    }
 
-            .v-line.right {
-                right: calc(50% - 358px);
-            }
+    .v-line.right {
+        right: calc(50% - 358px);
+    }
 
-            .h1-line {
-                position: absolute;
-                height: 2px;
-                width: 234px;
-                background: #000;
-                top: 223px;
-            }
+    .h1-line {
+        position: absolute;
+        height: 2px;
+        width: 234px;
+        background: #000;
+        top: 223px;
+    }
 
-            .h1-line.left {
-                left: calc(50% - 358px);
-            }
+    .h1-line.left {
+        left: calc(50% - 358px);
+    }
 
-            .h1-line.right {
-                right: calc(50% - 358px);
-            }
+    .h1-line.right {
+        right: calc(50% - 358px);
+    }
 
-            .label {
-                position: absolute;
-                writing-mode: vertical-rl;
-                font-weight: bold;
-                font-size: 40px;
-                line-height: 1.2;
-                top: -50px;
-            }
+    .label {
+        position: absolute;
+        writing-mode: vertical-rl;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 1.2;
+        top: -50px;
+    }
 
-            .label.left {
-                left: calc(55% - 430px);
-                transform: rotate(180deg);
-            }
+    .label.left {
+        left: calc(55% - 430px);
+        transform: rotate(180deg);
+    }
 
-            .label.right {
-                right: calc(55% - 430px);
-            }
+    .label.right {
+        right: calc(55% - 430px);
+    }
 
-            .bottom-step {
-                margin-top: 160px;
-            }
+    .bottom-step {
+        margin-top: 160px;
+    }
 
-            .decision-content .sub-heading {
-                font-weight: 600;
-                display: inline;
-            }
-        </style>
-    </head>
-    <body>
-        <h1 class="fw-bold">Our Approach</h1>
-        <br />
-        <p>
-            Here’s how we scope, price, and deliver work—from the first
-            conversation to the final invoice.
-        </p>
-        <br />
-        <div class="flowchart">
-            <!-- Top step -->
-            <div class="step">
-                <strong>1 - Scope</strong>
-                <div class="step-content">
-                    Each engagement starts with a Scope of Work (SOW)—a shared
-                    understanding of what we’re solving.
-                </div>
+    .decision-content .sub-heading {
+        font-weight: 600;
+        display: inline;
+    }
+</style>
+<h1 class="fw-bold">Our Approach</h1>
+<br/>
+<p>
+    Here’s how we scope, price, and deliver work—from the first
+    conversation to the final invoice.
+</p>
+<br/>
+<div class="flowchart">
+    <!-- Top step -->
+    <div class="step">
+        <strong>1 - Scope</strong>
+        <div class="step-content">
+            Each engagement starts with a Scope of Work (SOW)—a shared
+            understanding of what we’re solving.
+        </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <!-- Middle step -->
+    <div class="step">
+        <strong>2 - Estimate</strong><br/>
+        <div class="step-content">
+            Each UOW is estimated in Full Stack Days (FSDs): one day of
+            coordinated output from a core contributor and supporting
+            team, rather than just an average (blended) rate. You’ll see
+            your entire project—scope, delivery, and cost—measured in
+            the same unit.
+        </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <!-- Diamond -->
+    <div class="decision">
+        <div class="decision-inner">
+            <div class="decision-title">
+                <strong>3 - Choose Pricing Model</strong>
             </div>
-
-            <div class="connector"></div>
-
-            <!-- Middle step -->
-            <div class="step">
-                <strong>2 - Estimate</strong><br />
-                <div class="step-content">
-                    Each UOW is estimated in Full Stack Days (FSDs): one day of
-                    coordinated output from a core contributor and supporting
-                    team, rather than just an average (blended) rate. You’ll see
-                    your entire project—scope, delivery, and cost—measured in
-                    the same unit.
-                </div>
-            </div>
-
-            <div class="connector"></div>
-
-            <!-- Diamond -->
-            <div class="decision">
-                <div class="decision-inner">
-                    <div class="decision-title">
-                        <strong>3 - Choose Pricing Model</strong>
-                    </div>
-                    <div class="decision-content">
-                        <span class="sub-heading">Fixed Billing:</span><br />
-                        Pay the upper bound of our estimate (the pessimistic case).
-                        You cap risk and lock in a known cost.
-                        <br /><br />
-                        <span class="sub-heading">Flexible Billing:</span><br />
-                        Pay only for the actual FSDs used. If a UOW takes less time,
-                        you pay less. If it takes more, you’re billed only for what
-                        was actually consumed.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Branch lines -->
-            <div class="parent">
-                <div class="h-line left"></div>
-                <div class="h-line right"></div>
-
-                <div class="v-line left"></div>
-                <div class="v-line right"></div>
-
-                <div class="label left">Fixed</div>
-                <div class="label right">Flexible</div>
-
-                <div class="h1-line left"></div>
-                <div class="h1-line right"></div>
-            </div>
-            <!-- Bottom step -->
-            <div class="step bottom-step">
-                <strong>4 - Deliver</strong><br />
-                <div class="step-content">
-                    Every month, you get a clear invoice—our line items are
-                    deliverables (UOWs), not resources.
-                </div>
+            <div class="decision-content">
+                <span class="sub-heading">Fixed Billing:</span><br/>
+                Pay the upper bound of our estimate (the pessimistic case).
+                You cap risk and lock in a known cost.
+                <br/><br/>
+                <span class="sub-heading">Flexible Billing:</span><br/>
+                Pay only for the actual FSDs used. If a UOW takes less time,
+                you pay less. If it takes more, you’re billed only for what
+                was actually consumed.
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+    <!-- Branch lines -->
+    <div class="parent">
+        <div class="h-line left"></div>
+        <div class="h-line right"></div>
+
+        <div class="v-line left"></div>
+        <div class="v-line right"></div>
+
+        <div class="label left">Fixed</div>
+        <div class="label right">Flexible</div>
+
+        <div class="h1-line left"></div>
+        <div class="h1-line right"></div>
+    </div>
+    <!-- Bottom step -->
+    <div class="step bottom-step">
+        <strong>4 - Deliver</strong><br/>
+        <div class="step-content">
+            Every month, you get a clear invoice—our line items are
+            deliverables (UOWs), not resources.
+        </div>
+    </div>
+</div>
