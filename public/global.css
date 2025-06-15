@@ -1,16 +1,16 @@
 @font-face {
-    font-family: "Source Sans 3", sans-serif;
-    src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
-    font-weight: 100 900;
-    font-style: normal;
+  font-family: "Source Sans 3";
+  src: url("/fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 :root {
-    --bs-body-font-family: "Source Sans 3", sans-serif;
+  --bs-body-font-family: "Source Sans 3", sans-serif;
 }
 
 body {
-    font-family: var(--bs-body-font-family) !important;
+  font-family: var(--bs-body-font-family)!important;
 }
 
 
