@@ -4,8 +4,8 @@ import Delimiter from "./Delimiter.astro";
 const caseStudies: CaseStudy[] = [
     {
         title: "Meinhardt Group",
-        subtitle: 'Asia’s Largest Privately-Held Engineering Consultancy',
-        image: '/company-logos/Meinhardt/1. Meinhardt Remastered Square.svg',
+        subtitle: "Asia’s Largest Privately-Held Engineering Consultancy",
+        image: "/company-logos/Meinhardt/1. Meinhardt Remastered Square.svg",
         challenge: {
             desc: "A Gulf-state government asked Meinhardt Group to modernize a nationwide school system—over 400 campuses  —under a unified smart-city-grade mandate.",
             bullets: [],
@@ -13,17 +13,16 @@ const caseStudies: CaseStudy[] = [
         role: {
             desc: "In close collaboration with Meinhardt’s domain experts, we led the concept and design of a unified Built Environment  Management Tool. The platform connected BIM models, procurement systems, site telemetry, FM tickets, and carbon  data into a single interface.",
             bullets: [],
-
         },
         outcome: {
             desc: "A validated solution blueprint, clickable prototype, and phased roadmap. The client adopted our specifications and  issued their formal proposal based directly on our work.",
             bullets: [],
-        }
+        },
     },
     {
         title: "360 JetFuel",
         subtitle: "Global Aviation Fuel and Ground Handling Platform",
-        image: '/company-logos/360 JetFuel/360 JetFuel - Black.svg',
+        image: "/company-logos/360 JetFuel/360 JetFuel - Black.svg",
         challenge: {
             desc: "The client needed modern infrastructure to support global refueling and ground handling operations—delivering  real-time traceability, compliance, and automated payments.",
             bullets: [],
@@ -33,7 +32,7 @@ const caseStudies: CaseStudy[] = [
             bullets: [
                 {
                     title: "SAF Registry",
-                    desc: " – One of the world’s first operational book-and-claim registries for Sustainable Aviation Fuel,  designed for audit-grade traceability;"
+                    desc: " – One of the world’s first operational book-and-claim registries for Sustainable Aviation Fuel,  designed for audit-grade traceability;",
                 },
                 {
                     title: "Ground Handling Suite",
@@ -42,18 +41,19 @@ const caseStudies: CaseStudy[] = [
                 {
                     title: "Fuel Platform 2.0",
                     desc: " – A fully automated quote-to-pay platform with card issuance and multicurrency settlement.",
-                }
+                },
             ],
         },
         outcome: {
             desc: "The SAF registry is now used by a Gulf-state national oil company to manage its entire SAF operation. The client's  handling operations are now fully automated (with near-zero dispatch intervention), and Fuel Platform 2.0 is on track  for a live launch in the coming months.",
             bullets: [],
-        }
+        },
     },
     {
         title: "Bankwards",
-        subtitle: 'Multi-Currency Treasury Wallet with Fixed-Fee Global Payments',
-        image: '/company-logos/Meinhardt/1. Meinhardt Remastered Square.svg',
+        subtitle:
+            "Multi-Currency Treasury Wallet with Fixed-Fee Global Payments",
+        image: "/company-logos/Meinhardt/1. Meinhardt Remastered Square.svg",
         challenge: {
             desc: "Businesses moving large volumes of money across borders faced unpredictable fees, fragmented systems, and limited  cash visibility. The goal: one wallet to manage payments, permissions, and reconciliation—without losing control or  transparency.",
             bullets: [],
@@ -86,7 +86,7 @@ const caseStudies: CaseStudy[] = [
         outcome: {
             desc: "In its first quarter post-launch, the platform processed over €80 million in transactions. Clients now benefit from predictable cost structures, reduced operational load, and real-time financial oversight.",
             bullets: [],
-        }
+        },
     },
     {
         title: "National Electrical Company of Serbia (EPS)",
@@ -120,7 +120,8 @@ const caseStudies: CaseStudy[] = [
     },
     {
         title: "Fis Securities Finance Trading and Collateral Platform",
-        subtitle: "Enterprise Platform for Securities Lending and Collateral Management",
+        subtitle:
+            "Enterprise Platform for Securities Lending and Collateral Management",
         image: "/company-logos/FIS/5. FIS.svg",
         challenge: {
             desc: "FIS needed to modernize trading infrastructure for securities lending, improving front-to-back workflows and ensuring global compliance for margin management and collateral optimization.",
@@ -185,35 +186,41 @@ const caseStudies: CaseStudy[] = [
             desc: "The platform enables clinicians to catch and address high-risk prescriptions before they’re issued—improving patient safety and reducing clinical and regulatory risk across healthcare systems.",
             bullets: [],
         },
-    }
-]
+    },
+];
 ---
-
 <h1 class="fw-bold mb-5">Case Studies</h1>
 
-<Delimiter></Delimiter>
+<Delimiter />
 
 <div class="row mb-5">
-    {caseStudies.map((cs, index) => (
+    {
+        caseStudies.map((cs, index) => (
             <>
                 <div class="col-12 d-md-none text-center mb-4">
-                    <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
+                    <img
+                        src={cs.image}
+                        alt={cs.title}
+                        class="img-fluid mb-3"
+                        style="max-width: 120px;"
+                    />
                 </div>
 
-
                 <div class="col-md-9">
-
                     <h2 class="fw-bold mb-md-5">{cs.title}</h2>
                     <h5 class="fw-semibold">{cs.subtitle}</h5>
-
                 </div>
 
                 <div class="d-none d-md-block col-md-3 text-end">
-                    <img src={cs.image} alt={cs.title} class="img-fluid mb-3" style="max-width: 120px;"/>
+                    <img
+                        src={cs.image}
+                        alt={cs.title}
+                        class="img-fluid mb-3"
+                        style="max-width: 120px;"
+                    />
                 </div>
 
                 <div class="col-md-12">
-
                     <div class="mt-5">
                         <h6 class="fw-bold">The Challenge</h6>
                         <p class="text-muted">{cs.challenge.desc}</p>
@@ -222,23 +229,23 @@ const caseStudies: CaseStudy[] = [
                     <div class="mt-4">
                         <h6 class="fw-bold mt-5">Our Role</h6>
                         <p class="text-muted">{cs.role.desc}</p>
-                        <ul class="ps-3">
+                        <ul class="ps-0" style="list-style-position: inside;">
                             {cs.role.bullets.map((b) => (
-                                    <li>
-                                        <span class="fw-semibold">{b.title}</span>
-                                        <span class="text-muted"> {b.desc}</span>
-                                    </li>
+                                <li class="mb-2">
+                                    <span class="fw-semibold" style="margin-left: 1rem;">{b.title}</span>
+                                    <span class="text-muted"> {b.desc}</span>
+                                </li>
                             ))}
                         </ul>
                     </div>
 
-                    <div class="mt-5 mb-5">
+                    <div class="mt-3 mb-5">
                         <h6 class="fw-bold">The Outcome</h6>
                         <p class="text-muted">{cs.outcome.desc}</p>
                     </div>
                 </div>
-                {index < caseStudies.length - 1 &&
-                        <HrDelimiter></HrDelimiter>}
+                {index < caseStudies.length - 1 && <HrDelimiter />}
             </>
-    ))}
+        ))
+    }
 </div>

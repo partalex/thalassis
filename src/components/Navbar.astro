@@ -1,154 +1,125 @@
 ---
 const navLinks: NavLink[] = [
-  { href: "/#about", name: "About Us" },
-  { href: "/case-studies", name: "Case Studies" },
-  { href: "/contact", name: "Contact Us" },
+    { href: "/#about", name: "About Us" },
+    { href: "/case-studies", name: "Case Studies" },
+    { href: "/contact", name: "Contact Us" },
 ];
 const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
 ---
 
 <style>
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    height: 200px;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    width: 125px;
-    height: 50px;
-    transition: background-position-x 0.9s linear;
-    text-align: center;
-  }
-
-  .menu li:hover {
-    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjM5MHB4IiBoZWlnaHQ9IjUwcHgiIHZpZXdCb3g9IjAgMCAzOTAgNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDM5MCA1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTAsNDcuNTg1YzAsMCw5Ny41LDAsMTMwLDAgYzEzLjc1LDAsMjguNzQtMzguNzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVjMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
-    animation: line 1s;
-  }
-
-  .menu li:hover a {
-    color: gray;
-  }
-
-  @keyframes line {
-    0% {
-      background-position-x: 390px;
-    }
-  }
-
-  .burger {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: black;
-    display: none; /* default hidden */
-  }
-
-  .mobile-menu {
-    position: fixed;
-    inset: 0;
-    background: white;
-    z-index: 9999;
-    display: none;
-    flex-direction: column;
-    padding: 2rem;
-  }
-
-  .mobile-menu.show {
-    display: flex;
-  }
-
-  .mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .mobile-menu-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .mobile-menu-links a {
-    font-size: 1.75rem;
-    color: black;
-    text-decoration: none;
-  }
-
-  .close-btn {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-  @media (max-width: 990px) {
-    .burger {
-      display: block; /* show burger on mobile */
+    .logo {
+        height: 200px;
     }
 
-    .nav-list {
-      display: none; /* hide nav links on mobile */
+    .navbar-nav .nav-item {
+        width: 125px;
+        height: 50px;
+        transition: background-position-x 0.9s linear;
+        text-align: center;
     }
-  }
+
+    .navbar-nav .nav-item:hover {
+        background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjM5MHB4IiBoZWlnaHQ9IjUwcHgiIHZpZXdCb3g9IjAgMCAzOTAgNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDM5MCA1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTAsNDcuNTg1YzAsMCw5Ny41LDAsMTMwLDAgYzEzLjc1LDAsMjguNzQtMzguNzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVjMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+        animation: line 1s;
+    }
+
+    .navbar-nav .nav-item:hover a {
+        color: gray;
+    }
+
+    @keyframes line {
+        0% {
+            background-position-x: 390px;
+        }
+    }
+
+    .offcanvas {
+        width: 100% !important;
+    }
+
+    .offcanvas-header img {
+        height: 150px;
+    }
+
+    .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* center horizontally */
+        justify-content: center; /* center vertically */
+        gap: 2rem; /* nice spacing between links */
+        padding-top: 2rem; /* extra spacing if needed */
+    }
+
+    /* Offcanvas nav items styling */
+    .offcanvas-body .nav-item {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .offcanvas-body .nav-link {
+        white-space: nowrap;
+        font-weight: 600;
+        font-size: 1.5rem;
+        
+    }
 </style>
 
-<nav class="navbar">
-  <a class="navbar-brand" href="/">
-    <img src={logoPath} alt="Logo" class="logo" />
-  </a>
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src={logoPath} alt="Logo" class="logo" />
+        </a>
 
-  <button class="burger" id="burger">&#9776;</button>
+        <button
+            class="navbar-toggler d-md-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <ul class="menu nav-list">
-    {navLinks.map((link) => (
-      <li><a class="nav-link" href={link.href}>{link.name}</a></li>
-    ))}
-  </ul>
+        <ul class="navbar-nav ms-auto gap-4 d-none d-md-flex">
+            {
+                navLinks.map((link) => (
+                    <li class="nav-item">
+                        <a class="nav-link" href={link.href}>
+                            {link.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <div
+            class="offcanvas offcanvas-end d-md-none"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+        >
+            <div class="offcanvas-header">
+                <img src={logoPath} alt="Logo" />
+                <button
+                    type="button"
+                    class="btn-close text-reset"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center flex-grow-1">
+                    {
+                        navLinks.map((link) => (
+                            <li class="nav-item">
+                                <a class="nav-link" href={link.href}>
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
 </nav>
-
-<!-- MobileMenu in DOM -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="mobile-menu-header">
-    <img src={logoPath} alt="Logo" class="mobile-logo" />
-    <button id="closeMobileMenu" class="close-btn">✕</button>
-  </div>
-  <div class="mobile-menu-links">
-    {navLinks.map((link) => (
-      <a href={link.href}>{link.name}</a>
-    ))}
-  </div>
-</div>
-
-<script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
-    const burger = document.getElementById("burger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const closeBtn = document.getElementById("closeMobileMenu");
-
-    burger?.addEventListener("click", () => {
-      mobileMenu?.classList.add("show");
-    });
-
-    closeBtn?.addEventListener("click", () => {
-      mobileMenu?.classList.remove("show");
-    });
-  });
-</script>
