@@ -23,7 +23,6 @@ const carouselItems = [
 
 <h1 class="fw-bold mb-5">Who We Have Worked With</h1>
 
-<!-- ✅ Custom slider for desktop -->
 <div class="section-slider custom-carousel">
   <ul class="list">
     <li></li><li></li><li></li><li></li><li></li>
@@ -31,38 +30,24 @@ const carouselItems = [
   <div class="swipe"></div>
 </div>
 
-<!-- ✅ Bootstrap Carousel for mobile -->
-<div
-  id="mobileCarousel"
-  class="carousel slide bootstrap-carousel"
-  data-bs-ride="carousel"
->
+<div id="mobileCarousel" class="carousel slide bootstrap-carousel" data-bs-ride="carousel">
   <div class="carousel-inner">
-    {
-      carouselItems.map((item, index) => (
-        <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
-          <img src={item.imagePath} class="d-block w-100" alt={item.alt} />
+    {carouselItems.map((item, index) => (
+      <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+        <div class="carousel-image-wrapper">
+          <img src={item.imagePath} alt={item.alt} />
         </div>
-      ))
-    }
+      </div>
+    ))}
   </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#mobileCarousel"
-    data-bs-slide="prev"
-  >
+  <button class="carousel-control-prev" type="button" data-bs-target="#mobileCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#mobileCarousel"
-    data-bs-slide="next"
-  >
+  <button class="carousel-control-next" type="button" data-bs-target="#mobileCarousel" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+
 
 <CenteredButton>
   <DarkButton label="Find Out More" link="/" />
@@ -176,12 +161,12 @@ const carouselItems = [
   }
 
   #mobileCarousel {
-    max-width: 400px; /* optional: ograniči širinu */
-    margin: 0 auto; /* centriraj */
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   #mobileCarousel .carousel-inner {
-    height: 350px; /* FIKSNA visina karusela */
+    height: 350px;
     display: flex;
     align-items: center;
   }
@@ -193,7 +178,21 @@ const carouselItems = [
   #mobileCarousel .carousel-item img {
     max-height: 100%;
     max-width: 100%;
-    object-fit: contain; /* zadrži proporcije */
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  #mobileCarousel .carousel-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  #mobileCarousel .carousel-image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   #mobileCarousel .carousel-item img {
@@ -202,7 +201,6 @@ const carouselItems = [
     margin: 0 auto;
   }
 
-  /* Pozicioniraj strelice pored slike, spolja */
   #mobileCarousel .carousel-control-prev,
   #mobileCarousel .carousel-control-next {
     width: auto;
@@ -223,18 +221,18 @@ const carouselItems = [
 
   #mobileCarousel .carousel-control-prev,
   #mobileCarousel .carousel-control-next {
-    width: 40px; /* kvadrat */
+    width: 40px;
     height: 40px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: black; /* ili po želji */
-    border-radius: 4px; /* blagi ugao */
-    opacity: 1; /* uvek vidljivo */
+    background-color: black;
+    border-radius: 4px;
+    opacity: 1;
   }
 
   #mobileCarousel .carousel-control-prev-icon,
   #mobileCarousel .carousel-control-next-icon {
-    background-size: 60% 60%; /* manja strelica unutar kvadrata */
+    background-size: 60% 60%;
   }
 
   /* Mobile: show bootstrap, hide custom */
