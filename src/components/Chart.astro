@@ -22,7 +22,26 @@
                 text-align: center;
                 width: 250px;
                 border-radius: 10px;
-                background: #fff;
+                background-color: #f0f0f0;
+                transition: background-color 0.3s ease;
+            }
+
+            .step:hover,
+            .decision:hover {
+                background-color: #ffffff;
+            }
+
+            .step-content {
+                transform: scale(0);
+                opacity: 0;
+                transition:
+                    transform 0.5s ease,
+                    opacity 0.5s ease;
+            }
+
+            .step:hover .step-content {
+                transform: scale(1);
+                opacity: 1;
             }
 
             .connector {
@@ -42,9 +61,33 @@
                 margin: 40px 0;
             }
 
-            .decision-content {
+            .decision-inner {
                 transform: rotate(-45deg);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
                 width: 300px;
+                position: relative;
+            }
+
+
+            .decision-title {
+                width: 300px;
+            }
+
+            .decision-content {
+                transform: rotate(-45deg) scale(0);
+                opacity: 0;
+                transition:
+                    transform 0.5s ease,
+                    opacity 0.5s ease;
+                width: 300px;
+            }
+
+            .decision:hover .decision-content {
+                transform: scale(1);
+                opacity: 1;
             }
 
             .h-line,
@@ -142,9 +185,11 @@
         <div class="flowchart">
             <!-- Top step -->
             <div class="step">
-                <strong>1 - Scope</strong><br />
-                Each engagement starts with a Scope of Work (SOW)—a shared understanding
-                of what we’re solving.
+                <strong>1 - Scope</strong>
+                <div class="step-content">
+                    Each engagement starts with a Scope of Work (SOW)—a shared
+                    understanding of what we’re solving.
+                </div>
             </div>
 
             <div class="connector"></div>
@@ -152,28 +197,33 @@
             <!-- Middle step -->
             <div class="step">
                 <strong>2 - Estimate</strong><br />
-                Each UOW is estimated in Full Stack Days (FSDs): one day of coordinated
-                output from a core contributor and supporting team, rather than just
-                an average (blended) rate. You’ll see your entire project—scope,
-                delivery, and cost—measured in the same unit.
+                <div class="step-content">
+                    Each UOW is estimated in Full Stack Days (FSDs): one day of
+                    coordinated output from a core contributor and supporting
+                    team, rather than just an average (blended) rate. You’ll see
+                    your entire project—scope, delivery, and cost—measured in
+                    the same unit.
+                </div>
             </div>
 
             <div class="connector"></div>
 
             <!-- Diamond -->
             <div class="decision">
-                <div class="decision-content">
-                    <strong>3 - Choose Pricing Model</strong><br /><br />
-
-                    <span class="sub-heading">Fixed Billing:</span><br />
-                    Pay the upper bound of our estimate (the pessimistic case). You
-                    cap risk and lock in a known cost.
-                    <br /><br />
-
-                    <span class="sub-heading">Flexible Billing:</span><br />
-                    Pay only for the actual FSDs used. If a UOW takes less time,
-                    you pay less. If it takes more, you’re billed only for what was
-                    actually consumed.
+                <div class="decision-inner">
+                    <div class="decision-title">
+                        <strong>3 - Choose Pricing Model</strong>
+                    </div>
+                    <div class="decision-content">
+                        <span class="sub-heading">Fixed Billing:</span><br />
+                        Pay the upper bound of our estimate (the pessimistic case).
+                        You cap risk and lock in a known cost.
+                        <br /><br />
+                        <span class="sub-heading">Flexible Billing:</span><br />
+                        Pay only for the actual FSDs used. If a UOW takes less time,
+                        you pay less. If it takes more, you’re billed only for what
+                        was actually consumed.
+                    </div>
                 </div>
             </div>
 
@@ -181,10 +231,10 @@
             <div class="parent">
                 <div class="h-line left"></div>
                 <div class="h-line right"></div>
-        
+
                 <div class="v-line left"></div>
                 <div class="v-line right"></div>
-            
+
                 <div class="label left">Fixed</div>
                 <div class="label right">Flexible</div>
 
@@ -194,8 +244,10 @@
             <!-- Bottom step -->
             <div class="step bottom-step">
                 <strong>4 - Deliver</strong><br />
-                Every month, you get a clear invoice—our line items are deliverables
-                (UOWs), not resources.
+                <div class="step-content">
+                    Every month, you get a clear invoice—our line items are
+                    deliverables (UOWs), not resources.
+                </div>
             </div>
         </div>
     </body>
