@@ -19,10 +19,18 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
 ---
 
 
-<footer class="bg-black">
+<style>
+    .margin{
+        margin-right: -12px;
+        margin-left: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+</style>
 
-    <!-- PC view -->
-    <div class="row text-center d-none d-lg-flex pt-4 text-light">
+<!-- PC view -->
+<footer class="d-none d-lg-block bg-black">
+    <div class="row text-center pt-5 text-light">
 
         <div class="col-4 text-light">
             <h5 class="fw-bold mb-3">Got a project in mind?</h5>
@@ -44,19 +52,21 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
 
         <div class="col-4">
             <img class="img-fluid mb-4"
-                    src="/logo/png/Thalassis Consulting-02 - White.png"
-                    alt="Thalassis Consulting Logo"
-                    style="max-width: 225px; height: auto;"
+                 src="/logo/png/Thalassis Consulting-02 - White.png"
+                 alt="Thalassis Consulting Logo"
+                 style="max-width: 225px; height: auto;"
             />
             <p class="small mt-5">{copyright}</p>
         </div>
 
     </div>
+</footer>
 
-    <!-- Mobile View  -->
-    <div class="row d-lg-none text-center pt-4 text-light">
+<!-- Mobile View  -->
+<footer class="d-lg-none bg-black margin">
+    <div class="row text-center pt-4 text-light">
 
-        <div class="col-12 mb-4">
+        <div class="col-12 mt-4 mb-4">
             <!--logo-->
             <img
                     src="/logo/png/Thalassis Consulting-02 - White.png"

@@ -232,12 +232,13 @@ const caseStudies: CaseStudy[] = [
                         </ul>
                     </div>
 
-                    <div class="mt-5 mb-5">
+                    <div class="mt-5">
                         <h6 class="fw-bold">The Outcome</h6>
                         <p class="text-muted">{cs.outcome.desc}</p>
                     </div>
                 </div>
                 {index < caseStudies.length - 1 &&
+                        <div class="mb-3"></div>
                         <HrDelimiter></HrDelimiter>}
             </>
     ))}
