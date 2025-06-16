@@ -27,9 +27,9 @@ import Navbar from "../components/Navbar.astro";
 </head>
 <!--above 1624px is 1624px  wide-->
 <!--/*<body class="container-fluid" style="max-width:1624px;">*/-->
-<body class="container">
+<body class="container d-flex flex-column min-vh-100">
 <Navbar></Navbar>
-<div class="px-4 px-md-0">
+<div class="px-4 px-md-0 flex-grow-1">
     <slot/>
 </div>
 <Footer></Footer>
