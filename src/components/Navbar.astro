@@ -4,12 +4,12 @@ const navLinks: NavLink[] = [
     { href: "/case-studies", name: "Case Studies" },
     { href: "/contact", name: "Contact Us" },
 ];
-const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
+const logoPath = "logo/png/Thalassis Consulting-01 - Black.png";
 ---
 
 <style>
     .logo {
-        height: 200px;
+        height: 50px;
     }
 
     .navbar-nav .nav-item {
@@ -22,10 +22,6 @@ const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
     .navbar-nav .nav-item:hover {
         background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjM5MHB4IiBoZWlnaHQ9IjUwcHgiIHZpZXdCb3g9IjAgMCAzOTAgNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDM5MCA1MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTAsNDcuNTg1YzAsMCw5Ny41LDAsMTMwLDAgYzEzLjc1LDAsMjguNzQtMzguNzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVjMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
         animation: line 1s;
-    }
-
-    .navbar-nav .nav-item:hover a {
-        color: gray;
     }
 
     @keyframes line {
@@ -45,13 +41,12 @@ const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
     .offcanvas-body {
         display: flex;
         flex-direction: column;
-        align-items: center; /* center horizontally */
-        justify-content: center; /* center vertically */
-        gap: 2rem; /* nice spacing between links */
-        padding-top: 2rem; /* extra spacing if needed */
+        align-items: center;
+        justify-content: center; 
+        gap: 2rem; 
+        padding-top: 2rem;
     }
 
-    /* Offcanvas nav items styling */
     .offcanvas-body .nav-item {
         text-align: center;
         margin-bottom: 2rem;
@@ -66,7 +61,7 @@ const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
 </style>
 
 <nav class="navbar navbar-expand-md">
-    <div class="container-fluid">
+    <div class="container-fluid mb-5 mt-5 ps-0">
         <a class="navbar-brand" href="/">
             <img src={logoPath} alt="Logo" class="logo" />
         </a>
