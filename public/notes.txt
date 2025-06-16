@@ -21,11 +21,12 @@ todo
         pocecati break point da se pore mobile view pokaze
     carousel
         za pc jos po slika sa strane ako moze  (5 slike ukupno)
-        prava slika da bude lseg
-        fis -> LETI !!!!!!! start from that, i sa case studies
 
 
 done next(iter):
+    carousel
+        prava slika da bude lseg
+        fis -> LETI !!!!!!! start from that, i sa case studies
 
 
 done previous(iter):
