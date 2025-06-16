@@ -67,6 +67,9 @@ todo
         hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
         invertovan
 
+    caroulse
+        ispada iz viweport-a za blizu medium
+
 done:
     typography
         h1 extra bold
