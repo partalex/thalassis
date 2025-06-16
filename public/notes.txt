@@ -1,23 +1,17 @@
-todo
+too much tired for hits
+    contact date input
+    footer
+        crna pozadina da se prostire na celu sirinu
+    buttons
+        https://prismic.io/blog/css-button-animations#11-button-hover-animations
+        more compofrtable talking? -> treba da bude dosta vise
+    carousel -> primer je zeznut, treba vise vremena
+        za pc jos po slika sa strane ako moze (5 slike ukupno)
+
+done last(iter):
     icons
         contact page
         book an appointment
-        date input
-    footer
-        crna pozadina da se prostire na celu sirinu
-
-    ------------------------------------------------------------------------------------
-    ongoing
-        buttons
-            https://prismic.io/blog/css-button-animations#11-button-hover-animations
-            smanjiti font
-            povecato visinu ali neznatno
-            more compofrtable talking? -> treba da bude dosta vise
-        carousel -> primer je zeznut, treba vise vremena
-            za pc jos po slika sa strane ako moze (5 slike ukupno)
-
-
-done last(iter):
     approach
         tranzicija i za broj
         fiksna je velicina kvadrata za pc (isto za Our Services)
