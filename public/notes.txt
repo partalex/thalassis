@@ -9,6 +9,7 @@ todo
         nova slika za Meinhardt, i u case studies i u carousel
     approach
         tranzicija i za broj
+        fiksna je velicina kvadrata za pc (isto za Our Services)
     placeholders
         za inpute samo prvo slovo veliko
     buttons
@@ -24,7 +25,10 @@ todo
         fis -> LETI !!!!!!! start from that, i sa case studies
 
 
-done:
+done next(iter):
+
+
+done previous(iter):
     our approach
         animation
 
