@@ -1,15 +1,32 @@
 todo
     icons
-        contact
+        contact page
         book an appointment
-
-    contact date icon
+        date input
+    footer
+        crna pozadina da se prostire na celu sirinu
+    image
+        nova slika za Meinhardt, i u case studies i u carousel
+    approach
+        tranzicija i za broj
+    placeholders
+        za inpute samo prvo slovo veliko
+    buttons
+        https://prismic.io/blog/css-button-animations#11-button-hover-animations
+        smanjiti font
+        povecato visinu ali neznatno
+        more compofrtable talking? -> treba da bude dosta vise
+    book an app
+        pocecati break point da se pore mobile view pokaze
+    carousel
+        za pc jos po slika sa strane ako moze  (5 slike ukupno)
+        prava slika da bude lseg
+        fis -> LETI !!!!!!! start from that, i sa case studies
 
 
 done:
     our approach
         animation
-
 
     contact
         hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
