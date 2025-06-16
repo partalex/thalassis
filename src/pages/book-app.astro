@@ -51,8 +51,10 @@ const appointments: Appointment[] = [
         </div>
 
         <div class="col-6">
-            <!--TODO: add icon-->
-            <h6 class="text-center">Select Appointment</h6>
+            <div class="d-flex align-items-center justify-content-center mb-5">
+                <i class="ph ph-calendar-blank me-2"></i>
+                <h6>Select Appointment</h6>
+            </div>
 
 
             <div class="card shadow-sm p-5">
@@ -60,24 +62,22 @@ const appointments: Appointment[] = [
                         <>
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
-                                    <h5 class="mb-0">{app.name}</h5>
+                                    <h4 class="mb-0">{app.name}</h4>
                                     <small class="text-muted">{app.desc}</small>
                                 </div>
                                 <a class="btn btn-dark" href={app.link}>Book</a>
                             </div>
-                            {index < app.length - 1 && <HrDelimiter/>}
-                            </>
+                            <!--{index < app.length - 1 && <HrDelimiter/>}-->
+                        </>
                 ))}
+            </div>
+
         </div>
 
-        <div class="mt-5"></div>
-
-        <div class="offset-8 mx-auto">
+        <div class="mt-5 ms-auto col-6">
             <LargeLightButton label="Back" link="/"></LargeLightButton>
         </div>
-
-        <div class="mt-4"></div>
-
     </div>
+
 
 </Layout>
