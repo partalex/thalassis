@@ -2,14 +2,14 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Services from "../components/Services.astro";
-import Approaches from "../components/Approaches.astro";
+import ApproachesDesktop from "../components/ApproachesDesktop.astro";
 import WhatWeDo from "../components/WhatWeDo.astro";
 import Carousel from "../components/Carousel.astro";
 import HrDelimiter from "../components/HrDelimiter.astro";
 import First from "../components/First.astro";
-import Chart from "../components/Chart.astro";
 import WhyThalassis from "../components/WhyThalassis.astro";
 import Delimiter from "../components/Delimiter.astro";
+import ApproachesMobile from "../components/ApproachesMobile.astro";
 ---
 <Layout>
     <!--<Welcome welcome="Hey" />-->
@@ -23,8 +23,8 @@ import Delimiter from "../components/Delimiter.astro";
     <HrDelimiter></HrDelimiter>
 
 
-    <Carousel></Carousel>
-    <HrDelimiter></HrDelimiter>
+    <!--<Carousel></Carousel>-->
+    <!--<HrDelimiter></HrDelimiter>-->
 
 
     <Services></Services>
@@ -33,17 +33,15 @@ import Delimiter from "../components/Delimiter.astro";
     <!--#1a1a1a-->
     <!--#808080-->
 
-    <!--hide on mobile-->
-    <!--<div class="d-none d-md-block">-->
-    <!--    <Chart></Chart>-->
-    <!--    <HrDelimiter></HrDelimiter>-->
-    <!--</div>-->
+    <div class="d-none d-md-block">
+        <ApproachesDesktop></ApproachesDesktop>
+        <HrDelimiter></HrDelimiter>
+    </div>
 
 
-    <!--show only on larger of small screens-->
     <!-- out approach dodati animaciju -->
-    <div class="d-block d-md-none">
-        <Approaches></Approaches>
+    <div class="d-md-none">
+        <ApproachesMobile></ApproachesMobile>
         <HrDelimiter></HrDelimiter>
     </div>
 
