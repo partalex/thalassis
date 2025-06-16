@@ -2,18 +2,6 @@
 const { label, link } = Astro.props;
 ---
 
-<style>
-    .offset-shadow {
-  box-shadow: 0.3em 0.3em 0 #dd6395;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.offset-shadow:hover {
-  box-shadow: 0 0 0 #dd6395;
-  transform: translate(0.3em, 0.3em);
-}
-</style>
-
 <a
     href={link}
     class="btn btn-dark btn-lg black-btn offset-shadow"
