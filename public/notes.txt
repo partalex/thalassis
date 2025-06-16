@@ -1,34 +1,21 @@
-check
-    h1 extra bold
-    h2 medium
-    h3 semi bold -> naslov kartica
-    p extra light
-
 
 todo
-    nav bar right justify, to the end
-    za sve p kao za (Radical accountability is in our DNA—fro...)
     za prvi sekciju, desno treba prostor
-    p razmak 1em
+
     button treba bude malo sire sa light font-om
     smanjiti border radisu na button-ima
     our services - Architecture & Advisory ikonica ne valja
 
     why thalassis
         radijus
-        text da bude more kao p lighter
+        razmak iznad
 
     footer
-        ikonice treba da buud belo
-        text je isto beo da bude extra light
+        promeniti ikonice
         copyright text da se prelomi
 
-    the outcome
-        text treba da bude isto light
-    our role
-       bullets spacings treba da bude isto tu
 
-    mex-width treba da bude 1624 px
+    max-width treba da bude 1624 px
     padding 132px
 
     hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
@@ -84,3 +71,24 @@ todo
     our approach boje
         <!--#1a1a1a-->
         <!--#808080-->
+
+done:
+    h1 extra bold
+    h2 medium
+    h3 semi bold -> naslov kartica
+    p extra light
+    p razmak 1em
+    za sve p kao za (Radical accountability is in our DNA—fro...)
+    nav bar right justify, to the end
+        the outcome
+            text treba da bude isto light
+        our role
+           bullets spacings treba da bude isto tu
+
+    footer
+        ikonice treba da dudu bele
+        text je isto beo da bude extra light
+
+    button
+        balck a ne dark
+
