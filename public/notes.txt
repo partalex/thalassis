@@ -5,31 +5,35 @@ todo
         date input
     footer
         crna pozadina da se prostire na celu sirinu
+
+    ------------------------------------------------------------------------------------
+    ongoing
+        buttons
+            https://prismic.io/blog/css-button-animations#11-button-hover-animations
+            smanjiti font
+            povecato visinu ali neznatno
+            more compofrtable talking? -> treba da bude dosta vise
+        carousel -> primer je template, treba vise vrema
+            za pc jos po slika sa strane ako moze (5 slike ukupno)
+
+
+done last(iter):
     approach
         tranzicija i za broj
         fiksna je velicina kvadrata za pc (isto za Our Services)
-    placeholders
-        za inpute samo prvo slovo veliko
-    buttons
-        https://prismic.io/blog/css-button-animations#11-button-hover-animations
-        smanjiti font
-        povecato visinu ali neznatno
-        more compofrtable talking? -> treba da bude dosta vise
-    book an app
-        pocecati break point da se pore mobile view pokaze
-    carousel
-        za pc jos po slika sa strane ako moze  (5 slike ukupno)
-
-
-done next(iter):
     carousel
         prava slika da bude lseg
         fis -> LETI !!!!!!! start from that, i sa case studies
     image
         nova slika za Meinhardt, i u case studies i u carousel
+    placeholders
+        za inpute samo prvo slovo veliko
+    book an app
+        pocecati break point da se pore mobile view pokaze
 
 
-done previous(iter):
+
+done previous(iters):
     our approach
         animation
 
