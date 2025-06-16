@@ -19,25 +19,24 @@ import LightFullButton from "./LightFullButton.astro";
 const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
 ---
 
-
 <style>
-    .margin{
+    .margin {
         margin-right: -12px;
         margin-left: -12px;
         padding-left: 12px;
         padding-right: 12px;
     }
 
-    .p-small{
+    .p-small {
         font-size: 0.6rem;
     }
 
-    .social-font{
+    .social-font {
         font-size: 0.7rem;
         font-weight: 100;
     }
 
-    .project-font{
+    .project-font {
         font-weight: 200 !important;
     }
 
@@ -53,83 +52,83 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
             height: 24px;
         }
     }
-
 </style>
 
 <!-- PC view -->
 <footer class="d-none d-lg-block bg-black text-white-50">
     <div class="row pt-5">
-
         <div class="col-4 text-light text-center">
             <h5 class="text-center project-font">Got a project in mind?</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
         </div>
 
         <div class="col-4">
-            <ul class="list-unstyled socials-list mb-4 ">
+            <ul class="list-unstyled socials-list mb-4">
                 {
                     socials.map((item) => (
-                            <li class="mb-3 ">
-                                {/* <i class={`text-light bi ${item.icon} me-3 `}/> */}
-                                <img src={item.icon} alt="icon" class="social-icon me-3" />
-                                <span class="social-font">{item.link}</span>
-                            </li>
+                        <li class="mb-3 ">
+                            {/* <i class={`text-light bi ${item.icon} me-3 `}/> */}
+                            <img
+                                src={item.icon}
+                                alt="icon"
+                                class="social-icon me-3"
+                            />
+                            <span class="social-font">{item.link}</span>
+                        </li>
                     ))
                 }
             </ul>
         </div>
 
         <div class="col-4 text-center">
-            <img class="img-fluid " style="max-width: 250px"
-                 src="/logo/png/Thalassis Consulting-02 - White.png"
-                 alt="Thalassis Consulting Logo"
+            <img
+                class="img-fluid"
+                style="max-width: 250px"
+                src="/logo/png/Thalassis Consulting-02 - White.png"
+                alt="Thalassis Consulting Logo"
             />
-            <Delimiter></Delimiter>
-            <Delimiter></Delimiter>
+            <Delimiter />
+            <Delimiter />
             <p class="p-small text-center">{copyright}</p>
         </div>
-
     </div>
-
 </footer>
-
 
 <!-- Mobile View  -->
 <footer class="d-lg-none bg-black margin">
     <div class="row text-center pt-4 text-white-50">
-
         <div class="col-12 mt-4 mb-5">
             <img
-                    src="/logo/png/Thalassis Consulting-02 - White.png"
-                    alt="Thalassis Consulting Logo"
-                    style="max-width: 260px; height: auto;"
-                    class="mb-4">
-
+                src="/logo/png/Thalassis Consulting-02 - White.png"
+                alt="Thalassis Consulting Logo"
+                style="max-width: 260px; height: auto;"
+                class="mb-4"
+            />
         </div>
 
-        <div class="col-12 mb-5">
-            <ul class="list-unstyled socials-list mb-3">
+        <div class="col-12 mb-5 d-flex justify-content-center">
+  <ul class="list-unstyled socials-list mb-3 text-start ps-0" style="max-width: 350px; width: 100%;">
                 {
-                    socials.map((item) => (
-                            <li class="mb-3 d-flex justify-content-center align-items-center">
-                                <img src={item.icon} alt="icon" class="social-icon me-3" />
-                                <span>{item.link}</span>
-                            </li>
-                    ))
+                socials.map((item) => (
+                    <li class="mb-3 d-flex align-items-center">
+                    <img
+                        src={item.icon}
+                        alt="icon"
+                        class="social-icon me-3"
+                    />
+                    <span>{item.link}</span>
+                    </li>
+                ))
                 }
             </ul>
-        </div>
-
+            </div>
         <div class="col-12 mb-5">
             <h5 class="text-light mb-3 text-center">Got a project in mind?</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
         </div>
 
         <div class="col-12 pb-4">
             <p class="small mb-0 text-center">{copyright}</p>
         </div>
-
     </div>
-
 </footer>
-
