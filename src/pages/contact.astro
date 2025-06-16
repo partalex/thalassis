@@ -8,19 +8,31 @@ import LightButton from "../components/LightButton.astro";
 import Delimiter from "../components/Delimiter.astro";
 import LargeLightButton from "../components/LargeLightButton.astro";
 
+
 const socials: Social[] = [
+    {
+        icon: "icons/footer/LN.png",
+        link: "https://linkedin.com/company/thalassis-consulting",
+        text: "",
+    },
     {
         icon: "icons/footer/Email.png",
         link: "mailto:hello@thalassis.co",
         text: "",
     },
-    {
-        icon: "icons/footer/LN.png",
-        link: "https://linkedin.com/company/thalassis-consulting",
-        text: "",
-    }
 ];
 ---
+
+<style>
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        background: black;
+        border-radius: 3px;
+    }
+</style>
+
 <Layout>
     <br>
 
@@ -46,12 +58,8 @@ const socials: Social[] = [
             <div class="d-flex justify-content-start justify-content-md-end mb-3">
                 {socials.map((soc) => (
                         <a href={soc.link}>
-                            <img src={soc.icon} alt="icon" class="social-icon me-3"/>
+                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/>
                         </a>
-                    <!--<a class="btn btn-outline-dark btn-lg me-2" href={soc.link} target="_blank">-->
-                    // <i class={`bi ${soc.icon}`}></i>
-//                        </a>
-
                 ))}
             </div>
 
@@ -79,8 +87,6 @@ const socials: Social[] = [
         <div class="d-md-none col-12 text-center">
             <LightButton label="Back" link="/"></LightButton>
         </div>
-
-
 
 
     </div>

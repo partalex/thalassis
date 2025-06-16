@@ -13,7 +13,7 @@ todo
             smanjiti font
             povecato visinu ali neznatno
             more compofrtable talking? -> treba da bude dosta vise
-        carousel -> primer je template, treba vise vrema
+        carousel -> primer je zeznut, treba vise vremena
             za pc jos po slika sa strane ako moze (5 slike ukupno)
 
 
