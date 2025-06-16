@@ -5,7 +5,7 @@ todo
         smanjiti border radisu na button-ima
         our services - Architecture & Advisory ikonica ne valja
 
-    why thalassis
+    Why Thalassis
         radijus
         razmak iznad
 
@@ -17,7 +17,6 @@ todo
     body container
         max-width treba da bude 1624 px
         padding 132px
-
 
     contact
         phosphor icons
@@ -87,7 +86,7 @@ done:
         text je isto beo da bude extra light
 
     button
-        balck a ne dark
+        black a ne dark
 
     za prvi sekciju, desno treba prostor
 
