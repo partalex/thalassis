@@ -7,15 +7,16 @@ import DarkButton from "../components/DarkButton.astro";
 import LightButton from "../components/LightButton.astro";
 import Delimiter from "../components/Delimiter.astro";
 import LargeLightButton from "../components/LargeLightButton.astro";
+import {loadId} from "astro/dist/vite-plugin-astro/utils";
 
 const socials: Social[] = [
     {
-        icon: "bi-envelope",
-        link: "hello@thalassis.co"
+        icon: "icons/footer/Email.png",
+        link: "mailto:hello@thalassis.co",
     },
     {
-        icon: "bi-linkedin",
-        link: "linkedin.com/company/thalassis-consulting"
+        icon: "icons/footer/LN.png",
+        link: "https://linkedin.com/company/thalassis-consulting",
     }
 ];
 ---
@@ -42,10 +43,13 @@ const socials: Social[] = [
             <!--{Array.from({length: 3}).map(() => <br/>)}-->
 
             <div class="d-flex justify-content-start justify-content-md-end mb-3">
-                {socials.map((social) => (
-                        <a class="btn btn-outline-dark btn-lg me-2" href={social.link} target="_blank">
-                            <i class={`bi ${social.icon}`}></i>
+                {socials.map((soc) => (
+                        <a href={soc.link}>
+                            <span class="social-font">{soc.text}</span>
                         </a>
+                        <!--<a class="btn btn-outline-dark btn-lg me-2" href={soc.link} target="_blank">-->
+                            // <i class={`bi ${soc.icon}`}></i>
+//                        </a>
                 ))}
             </div>
 
