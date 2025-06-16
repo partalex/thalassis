@@ -1,19 +1,23 @@
 ---
 import Delimiter from "./Delimiter.astro";
 const socials: Social[] = [
-    {
-        icon: "icons/footer/Location.png",
-        link: "160 Robinson Road, Singapore (068914)",
-    },
-    {
-        icon: "icons/footer/Email.png",
-        link: "hello@thalassis.co",
-    },
-    {
-        icon: "icons/footer/LN.png",
-        link: "linkedin.com/company/thalassis-consulting",
-    },
+  {
+    icon: "icons/footer/Location.png",
+    link: "https://maps.google.com/?q=160 Robinson Road, Singapore (068914)",
+    text: "160 Robinson Road, Singapore (068914)",
+  },
+  {
+    icon: "icons/footer/Email.png",
+    link: "mailto:hello@thalassis.co",
+    text: "hello@thalassis.co",
+  },
+  {
+    icon: "icons/footer/LN.png",
+    link: "https://linkedin.com/company/thalassis-consulting",
+    text: "linkedin.com/company/thalassis-consulting",
+  },
 ];
+
 import LightFullButton from "./LightFullButton.astro";
 
 const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
@@ -29,11 +33,6 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
 
     .p-small {
         font-size: 0.6rem;
-    }
-
-    .social-font {
-        font-size: 0.7rem;
-        font-weight: 100;
     }
 
     .project-font {
@@ -67,13 +66,10 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
                 {
                     socials.map((item) => (
                         <li class="mb-3 ">
-                            {/* <i class={`text-light bi ${item.icon} me-3 `}/> */}
-                            <img
-                                src={item.icon}
-                                alt="icon"
-                                class="social-icon me-3"
-                            />
-                            <span class="social-font">{item.link}</span>
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white-50 d-flex align-items-center">
+                                <img src={item.icon} alt="icon" class="social-icon me-3" />
+                                <span class="social-font">{item.text}</span>
+                            </a>
                         </li>
                     ))
                 }
@@ -111,12 +107,10 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
                 {
                 socials.map((item) => (
                     <li class="mb-3 d-flex align-items-center">
-                    <img
-                        src={item.icon}
-                        alt="icon"
-                        class="social-icon me-3"
-                    />
-                    <span>{item.link}</span>
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white-50 d-flex align-items-center">
+                        <img src={item.icon} alt="icon" class="social-icon me-3" />
+                        <span class="social-font">{item.text}</span>
+                    </a>
                     </li>
                 ))
                 }
