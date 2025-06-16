@@ -7,16 +7,17 @@ import DarkButton from "../components/DarkButton.astro";
 import LightButton from "../components/LightButton.astro";
 import Delimiter from "../components/Delimiter.astro";
 import LargeLightButton from "../components/LargeLightButton.astro";
-import {loadId} from "astro/dist/vite-plugin-astro/utils";
 
 const socials: Social[] = [
     {
         icon: "icons/footer/Email.png",
         link: "mailto:hello@thalassis.co",
+        text: "",
     },
     {
         icon: "icons/footer/LN.png",
         link: "https://linkedin.com/company/thalassis-consulting",
+        text: "",
     }
 ];
 ---
@@ -38,18 +39,19 @@ const socials: Social[] = [
         <div class="col-md-5">
             <h1 class="fw-bold text-start text-md-end mb-5 mb-md-5">Contact Us</h1>
 
-            <h5 class="text-start text-md-end">Outcomes Start With a conversation.</h5>
+            <h5 class="text-start text-md-end">Outcomes Start With a Conversation.</h5>
             <h5 class="text-start text-md-end mb-5 mb-md-5">Let’s Talk.</h5>
             <!--{Array.from({length: 3}).map(() => <br/>)}-->
 
             <div class="d-flex justify-content-start justify-content-md-end mb-3">
                 {socials.map((soc) => (
                         <a href={soc.link}>
-                            <span class="social-font">{soc.text}</span>
+                            <img src={soc.icon} alt="icon" class="social-icon me-3"/>
                         </a>
-                        <!--<a class="btn btn-outline-dark btn-lg me-2" href={soc.link} target="_blank">-->
-                            // <i class={`bi ${soc.icon}`}></i>
+                    <!--<a class="btn btn-outline-dark btn-lg me-2" href={soc.link} target="_blank">-->
+                    // <i class={`bi ${soc.icon}`}></i>
 //                        </a>
+
                 ))}
             </div>
 
@@ -62,16 +64,25 @@ const socials: Social[] = [
         </div>
 
 
-        <div class="col-12 col-md-6 text-center order-2 order-md-1">
-            <LargeLightButton label="Back" link="/"></LargeLightButton>
+        <div class="d-none d-md-block col-6 text-center">
+            <LightButton label="Back" link="/"></LightButton>
+        </div>
+
+        <div class="d-none d-md-block col-6 text-center">
+            <DarkButton label="Sumbit" link="/"></DarkButton>
+        </div>
+
+        <div class="d-md-none col-12 text-center mb-4">
+            <DarkButton label="Sumbit" link="/"></DarkButton>
+        </div>
+
+        <div class="d-md-none col-12 text-center">
+            <LightButton label="Back" link="/"></LightButton>
         </div>
 
 
-        <div class="col-12 col-md-6 mb-4 mb-md-4 text-center order-1 order-md-2">
-            <button class="btn btn-dark btn-lg w-50 mb-4 mb-md-0" type="submit">
-                Submit
-            </button>
-        </div>
+
+
     </div>
 
     <br>
