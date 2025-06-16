@@ -36,6 +36,7 @@ const whyUs: WhyUs[] = [
         font-size: 1.5rem; /* veći broj */
         border-radius: 0.5rem; /* zaobljeni uglovi - opcionalno */
     }
+
 </style>
 
 <h1>Why Thalassis?</h1>
@@ -52,7 +53,8 @@ const whyUs: WhyUs[] = [
                             <div class="badge custom-badge me-3">
                                 {index + 1}
                             </div>
-                            <h3 class="mb-0 flex-grow-1" style="max-width: 70%;">{item.title}</h3>
+                            <h3 class="mb-0 flex-grow-1 d-md-none" style="max-width: 80%;">{item.title}</h3>
+                            <h3 class="mb-0 flex-grow-1 d-none d-md-flex" style="max-width: 70%;">{item.title}</h3>
                         </div>
                         <p>{item.desc}</p>
                     </div>
