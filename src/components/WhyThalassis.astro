@@ -21,26 +21,43 @@ const whyUs: WhyUs[] = [
         title: "Built For Complex, High-Stakes Systems",
         desc: "We’ve shipped software in sectors where things can’t break—like aviation, payments, and infrastructure. We know how to build systems that last",
     },
-
-]
+];
 ---
+
+<style>
+    .custom-badge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px; /* fiksna širina */
+        height: 50px; /* fiksna visina = kvadrat */
+        background-color: #000;
+        color: #fff;
+        font-size: 1.5rem; /* veći broj */
+        border-radius: 0.5rem; /* zaobljeni uglovi - opcionalno */
+    }
+</style>
 
 <h1>Why Thalassis?</h1>
 
-<Delimiter></Delimiter>
+<Delimiter />
 
-<div class="row row-cols-1 row-cols-md-3 g-2 mb-4">
-    {whyUs.map((item, index) => (
+<div class="row row-cols-1 row-cols-md-3 g-2 px-1">
+    {
+        whyUs.map((item, index) => (
             <div class="col">
-                <div class="card border-0">
+                <div class="card h-100 border-0">
                     <div class="card-body">
-                        <div class="d-flex align-items-start mb-2">
-                            <div class="badge bg-dark me-3 fs-5">{index + 1}</div>
-                            <h3 class=" text-wrap">{item.title}</h3>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="badge custom-badge me-3">
+                                {index + 1}
+                            </div>
+                            <h3 class="mb-0 flex-grow-1" style="max-width: 70%;">{item.title}</h3>
                         </div>
                         <p>{item.desc}</p>
                     </div>
                 </div>
             </div>
-    ))}
+        ))
+    }
 </div>
