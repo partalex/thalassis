@@ -61,11 +61,11 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
             <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
-        <div class="col-4">
-            <ul class="list-unstyled socials-list mb-4">
+        <div class="col-4 d-flex justify-content-center">
+            <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
                 {
                     socials.map((item) => (
-                            <li class="mb-3 ">
+                            <li class="mb-3 d-flex align-items-center">
                                 <a href={item.link} target="_blank" rel="noopener noreferrer"
                                    class="text-decoration-none text-white-50 d-flex align-items-center">
                                     <img src={item.icon} alt="icon" class="social-icon me-3"/>
