@@ -6,6 +6,7 @@ import LargeDarkButton from "../components/LargeDarkButton.astro";
 import HrDelimiter from "../components/HrDelimiter.astro";
 import Delimiter from "../components/Delimiter.astro";
 import LargeLightButton from "../components/LargeLightButton.astro";
+import DarkButton from "../components/DarkButton.astro";
 const appointments: Appointment[] = [
     {
         name: "Free Consultation",
@@ -25,6 +26,9 @@ const appointments: Appointment[] = [
 ];
 ---
 
+<style>
+</style>
+
 <Layout>
 
     <CenteredButton>
@@ -33,31 +37,35 @@ const appointments: Appointment[] = [
     <br>
     <br>
 
-    <div class="row">
+    <div class="row mt-md-4">
 
-        <div class="col-6">
+        <div class="col-12 col-md-5">
 
-            <h1 class="fw-bold text-start text-md-end">Book an</h1>
-            <h1 class="fw-bold text-start text-md-end mb-5 mb-md-5">Appointment</h1>
+            <h1 class="text-start text-md-end">Book an</h1>
+            <h1 class="text-start text-md-end mb-5 mb-md-5">Appointment</h1>
 
-            <h4 class="text-start text-md-end">More comfortable talking?</h4>
-            <h4 class="text-start text-md-end">No problem. Schedule a 30-min intro</h4>
-            <h4 class="text-start text-md-end">call with Thalassis to chat about your</h4>
-            <h4 class="text-start text-md-end">inquiry.</h4>
+            <h5 class="text-start text-md-end">More comfortable talking?</h5>
+            <h5 class="text-start text-md-end">No problem. Schedule a 30-min intro</h5>
+            <h5 class="text-start text-md-end">call with Thalassis to chat about your</h5>
+            <h5 class="text-start text-md-end">inquiry.</h5>
 
 
             <!--LinkedIn and email icon-->
 
         </div>
 
-        <div class="col-6">
+        <div class="d-none d-md-block col-md-1"></div>
+
+
+        <div class="col-12 col-md-6">
+
             <div class="d-flex align-items-center justify-content-center mb-5">
                 <i class="ph ph-calendar-blank me-2"></i>
-                <h6>Select Appointment</h6>
+                <h4>Select Appointment</h4>
             </div>
 
 
-            <div class="card shadow-sm p-5">
+            <div class="shadow p-3 p-md-5">
                 {appointments.map((app, index) => (
                         <>
                             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -65,23 +73,39 @@ const appointments: Appointment[] = [
                                     <h4 class="mb-0">{app.name}</h4>
                                     <small class="text-muted">{app.desc}</small>
                                 </div>
-                                <a class="btn btn-dark" href={app.link}>Book</a>
+                                <DarkButton label=book link="/"></DarkButton>
+                                <!--<a class="btn btn-dark" href={app.link}>Book</a>-->
                             </div>
-                            <!--{index < app.length - 1 && <HrDelimiter/>}-->
+                            <HrDelimiter></HrDelimiter>
+                            <!--{index < app.length - 1 && <HrDelimiter />}-->
                         </>
                 ))}
             </div>
 
         </div>
 
-        <div class="row">
-            <!-- Leva polovina (col-6) -->
-            <div class="col-6"></div>
-            <!-- Desna polovina (col-6) -->
-            <div class="col-6 d-flex justify-content-center align-items-center">
-                <button type="button" class="btn btn-outline-dark">Back</button>
+        <div class="d-none d-md-block" style="margin-block: 40px"></div>
+
+        <div class="row my-5 my-md-4 text-center">
+
+            <!-- desktop view -->
+            <div class="col-6 d-none d-md-block"></div>
+
+
+            <div class="col-6 d-none d-md-block ">
+                <LightButton label="Back" link="/"></LightButton>
             </div>
+
+            <!-- mobile view -->
+            <div class="d-md-none col-12 ">
+                <LightButton label="Back" link="/"></LightButton>
+            </div>
+
         </div>
+
+        <div class="d-none d-md-block" style="margin-block: 20px"></div>
+
+
     </div>
 
 

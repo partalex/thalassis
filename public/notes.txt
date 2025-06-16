@@ -1,45 +1,23 @@
 todo
-    button
-        treba bude malo sire sa light font-om
-        smanjiti border radisu na button-ima
+    icons
+        contact
+        book an appointment
 
-    body container
-        max-width treba da bude 1624 px
-        padding 132px
+    contact date icon
 
-    contact
-        phosphor icons
-        default datetime format
 
-    Book an Appointment
-        text
-        ikonice
-        button
-        hr remove if last item
-        select aappontement kaledanrci -> calendar-blank
-        dropshadow umesto borderam, veci je dole i desno
-        gore i dole je isti razmak
-        levo i desno razmka
-        social ikonice mi nedostaju
-
-    footer
-        text ce se isaprviti vec za pc
-
+done:
     our approach
-        3. Choose -> ne valja, pogeldati Ning's tabelu
-        desc text takodje light p
+        animation
 
-    hamburger menu
-        da budu veca slova i rasirano
 
     contact
         hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
         invertovan
 
     caroulse
-        ispada iz viweport-a za blizu medium
+        new image
 
-done:
     typography
         h1 extra bold
         h2 medium
@@ -55,7 +33,8 @@ done:
 
     footer
         ikonice treba da dudu bele
-        text je isto beo da bude extra light
+        text lighting
+
 
     button
         black a ne dark
