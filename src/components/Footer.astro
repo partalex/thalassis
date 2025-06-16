@@ -1,21 +1,21 @@
 ---
 import Delimiter from "./Delimiter.astro";
 const socials: Social[] = [
-  {
-    icon: "icons/footer/Location.png",
-    link: "https://maps.google.com/?q=160 Robinson Road, Singapore (068914)",
-    text: "160 Robinson Road, Singapore (068914)",
-  },
-  {
-    icon: "icons/footer/Email.png",
-    link: "mailto:hello@thalassis.co",
-    text: "hello@thalassis.co",
-  },
-  {
-    icon: "icons/footer/LN.png",
-    link: "https://linkedin.com/company/thalassis-consulting",
-    text: "linkedin.com/company/thalassis-consulting",
-  },
+    {
+        icon: "icons/footer/Location.png",
+        link: "https://maps.google.com/?q=160 Robinson Road, Singapore (068914)",
+        text: "160 Robinson Road, Singapore (068914)",
+    },
+    {
+        icon: "icons/footer/Email.png",
+        link: "mailto:hello@thalassis.co",
+        text: "hello@thalassis.co",
+    },
+    {
+        icon: "icons/footer/LN.png",
+        link: "https://linkedin.com/company/thalassis-consulting",
+        text: "linkedin.com/company/thalassis-consulting",
+    },
 ];
 
 import LightFullButton from "./LightFullButton.astro";
@@ -58,19 +58,20 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
     <div class="row pt-5">
         <div class="col-4 text-light text-center">
             <h5 class="text-center project-font">Got a project in mind?</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
         <div class="col-4">
             <ul class="list-unstyled socials-list mb-4">
                 {
                     socials.map((item) => (
-                        <li class="mb-3 ">
-                            <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white-50 d-flex align-items-center">
-                                <img src={item.icon} alt="icon" class="social-icon me-3" />
-                                <span class="social-font">{item.text}</span>
-                            </a>
-                        </li>
+                            <li class="mb-3 ">
+                                <a href={item.link} target="_blank" rel="noopener noreferrer"
+                                   class="text-decoration-none text-white-50 d-flex align-items-center">
+                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
+                                    <span class="social-font">{item.text}</span>
+                                </a>
+                            </li>
                     ))
                 }
             </ul>
@@ -78,13 +79,13 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
 
         <div class="col-4 text-center">
             <img
-                class="img-fluid"
-                style="max-width: 250px"
-                src="/logo/png/Thalassis Consulting-02 - White.png"
-                alt="Thalassis Consulting Logo"
+                    class="img-fluid"
+                    style="max-width: 250px"
+                    src="/logo/png/Thalassis Consulting-02 - White.png"
+                    alt="Thalassis Consulting Logo"
             />
-            <Delimiter />
-            <Delimiter />
+            <Delimiter/>
+            <Delimiter/>
             <p class="p-small text-center">{copyright}</p>
         </div>
     </div>
@@ -95,30 +96,31 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
     <div class="row text-center pt-4 text-white-50">
         <div class="col-12 mt-4 mb-5">
             <img
-                src="/logo/png/Thalassis Consulting-02 - White.png"
-                alt="Thalassis Consulting Logo"
-                style="max-width: 260px; height: auto;"
-                class="mb-4"
+                    src="/logo/png/Thalassis Consulting-02 - White.png"
+                    alt="Thalassis Consulting Logo"
+                    style="max-width: 260px; height: auto;"
+                    class="mb-4"
             />
         </div>
 
         <div class="col-12 mb-5 d-flex justify-content-center">
-  <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
+            <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
                 {
-                socials.map((item) => (
-                    <li class="mb-3 d-flex align-items-center">
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white-50 d-flex align-items-center">
-                        <img src={item.icon} alt="icon" class="social-icon me-3" />
-                        <span class="social-font">{item.text}</span>
-                    </a>
-                    </li>
-                ))
+                    socials.map((item) => (
+                            <li class="mb-3 d-flex align-items-center">
+                                <a href={item.link} target="_blank" rel="noopener noreferrer"
+                                   class="text-decoration-none text-white-50 d-flex align-items-center">
+                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
+                                    <span class="social-font">{item.text}</span>
+                                </a>
+                            </li>
+                    ))
                 }
             </ul>
-            </div>
+        </div>
         <div class="col-12 mb-5">
             <h5 class="text-light mb-3 text-center">Got a project in mind?</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
         <div class="col-12 pb-4">
