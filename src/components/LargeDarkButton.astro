@@ -1,12 +1,15 @@
 ---
-const {label, link} = Astro.props;
+const { label, link } = Astro.props;
 ---
 
-
-<a href={link} class="btn btn-dark btn-lg black-btn"
-   style="border-radius: 3px;
+<a
+    href={link}
+    class="btn btn-dark btn-lg black-btn offset-shadow"
+    style="border-radius: 3px;
     font-weight: 200;
     min-width: 160px;
     background: black;
-    font-size: 1.2rem;
-   ">{label}</a>
+    font-size: 1rem;
+   "
+    >{label}</a
+>
