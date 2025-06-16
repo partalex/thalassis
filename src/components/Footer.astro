@@ -2,15 +2,15 @@
 import Delimiter from "./Delimiter.astro";
 const socials: Social[] = [
     {
-        icon: "bi-geo-alt",
+        icon: "icons/footer/Location.png",
         link: "160 Robinson Road, Singapore (068914)",
     },
     {
-        icon: "bi-envelope",
+        icon: "icons/footer/Email.png",
         link: "hello@thalassis.co",
     },
     {
-        icon: "bi-linkedin",
+        icon: "icons/footer/LN.png",
         link: "linkedin.com/company/thalassis-consulting",
     },
 ];
@@ -41,6 +41,18 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
         font-weight: 200 !important;
     }
 
+    .social-icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        .social-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
 
 </style>
 
@@ -58,7 +70,8 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
                 {
                     socials.map((item) => (
                             <li class="mb-3 ">
-                                <i class={`text-light bi ${item.icon} me-3 `}/>
+                                {/* <i class={`text-light bi ${item.icon} me-3 `}/> */}
+                                <img src={item.icon} alt="icon" class="social-icon me-3" />
                                 <span class="social-font">{item.link}</span>
                             </li>
                     ))
@@ -99,7 +112,7 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
                 {
                     socials.map((item) => (
                             <li class="mb-3 d-flex justify-content-center align-items-center">
-                                <i class={`text-light bi ${item.icon} me-3 fs-3`}/>
+                                <img src={item.icon} alt="icon" class="social-icon me-3" />
                                 <span>{item.link}</span>
                             </li>
                     ))
@@ -108,12 +121,12 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
         </div>
 
         <div class="col-12 mb-5">
-            <h5 class="text-light mb-3">Got a project in mind?</h5>
+            <h5 class="text-light mb-3 text-center">Got a project in mind?</h5>
             <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
         <div class="col-12 pb-4">
-            <p class="small mb-0">{copyright}</p>
+            <p class="small mb-0 text-center">{copyright}</p>
         </div>
 
     </div>
