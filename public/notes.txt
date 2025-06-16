@@ -1,11 +1,14 @@
-    nav bar right justify, to the end
-    za sve p kao za (Radical accountability is in our DNA—fro...)
-    za prvi sekciju, desno treba prostor
+check
     h1 extra bold
     h2 medium
     h3 semi bold -> naslov kartica
     p extra light
 
+
+todo
+    nav bar right justify, to the end
+    za sve p kao za (Radical accountability is in our DNA—fro...)
+    za prvi sekciju, desno treba prostor
     p razmak 1em
     button treba bude malo sire sa light font-om
     smanjiti border radisu na button-ima

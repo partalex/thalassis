@@ -3,6 +3,9 @@ import LightButton from "../components/LightButton.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import Layout from "../layouts/Layout.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
+import HrDelimiter from "../components/HrDelimiter.astro";
+import Delimiter from "../components/Delimiter.astro";
+import LargeLightButton from "../components/LargeLightButton.astro";
 const appointments: Appointment[] = [
     {
         name: "Free Consultation",
@@ -33,15 +36,14 @@ const appointments: Appointment[] = [
     <div class="row">
 
         <div class="col-6">
-            <!--so-->
-            <h1 class="fw-bold text-end">Book an</h1>
-            <h1 class="fw-bold text-end">Appointment</h1>
-            <br>
 
-            <h5 class="text-end">More comfortable talking?</h5>
-            <h5 class="text-end">No problem. Schedule a 30-min intro</h5>
-            <h5 class="text-end">call with Thalassis to chat about your</h5>
-            <h5 class="text-end">inquiry.</h5>
+            <h1 class="fw-bold text-start text-md-end">Book an</h1>
+            <h1 class="fw-bold text-start text-md-end mb-5 mb-md-5">Appointment</h1>
+
+            <h4 class="text-start text-md-end">More comfortable talking?</h4>
+            <h4 class="text-start text-md-end">No problem. Schedule a 30-min intro</h4>
+            <h4 class="text-start text-md-end">call with Thalassis to chat about your</h4>
+            <h4 class="text-start text-md-end">inquiry.</h4>
 
 
             <!--LinkedIn and email icon-->
@@ -55,23 +57,23 @@ const appointments: Appointment[] = [
 
             <div class="card shadow-sm p-5">
                 {appointments.map((app, index) => (
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div>
-                                <h5 class="mb-0">{app.name}</h5>
-                                <small class="text-muted">{app.desc}</small>
+                        <>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h5 class="mb-0">{app.name}</h5>
+                                    <small class="text-muted">{app.desc}</small>
+                                </div>
+                                <a class="btn btn-dark" href={app.link}>Book</a>
                             </div>
-                            <a class="btn btn-dark" href={app.link}>Book</a>
-                        </div>
-                        <hr>
+                            {index < app.length - 1 && <HrDelimiter/>}
+                            </>
                 ))}
-            </div>
-
         </div>
 
         <div class="mt-5"></div>
 
-        <div class="offset-8 col-4">
-            <LightButton label="Back" link="/"></LightButton>
+        <div class="offset-8 mx-auto">
+            <LargeLightButton label="Back" link="/"></LargeLightButton>
         </div>
 
         <div class="mt-4"></div>
