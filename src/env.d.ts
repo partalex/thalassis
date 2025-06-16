@@ -9,6 +9,7 @@ type NavLink = {
 type Social = {
     link: string;
     icon: string;
+    text: string
 }
 
 type Appointment ={
