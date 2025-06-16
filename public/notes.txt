@@ -1,10 +1,9 @@
-
 todo
-    za prvi sekciju, desno treba prostor
 
-    button treba bude malo sire sa light font-om
-    smanjiti border radisu na button-ima
-    our services - Architecture & Advisory ikonica ne valja
+    button
+        treba bude malo sire sa light font-om
+        smanjiti border radisu na button-ima
+        our services - Architecture & Advisory ikonica ne valja
 
     why thalassis
         radijus
@@ -15,17 +14,14 @@ todo
         copyright text da se prelomi
 
 
-    max-width treba da bude 1624 px
-    padding 132px
+    body container
+        max-width treba da bude 1624 px
+        padding 132px
 
-    hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
-    invertovan
 
-    kontakt
-    phosphor icons
-    tekst treba da bude bledji extra light
-    default datetime format
-    kapipitalizacija
+    contact
+        phosphor icons
+        default datetime format
 
     Book an Appointment
         text
@@ -40,21 +36,14 @@ todo
 
         mobile v -> a lot of things
 
-
-    hamburger menu
-        da budu veca slova i rasirano
-
     footer
         mobile -> ide levo
         text ce se isaprviti vec za pc
         Got a project in mind? treba da bude
 
 
-    navabar
-        za offcanvas ikonica da vodi na homepage
-
     mobile
-            h1 slova izlgedaju manje
+        h1 izgleda veci (Tech Consulting That Makes Waves)
 
         our approach
             3. Choose -> ne valja, pogeldati Ning's tabelu
@@ -72,12 +61,20 @@ todo
         <!--#1a1a1a-->
         <!--#808080-->
 
+        hamburger menu
+            da budu veca slova i rasirano
+
+    contact
+        hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
+        invertovan
+
 done:
-    h1 extra bold
-    h2 medium
-    h3 semi bold -> naslov kartica
-    p extra light
-    p razmak 1em
+    typography
+        h1 extra bold
+        h2 medium
+        h3 semi bold -> naslov kartica
+        p extra light
+        p razmak 1em
     za sve p kao za (Radical accountability is in our DNA—fro...)
     nav bar right justify, to the end
         the outcome
@@ -91,4 +88,16 @@ done:
 
     button
         balck a ne dark
+
+    za prvi sekciju, desno treba prostor
+
+    navabar
+        za offcanvas img da vodi na homepage
+
+    contact
+        kapipitalizacija
+        tekst treba da bude bledji extra light
+
+
+
 
