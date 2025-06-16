@@ -1,10 +1,11 @@
 ---
-const {label, link} = Astro.props;
+const { label, link } = Astro.props;
 ---
 
-<a href={link} class="btn btn-light text-dark mt-3"
-   style="border-radius: 3px;
-   font-weight: 200;
-   min-width: 160px;
-   font-size: 1.2rem;
-   ">{label}</a>
+<a href={link} class="btn btn-light text-dark fw-bold mt-3" style="border-radius: 3px;
+    font-weight: 200;
+    min-width: 160px;
+    font-size: 1.2rem;
+   ">
+  {label}
+</a>
