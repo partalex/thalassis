@@ -1,4 +1,5 @@
 ---
+import Delimiter from "./Delimiter.astro";
 const socials: Social[] = [
     {
         icon: "bi-geo-alt",
@@ -26,40 +27,59 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
         padding-left: 12px;
         padding-right: 12px;
     }
+
+    .p-small{
+        font-size: 0.6rem;
+    }
+
+    .social-font{
+        font-size: 0.7rem;
+        font-weight: 100;
+    }
+
+    .project-font{
+        font-weight: 200 !important;
+    }
+
+
 </style>
 
 <!-- PC view -->
-<footer class="d-none d-lg-block bg-black">
-    <div class="row text-center text-white-50 g-5 mt-0">
+<footer class="d-none d-lg-block bg-black text-white-50">
+    <div class="row pt-5">
 
-        <div class="col-4 text-light">
-            <h5 class="text-light text-center">Got a project in mind?</h5>
+        <div class="col-4 text-light text-center">
+            <h5 class="text-center project-font">Got a project in mind?</h5>
             <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
         <div class="col-4">
-            <ul class="list-unstyled socials-list mb-4 text-start">
+            <ul class="list-unstyled socials-list mb-4 ">
                 {
                     socials.map((item) => (
-                            <li class="mb-3 d-flex align-items-center">
-                                <i class={`text-light bi ${item.icon} me-3 fs-3`}/>
-                                <span>{item.link}</span>
+                            <li class="mb-3 ">
+                                <i class={`text-light bi ${item.icon} me-3 `}/>
+                                <span class="social-font">{item.link}</span>
                             </li>
                     ))
                 }
             </ul>
         </div>
 
-        <div class="col-4">
-            <img class="img-fluid"
+        <div class="col-4 text-center">
+            <img class="img-fluid " style="max-width: 250px"
                  src="/logo/png/Thalassis Consulting-02 - White.png"
                  alt="Thalassis Consulting Logo"
             />
-            <p class="small">{copyright}</p>
+            <Delimiter></Delimiter>
+            <Delimiter></Delimiter>
+            <p class="p-small text-center">{copyright}</p>
         </div>
 
     </div>
+
 </footer>
+
 
 <!-- Mobile View  -->
 <footer class="d-lg-none bg-black margin">
@@ -88,7 +108,7 @@ const copyright = "© 2025 Thalassis Consulting Pte. Ltd. All rights reserved.";
         </div>
 
         <div class="col-12 mb-5">
-            <h5 class="text-light text-center mb-3">Got a project in mind?</h5>
+            <h5 class="text-light mb-3">Got a project in mind?</h5>
             <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
         </div>
 
