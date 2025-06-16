@@ -1,13 +1,7 @@
 todo
-
     button
         treba bude malo sire sa light font-om
         smanjiti border radisu na button-ima
-
-    footer
-        promeniti ikonice
-        copyright text da se prelomi
-
 
     body container
         max-width treba da bude 1624 px
@@ -29,21 +23,14 @@ todo
         social ikonice mi nedostaju
 
     footer
-        mobile -> ide levo
         text ce se isaprviti vec za pc
-        Got a project in mind? treba da bude
 
+    our approach
+        3. Choose -> ne valja, pogeldati Ning's tabelu
+        desc text takodje light p
 
-
-        our approach
-            3. Choose -> ne valja, pogeldati Ning's tabelu
-            desc text takodje light p
-
-        Why Thalassis?
-            box broj treba da bude visi, naslovi u dva reda
-
-        hamburger menu
-            da budu veca slova i rasirano
+    hamburger menu
+        da budu veca slova i rasirano
 
     contact
         hover na social media: https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
