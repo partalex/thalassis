@@ -112,15 +112,16 @@ const socials: Social[] = [
             <div class="shadow p-3 p-md-5">
                 {appointments.map((app, index) => (
                         <>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4 class="mb-0">{app.name}</h4>
-                                    <small class="text-muted">{app.desc}</small>
+                            <div class="py-2 py-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="mb-0">{app.name}</h4>
+                                        <small class="text-muted">{app.desc}</small>
+                                    </div>
+                                    <DarkButton label="Book" link={app.link}></DarkButton>
                                 </div>
-                                <DarkButton label="Book" link={app.link}></DarkButton>
                             </div>
-                            {index < appointments.length - 1 &&
-                                    <HrDelimiter/>}
+                            {index < appointments.length - 1 && <HrDelimiter/>}
                         </>
                 ))}
             </div>
