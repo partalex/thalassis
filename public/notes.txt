@@ -4,10 +4,6 @@ todo
         treba bude malo sire sa light font-om
         smanjiti border radisu na button-ima
 
-    Why Thalassis
-        radijus
-        razmak iznad
-
     footer
         promeniti ikonice
         copyright text da se prelomi
@@ -32,16 +28,12 @@ todo
         levo i desno razmka
         social ikonice mi nedostaju
 
-        mobile v -> a lot of things
-
     footer
         mobile -> ide levo
         text ce se isaprviti vec za pc
         Got a project in mind? treba da bude
 
 
-    mobile
-        h1 izgleda veci (Tech Consulting That Makes Waves)
 
         our approach
             3. Choose -> ne valja, pogeldati Ning's tabelu
@@ -103,4 +95,8 @@ done:
             National Electrical Company of Serbia (EPS) -> polomite text u 2 reada
             FIS - u 3 reda
 
+        h1 izgleda veci (Tech Consulting That Makes Waves)
 
+    Why Thalassis
+        radijus
+        razmak iznad
