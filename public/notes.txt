@@ -1,12 +1,15 @@
-too much tired for hits
-    contact date input
+too much tired for this
+    contact date input and placeholder
     footer
         crna pozadina da se prostire na celu sirinu
-    buttons
-        https://prismic.io/blog/css-button-animations#11-button-hover-animations
-        more compofrtable talking? -> treba da bude dosta vise
     carousel -> primer je zeznut, treba vise vremena
         za pc jos po slika sa strane ako moze (5 slike ukupno)
+    buttons
+        more compofrtable talking? -> treba da bude dosta vise
+
+in the middle
+    buttons -> ostavljen primer u kodu ali mi se nije svideo dizajn, moze da se otkomentarise
+        https://prismic.io/blog/css-button-animations#11-button-hover-animations
 
 done last(iter):
     icons
