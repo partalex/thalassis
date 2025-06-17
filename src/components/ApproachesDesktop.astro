@@ -69,7 +69,8 @@ const approaches: ApproachItem[] = [
         justify-content: center;
         align-items: center;
         border-radius: 0.5rem;
-        transition: transform 1.2s ease, opacity 1.2s ease;
+        //transition: transform 1.2s ease, opacity 1.2s ease;
+        transition: transform 0.75s ease, opacity 0.75s ease;
         z-index: 2;
         transform: translateY(0%);
     }
@@ -125,8 +126,8 @@ const approaches: ApproachItem[] = [
                                 <h6 class="card-subtitle mb-1">{app.subTitle2}</h6>
                                 {app.desc2 && <p>{app.desc2}</p>}
                             </div>
-                            <div class="card-footer text-center" style="background-color: #808080; color: white;">
-                                <h2 style="font-size: 40px!important;">{index + 1}</h2>
+                            <div class=" text-center" style="background-color: #808080; color: white;">
+                                <h2 style="font-size: 40px!important;" class="ps-3 pt-2">{index + 1}</h2>
                             </div>
                         </div>
                     </div>
