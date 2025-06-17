@@ -12,6 +12,10 @@ todo:
         social text da bude manji da se ne prelaama
     carousel
         mobile v. button are outside of the body
+    buttons
+        replace all black buttons
+
+
     book an appointment
         srediti jos ova stranica
         gornja margina od select appointment treba da bude veca
@@ -19,10 +23,9 @@ todo:
             missing icons
             back button, margina nedostaje
         mobile -> subtitle more top margin, text nije dobro prelomljen i nije dobar tekst
+
     if can
         carousel -> for pc add one more image to both sides (5 images)
-    buttons
-        replace all black buttons
 
 done last1(iter):
     first component
