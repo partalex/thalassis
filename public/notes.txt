@@ -15,7 +15,7 @@ todo:
     buttons
         more compofrtable talking? -> treba da bude dosta vise
         animation collor has to be brighter
-    out approach
+    ou approach
         smanjiti trajanja animacije 30%
         left padding za broj
     book an appointment
