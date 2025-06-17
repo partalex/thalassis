@@ -2,22 +2,21 @@
 import Delimiter from "./Delimiter.astro";
 const socials: Social[] = [
     {
-        icon: "icons/footer/Location.png",
+        icon: "map-pin-line",
         link: "https://maps.google.com/?q=160 Robinson Road, Singapore (068914)",
         text: "160 Robinson Road, Singapore (068914)",
     },
     {
-        icon: "icons/footer/Email.png",
+        icon: "envelope-simple-open",
         link: "mailto:hello@thalassis.co",
         text: "hello@thalassis.co",
     },
     {
-        icon: "icons/footer/LN.png",
+        icon: "linkedin-logo",
         link: "https://linkedin.com/company/thalassis-consulting",
         text: "linkedin.com/company/thalassis-consulting",
     },
 ];
-
 import LightFullButton from "./LightFullButton.astro";
 
 const copyright = "© 2025 Thalassis Pte. Ltd. All rights reserved.";
@@ -41,15 +40,31 @@ const gotProject = "Got a Project in Mind?";
     }
 
     .social-icon {
-        width: 20px;
-        height: 20px;
-        object-fit: contain;
+        font-size: 20px;
+        color: #aaa; /* ili white-50 */
+        display: inline-block;
+        transition:
+            transform 0.6s ease,
+            color 0.6s ease,
+            background-color 0.6s ease;
+        position: relative;
     }
 
+    .social-font {
+        font-size: medium;
+    }
+
+    /* Animacija: flip + promena boje */
+    .social-icon:hover {
+        transform: rotateY(360deg);
+        color: black;
+        background-color: white;
+    }
+
+    /* Veća ikona na mobilu */
     @media (max-width: 768px) {
         .social-icon {
-            width: 24px;
-            height: 24px;
+            font-size: 24px;
         }
     }
 </style>
@@ -59,20 +74,27 @@ const gotProject = "Got a Project in Mind?";
     <div class="row pt-5">
         <div class="col-4 text-light text-center">
             <h5 class="text-center project-font">{gotProject}</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
         </div>
 
         <div class="col-4 d-flex justify-content-center">
-            <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
+            <ul
+                class="list-unstyled socials-list mb-1 text-start ps-0"
+                style="max-width: 350px; width: 100%;"
+            >
                 {
                     socials.map((item) => (
-                            <li class="mb-3 d-flex align-items-center">
-                                <a href={item.link} target="_blank" rel="noopener noreferrer"
-                                   class="text-decoration-none text-white-50 d-flex align-items-center">
-                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
-                                    <span class="social-font">{item.text}</span>
-                                </a>
-                            </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <a
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-white-50 d-flex align-items-center"
+                            >
+                                <i class={`ph ph-${item.icon} social-icon me-3`}></i>
+                                <span class="social-font">{item.text}</span>
+                            </a>
+                        </li>
                     ))
                 }
             </ul>
@@ -80,13 +102,13 @@ const gotProject = "Got a Project in Mind?";
 
         <div class="col-4 text-center">
             <img
-                    class="img-fluid"
-                    style="max-width: 250px"
-                    src="/logo/png/Thalassis Consulting-02 - White.png"
-                    alt="Thalassis Consulting Logo"
+                class="img-fluid"
+                style="max-width: 250px"
+                src="/logo/png/Thalassis Consulting-02 - White.png"
+                alt="Thalassis Consulting Logo"
             />
-            <Delimiter/>
-            <Delimiter/>
+            <Delimiter />
+            <Delimiter />
             <p class="p-small text-center">{copyright}</p>
         </div>
     </div>
@@ -97,31 +119,40 @@ const gotProject = "Got a Project in Mind?";
     <div class="row text-center pt-4 text-white-50">
         <div class="col-12 mt-4 mb-5">
             <img
-                    src="/logo/png/Thalassis Consulting-02 - White.png"
-                    alt="Thalassis Consulting Logo"
-                    style="max-width: 260px; height: auto;"
-                    class="mb-4"
+                src="/logo/png/Thalassis Consulting-02 - White.png"
+                alt="Thalassis Consulting Logo"
+                style="max-width: 260px; height: auto;"
+                class="mb-4"
             />
         </div>
-
+        
         <div class="col-12 mb-5 d-flex justify-content-center">
-            <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
+            <ul
+                class="list-unstyled socials-list mb-1 text-start ps-0"
+                style="max-width: 350px; width: 100%;"
+            >
                 {
                     socials.map((item) => (
-                            <li class="mb-3 d-flex align-items-center">
-                                <a href={item.link} target="_blank" rel="noopener noreferrer"
-                                   class="text-decoration-none text-white-50 d-flex align-items-center">
-                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
-                                    <span class="social-font">{item.text}</span>
-                                </a>
-                            </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <a
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-white-50 d-flex align-items-center"
+                            >
+                                <i class={`ph ph-${item.icon} social-icon me-3`}></i>
+                                <span class="social-font">{item.text}</span>
+                            </a>
+                        </li>
                     ))
                 }
             </ul>
         </div>
         <div class="col-12 mb-5">
-            <h5 class="text-light mb-3 text-center project-font">{gotProject}</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+            <h5 class="text-light mb-3 text-center project-font">
+                {gotProject}
+            </h5>
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/" />
         </div>
 
         <div class="col-12 pb-4">

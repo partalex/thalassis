@@ -89,176 +89,169 @@ const carouselItems = [
 
 <style>
 .section-slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    margin-top: 4rem;
-    // padding-bottom: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin-top: 4rem;
+}
 
 .list {
-    display: flex;
-    position: relative;
-    gap: 1rem;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    }
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
 .swipe {
-    width: 270px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 2px;
-    opacity: 0.1; /* test vidljivosti */
-    }
+  width: 270px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 2px;
+  opacity: 0.1; /* test vidljivosti */
+}
 
 .list li {
-    list-style-type: none;
-
-    width: 200px;
-    height: 200px;
-    opacity: 0.25;
-    position: absolute;
-    left: 50%;
-    margin-left: -100px;
-    border-radius: 2px;
-    background: transparent;
-    transition:
+  list-style-type: none;
+  width: 200px;
+  height: 200px;
+  opacity: 0.25;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  border-radius: 2px;
+  background: transparent;
+  transition:
     transform 1s,
     opacity 1s;
-    }
+}
 
 .list .act {
-    opacity: 1;
-    }
+  opacity: 1;
+}
 
 .list .prev,
 .list .next {
-    cursor: pointer;
-    }
+  cursor: pointer;
+}
 
 .list .prev {
-    transform: translateX(-220px) scale(0.85);
-    }
+  transform: translateX(-220px) scale(0.85);
+}
 
 .list .next {
-    transform: translateX(220px) scale(0.85);
-    }
+  transform: translateX(220px) scale(0.85);
+}
 
 .list .hide {
-    transform: translateX(-420px) scale(0.85);
-    }
+  transform: translateX(-420px) scale(0.85);
+}
 
 .list .new-next {
-    transform: translateX(420px) scale(0.85);
-    }
+  transform: translateX(420px) scale(0.85);
+}
 
 .list .hide,
 .list .new-next {
-    opacity: 0;
-    transition:
+  opacity: 0;
+  transition:
     opacity 0.5s,
     transform 0.5s;
-    }
+}
 
-/* Desktop: show custom, hide bootstrap */
-.custom-carousel {
-    display: block;
-    }
-
-.bootstrap-carousel {
-    display: none;
-    }
+/* === MOBILE BOOTSTRAP CAROUSEL === */
 
 #mobileCarousel {
-    max-width: 400px;
-    margin: 0 auto;
-    }
+  position: relative;
+  overflow: visible;
+  max-width: 280px;
+  margin: 0 auto;
+}
 
 #mobileCarousel .carousel-inner {
-    height: 350px;
-    display: flex;
-    align-items: center;
-    }
+  height: 200px;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: centera; */
+}
 
 #mobileCarousel .carousel-item {
-    height: 100%;
-    }
-
-#mobileCarousel .carousel-item img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    margin: 0 auto;
-    }
+  height: 100%;
+}
 
 #mobileCarousel .carousel-image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    }
-
-#mobileCarousel .carousel-image-wrapper img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 #mobileCarousel .carousel-item img {
-    max-width: 300px; /* ili koliko želiš */
-    max-height: 300px;
-    margin: 0 auto;
-    }
+  max-width: 100%;
+  max-width: 150px; /* limit visine slike */
+  object-fit: contain;
+  margin: 0 auto;
+}
 
 #mobileCarousel .carousel-control-prev,
 #mobileCarousel .carousel-control-next {
-    width: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    background: black; 
-    border-radius: 50%;
-    padding: 0.5rem;
-    }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  /* border-radius: 50%; */
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #mobileCarousel .carousel-control-prev {
-    left: calc(50% - 200px);
-    }
+  left: -20px; /* lepo unutar okvira */
+}
 
 #mobileCarousel .carousel-control-next {
-    right: calc(50% - 200px);
-    }
-
-#mobileCarousel .carousel-control-prev,
-#mobileCarousel .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: black;
-    border-radius: 4px;
-    opacity: 1;
-    }
+  right: -20px; /* lepo unutar okvira */
+}
 
 #mobileCarousel .carousel-control-prev-icon,
 #mobileCarousel .carousel-control-next-icon {
-    background-size: 60% 60%;
-    }
+  background-size: 60% 60%;
+}
 
-/* Mobile: show bootstrap, hide custom */
+@media (max-width: 480px) {
+  #mobileCarousel .carousel-control-prev,
+  #mobileCarousel .carousel-control-next {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* === SHOW/HIDE SWITCH === */
+
+.custom-carousel {
+  display: block;
+}
+
+.bootstrap-carousel {
+  display: none;
+}
+
 @media (max-width: 768px) {
-    .custom-carousel {
+  .custom-carousel {
     display: none;
-    }
+  }
 
-    .bootstrap-carousel {
+  .bootstrap-carousel {
     display: block;
-    }
-    }
+  }
+}
 </style>
 
 <script type="module" is:inline>

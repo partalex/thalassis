@@ -6,28 +6,50 @@
     .form-label {
         font-weight: 200;
     }
-    .form-control{
+    .form-control {
         font-weight: 100;
     }
-    .form-select{
+    .form-select {
         font-weight: 100;
     }
 </style>
 
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+
 <form method="POST" action="api/submit">
     <div class="mb-3">
         <label for="fullName" class="form-label like-p ms-3">Full Name*</label>
-        <input type="text" class="form-control like-p" id="fullName" placeholder="Write your full name" required>
+        <input
+            type="text"
+            class="form-control like-p"
+            id="fullName"
+            placeholder="Write your full name"
+            required
+        />
     </div>
     <div class="mb-3">
-        <label for="emailAddress" class="form-label ms-3">E-mail Address*</label>
-        <input type="email" class="form-control" id="emailAddress" placeholder="Write your e-mail address"
-               required>
+        <label for="emailAddress" class="form-label ms-3">E-mail Address*</label
+        >
+        <input
+            type="email"
+            class="form-control"
+            id="emailAddress"
+            placeholder="Write your e-mail address"
+            required
+        />
     </div>
     <div class="mb-3">
         <label for="companyName" class="form-label ms-3">Company Name*</label>
-        <input type="text" class="form-control" id="companyName" placeholder="Write your company name"
-               required>
+        <input
+            type="text"
+            class="form-control"
+            id="companyName"
+            placeholder="Write your company name"
+            required
+        />
     </div>
     <div class="mb-3">
         <label for="timeline" class="form-label ms-3">Timeline*</label>
@@ -40,18 +62,27 @@
     </div>
     <div class="row mb-3">
         <div class="col-md-6">
-            <label for="startDate" class="form-label ms-3">Start-Date*</label>
+            <label for="startDate" class="form-label">Start-Date*</label>
             <div class="input-group">
-                <input type="date" class="form-control" id="startDate" placeholder="e.g. 06/06/2025"
-                       required>
-                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                <input type="text" id="startDate" class="form-control" placeholder="e.g. 06/12/2025"/>
+                <span class="input-group-text" id="startDateIcon">
+                    <i class="ph ph-calendar-blank"></i>
+                </span>
             </div>
         </div>
         <div class="col-md-6">
-            <label for="endDate" class="form-label ms-3">End-Date*</label>
-            <div class="input-group">
-                <input type="date" class="form-control" id="endDate" placeholder="e.g. 06/12/2025" required>
-                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+            <label for="endDate" class="form-label">End-Date*</label>
+            <div class="input-group" id="endDateWrap" data-input>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="endDate"
+                    placeholder="e.g. 06/12/2025"
+                    data-input
+                />
+                <span class="input-group-text" data-toggle id="endDateIcon">
+                    <i class="ph ph-calendar-blank"></i>
+                </span>
             </div>
         </div>
     </div>
@@ -66,6 +97,39 @@
     </div>
     <div class="mb-3">
         <label for="note" class="form-label ms-3">Note</label>
-        <textarea class="form-control" id="note" rows="5" placeholder="Write your message"></textarea>
+        <textarea
+            class="form-control"
+            id="note"
+            rows="5"
+            placeholder="Write your message"></textarea>
     </div>
 </form>
+
+<script type="module">
+  import flatpickr from "https://cdn.skypack.dev/flatpickr";
+
+  const startInput = document.getElementById("startDate");
+  const endInput = document.getElementById("endDate");
+  const startIcon = document.getElementById("startDateIcon");
+  const endIcon = document.getElementById("endDateIcon");
+
+  const startPicker = flatpickr(startInput, {
+    dateFormat: "m/d/Y",
+    appendTo: document.body,
+    position: "auto center",
+  });
+
+  const endPicker = flatpickr(endInput, {
+    dateFormat: "m/d/Y",
+    appendTo: document.body,
+    position: "below left",
+  });
+
+  startIcon.addEventListener("click", () => {
+    startPicker.open();
+  });
+
+  endIcon.addEventListener("click", () => {
+    endPicker.open();
+  });
+</script>
