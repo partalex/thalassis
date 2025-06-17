@@ -16,11 +16,13 @@ todo:
         srediti jos ova stranica
         gornja margina od select appointment treba da bude veca
         za pc
-            nedostaju ikonices
+            missing icons
             back button, margina nedostaje
         mobile -> subtitle more top margin, text nije dobro prelomljen i nije dobar tekst
     if can
-        carousel -> za pc jos po slika sa strane ako moze (5 slike ukupno)
+        carousel -> for pc add one more image to both sides (5 images)
+    buttons
+        replace all black buttons
 
 done last1(iter):
     first component

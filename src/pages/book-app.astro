@@ -1,12 +1,12 @@
 ---
-import LightButton from "../components/LightButton.astro";
+import WhiteButton from "../components/WhiteButton.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import Layout from "../layouts/Layout.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
 import HrDelimiter from "../components/HrDelimiter.astro";
 import Delimiter from "../components/Delimiter.astro";
 import LargeLightButton from "../components/LargeLightButton.astro";
-import DarkButton from "../components/DarkButton.astro";
+import BlackButton from "../components/BlackButton.astro";
 import SmallDarkButton from "../components/SmallDarkButton.astro";
 
 const appointments: Appointment[] = [
@@ -123,7 +123,7 @@ const socials: Social[] = [
                                         <SmallDarkButton label="Book" link={app.link}></SmallDarkButton>
                                     </div>
                                     <div class="d-none d-md-block">
-                                        <DarkButton label="Book" link={app.link}></DarkButton>
+                                        <BlackButton label="Book" link={app.link}></BlackButton>
                                     </div>
 
                                 </div>
@@ -145,12 +145,12 @@ const socials: Social[] = [
 
 
         <div class="col-6 d-none d-md-block">
-            <LightButton label="Back" link="/"></LightButton>
+            <WhiteButton label="Back" link="/"></WhiteButton>
         </div>
 
         <!-- mobile view -->
         <div class="d-md-none col-12">
-            <LightButton label="Back" link="/"></LightButton>
+            <WhiteButton label="Back" link="/"></WhiteButton>
         </div>
 
     </div>
