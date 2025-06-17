@@ -8,27 +8,29 @@ const { label, link } = Astro.props;
         max-width: 200px !important;
         width: 150px !important;
     }
-    /* If you want animation for button just uncomment this section */
-    /* 
-    .offset-shadow {
-        color: white;
-        background: black;
-        box-shadow: 0.3em 0.3em 0 #808080;
-        border: 1px solid #979695;
 
-        transition:
-            box-shadow 0.3s ease,
-            transform 0.3s ease,
-            background 0.3s ease,
-            color 0.3s ease;
-        }
+    .offset-shadow {
+  /* Base colors */
+  color: #979695;
+  background: black;
+  box-shadow: 0.3em 0.3em 0 #dd6395;
+  border: 1px solid #979695;
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
 
 .offset-shadow:hover {
+  /* Flip shadow direction: top-left is negative offset */
   box-shadow: -0.3em -0.3em 0 #979695;
-  background: #808080;
+
+  background: #dd6395;
   color: black;
   transform: translate(-0.3em, -0.3em);
-} */
+}
 </style>
 
 <a
