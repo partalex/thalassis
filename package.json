@@ -1,4 +1,6 @@
 {
+  "author": "Aleksandar Vasilic <avasilic@email.com> (github.com/partalex)",
+  "contributor": "Milena Jovanovic (github.com/milenaa3110)",
   "name": "extinct-ellipse",
   "type": "module",
   "version": "0.0.1",
