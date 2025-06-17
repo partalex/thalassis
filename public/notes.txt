@@ -17,13 +17,13 @@ todo:
 
 
     book an appointment
-        srediti jos ova stranica
         gornja margina od select appointment treba da bude veca
-        za pc
+        pc view
             missing icons
             back button, margina nedostaje
         mobile -> subtitle more top margin, text nije dobro prelomljen i nije dobar tekst
 
+    our approach -> neka braon boja, wa message
     if can
         carousel -> for pc add one more image to both sides (5 images)
 
