@@ -1,11 +1,33 @@
-too much tired for this
-    contact date input and placeholder
+mobile version Iphone 12 Pro (390px)
+
+todo:
+    contact
+        date
+            icon
+            placeholder
+        animation https://prismic.io/blog/css-hover-effects#16-social-media-icons-hover-effect
+            i za book an appointment
     footer
-        crna pozadina da se prostire na celu sirinu
-    carousel -> primer je zeznut, treba vise vremena
-        za pc jos po slika sa strane ako moze (5 slike ukupno)
+        black backgroun da se prostire na celu sirinu (pc i mobile)
+        social text da bude manji da se ne prelaama
+    carousel
+        mobile ver button su vam starnice
     buttons
         more compofrtable talking? -> treba da bude dosta vise
+        animation collor has to be brighter
+    out approach
+        smanjiti trajanja animacije 30%
+        left padding za broj
+    book an appointment
+        srediti jos ova stranica
+        gornja margina od select appointment treba da bude veca
+        za pc
+            nedostaju ikonices
+            back button, margina nedostaje
+        mobile -> subtitle more top margin, text nije dobro prelomljen i nije dobar tekst
+    first component new text, ning's eddition
+    if can
+        carousel -> za pc jos po slika sa strane ako moze (5 slike ukupno)
 
 in the middle
     buttons -> ostavljen primer u kodu ali mi se nije svideo dizajn, moze da se otkomentarise
@@ -27,6 +49,7 @@ done last(iter):
         za inpute samo prvo slovo veliko
     book an app
         pocecati break point da se pore mobile view pokaze
+        left padding for nubmer
 
 
 

@@ -11,26 +11,26 @@ const { label, link } = Astro.props;
 
     .offset-shadow {
   /* Base colors */
-  color: #979695;
-  background: black;
-  box-shadow: 0.3em 0.3em 0 #dd6395;
-  border: 1px solid #979695;
+      color: #979695;
+      background: black;
+      box-shadow: 0.3em 0.3em 0 white;
+      border: 1px solid #979695;
 
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
+      transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+    }
 
-.offset-shadow:hover {
-  /* Flip shadow direction: top-left is negative offset */
-  box-shadow: -0.3em -0.3em 0 #979695;
+    .offset-shadow:hover {
+      /* Flip shadow direction: top-left is negative offset */
+      box-shadow: -0.3em -0.3em 0 black;
 
-  background: #dd6395;
-  color: black;
-  transform: translate(-0.3em, -0.3em);
-}
+      background: #ffffff;
+      color: black;
+      transform: translate(-0.3em, -0.3em);
+    }
 </style>
 
 <a
