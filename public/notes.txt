@@ -11,10 +11,7 @@ todo:
         black background da se prostire na celu sirinu (pc i mobile)
         social text da bude manji da se ne prelaama
     carousel
-        mobile ver button su vam starnice
-    buttons
-        more compofrtable talking? -> treba da bude dosta vise
-        animation collor has to be brighter
+        mobile v. button are outside of the body
     book an appointment
         srediti jos ova stranica
         gornja margina od select appointment treba da bude veca
@@ -25,16 +22,17 @@ todo:
     if can
         carousel -> za pc jos po slika sa strane ako moze (5 slike ukupno)
 
-in the middle
-    buttons -> ostavljen primer u kodu ali mi se nije svideo dizajn, moze da se otkomentarise
-        https://prismic.io/blog/css-button-animations#11-button-hover-animations
-    our approach
-        smanjiti trajanja animacije 30%
-        left padding za broj
-
-
 done last1(iter):
-    first component new text, Ning's eddition
+    first component
+        new text, Ning's edition
+    our approach
+        reduce animation duration by 35%
+        remove zero for pc card
+        left padding for number
+    buttons
+        https://prismic.io/blog/css-button-animations#11-button-hover-animations
+        animation's color has to be brighter
+        more comf talking? -> has to be more higher
 
 
 done last2(iter):

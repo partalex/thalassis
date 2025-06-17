@@ -1,4 +1,5 @@
 ---
+import HrDelimiter from "./HrDelimiter.astro";
 const approaches: ApproachItem[] = [
     {
         title: "Scope",
@@ -81,7 +82,12 @@ const approaches: ApproachItem[] = [
                 </h2>
                 <div id={`flush-collapse${index}`} class="accordion-collapse collapse"
                      data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">{app.desc1}</div>
+                    <div class="accordion-body">
+                        {app.subTitle1 && <h4>{app.subTitle1}</h4>}
+                        <p>{app.desc1}</p>
+                        {app.subTitle2 && <h4 class="mt-4">{app.subTitle2}</h4>}
+                        <p>{app.desc2}</p>
+                    </div>
                 </div>
             </div>
     ))}
