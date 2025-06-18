@@ -1,6 +1,18 @@
 mobile version Iphone 12 Pro (390px)
 
 todo:
+    button animacija nedostaje boreder
+    centriranje teksta za mobile footer
+
+    img u hamburgeru nije fluid
+    contact us
+        mobile button razmak
+        razmak od social ikonica do full name
+        padding za label date
+    book and appontment
+        mobile prekontorlisati padding za social and select appointment
+        pc view -> select appointment i kalendar nedostaju
+
     contact
         date
             icon
@@ -14,8 +26,6 @@ todo:
         mobile v. button are outside of the body
     buttons
         replace all black buttons
-
-
     book an appointment
         gornja margina od select appointment treba da bude veca
         pc view
