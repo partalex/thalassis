@@ -25,12 +25,6 @@ const gotProject = "Got a Project in Mind?";
 ---
 
 <style>
-    .margin {
-        //margin-right: -12px;
-        //margin-left: -12px;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
 
     .p-small {
         font-size: 0.6rem;
@@ -38,6 +32,14 @@ const gotProject = "Got a Project in Mind?";
 
     .project-font {
         font-weight: 200 !important;
+    }
+
+    .social-font {
+        font-size: small;
+    }
+
+    .social-font-md {
+        font-size: medium;
     }
 
     .social-icon {
@@ -55,46 +57,53 @@ const gotProject = "Got a Project in Mind?";
 </style>
 
 <!-- PC view -->
-<footer class="d-none d-lg-block bg-black text-white-50">
-    <div class="row pt-5">
-        <div class="col-4 text-light text-center">
-            <h5 class="text-center project-font">{gotProject}</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
-        </div>
 
-        <div class="col-4 d-flex justify-content-center">
-            <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
-                {
-                    socials.map((item) => (
-                            <li class="mb-3 d-flex align-items-center">
-                                <a href={item.link} target="_blank" rel="noopener noreferrer"
-                                   class="text-decoration-none text-white-50 d-flex align-items-center">
-                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
-                                    <span class="social-font">{item.text}</span>
-                                </a>
-                            </li>
-                    ))
-                }
-            </ul>
-        </div>
+<!-- color margin -->
 
-        <div class="col-4 text-center">
-            <img
-                    class="img-fluid"
-                    style="max-width: 250px"
-                    src="/logo/png/Thalassis Consulting-02 - White.png"
-                    alt="Thalassis Consulting Logo"
-            />
-            <Delimiter/>
-            <Delimiter/>
-            <p class="p-small text-center">{copyright}</p>
+<!-- or center content -->
+<footer class="d-none d-lg-flex container-fluid bg-black text-white-50">
+    <div class="container">
+        <!--<footer class="d-none d-lg-flex container bg-black text-white-50">-->
+        <div class="row pt-5">
+            <div class="col-4 text-light text-center">
+                <h5 class="text-center project-font">{gotProject}</h5>
+                <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+                <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
+                    {
+                        socials.map((item) => (
+                                <li class="mb-3 d-flex align-items-center">
+                                    <a href={item.link} target="_blank" rel="noopener noreferrer"
+                                       class="text-decoration-none text-white-50 d-flex align-items-center">
+                                        <img src={item.icon} alt="icon" class="social-icon me-3"/>
+                                        <span class="social-font-md">{item.text}</span>
+                                    </a>
+                                </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div class="col-4 text-center">
+                <img
+                        class="img-fluid"
+                        style="max-width: 250px"
+                        src="/logo/png/Thalassis Consulting-02 - White.png"
+                        alt="Thalassis Consulting Logo"
+                />
+                <Delimiter/>
+                <Delimiter/>
+                <p class="p-small text-center">{copyright}</p>
+            </div>
         </div>
     </div>
 </footer>
 
 <!-- Mobile View  -->
 <footer class="d-lg-none bg-black margin">
-    <div class="row text-center pt-4 text-white-50">
+    <div class="row text-center pt-4 text-white-50 m-0">
         <div class="col-12 mt-4 mb-5">
             <img
                     src="/logo/png/Thalassis Consulting-02 - White.png"
