@@ -73,8 +73,6 @@ const socials: Social[] = [
     }
 
     @media (max-width: 600px) {
-
-    /* Remove overlay */
     .social-link::before {
         display: none;
         background-color: transparent;
@@ -82,28 +80,27 @@ const socials: Social[] = [
 
     .social-link:hover::before {
         top: 100%;
-
-    }
-
-    /* Reset hover effects */
-    .social-link:hover .social-icon {
-        color: white;
-        transform: none;
     }
 
     .social-link {
         width: 40px;
         height: 40px;
-        background: black; 
+        background: transparent; 
         margin-right: 12px;
+        padding-right: 0px;
+        padding-top: 0px;
+    }
+
+    .social-link:hover .social-icon {
+        color: white;
     }
 
     .social-icon {
-        width: 40px;
-        height: 40px;
         object-fit: contain;
         background: black;
         border-radius: 3px;
+        margin-right: 0px!important;
+        transition: none !important;
     }
 }
 </style>
