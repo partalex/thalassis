@@ -9,15 +9,14 @@ import Delimiter from "../components/Delimiter.astro";
 import LargeLightButton from "../components/LargeLightButton.astro";
 import ButtonSubmit from "../components/ButtonSubmit.astro";
 
-
 const socials: Social[] = [
     {
-        icon: "icons/footer/LN.png",
+        icon: "linkedin-logo",
         link: "https://linkedin.com/company/thalassis-consulting",
         text: "",
     },
     {
-        icon: "icons/footer/Email.png",
+        icon: "envelope-simple-open",
         link: "mailto:hello@thalassis.co",
         text: "",
     },
@@ -25,6 +24,80 @@ const socials: Social[] = [
 ---
 
 <style>
+    .social-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+        border-radius: 6px;
+        background: black;
+        overflow: hidden;
+        padding-right: 16px;
+    }
+
+    .social-icon {
+        font-size: 30px;
+        color: white;
+        line-height: 1;
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+        transition: color 1s, transform 1s; 
+    }
+
+    .social-link::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        transition: top 1s;
+        z-index: 2;
+    }
+
+    .social-link:hover::before {
+        top: 0;
+    }
+
+    .social-link:hover .social-icon {
+        color: black;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    @media (max-width: 600px) {
+
+    /* Remove overlay */
+    .social-link::before {
+        display: none;
+        background-color: transparent;
+    }
+
+    .social-link:hover::before {
+        top: 100%;
+
+    }
+
+    /* Reset hover effects */
+    .social-link:hover .social-icon {
+        color: white;
+        transform: none;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        background: black; 
+        margin-right: 12px;
+    }
+
     .social-icon {
         width: 40px;
         height: 40px;
@@ -32,67 +105,74 @@ const socials: Social[] = [
         background: black;
         border-radius: 3px;
     }
+}
 </style>
 
 <Layout>
-    <br>
+    <br />
 
     <CenteredButton>
-        <LargeDarkButton label="More Comfortable Talking?" link="/book-app"></LargeDarkButton>
+        <LargeDarkButton label="More Comfortable Talking?" link="/book-app" />
     </CenteredButton>
 
-    <Delimiter></Delimiter>
+    <Delimiter />
     <div class="d-none d-md-block">
-        <Delimiter></Delimiter>
+        <Delimiter />
     </div>
 
     <div class="row">
         <!--<div class="row mt-3 mt-md-5">-->
 
         <div class="col-12 col-md-5">
-            <h1 class="fw-bold text-start text-md-end mb-5 mb-md-5">Contact Us</h1>
+            <h1 class="fw-bold text-start text-md-end mb-5 mb-md-5">
+                Contact Us
+            </h1>
 
-            <h5 class="text-start text-md-end">Outcomes Start With a Conversation.</h5>
+            <h5 class="text-start text-md-end">
+                Outcomes Start With a Conversation.
+            </h5>
             <h5 class="text-start text-md-end mb-5 mb-md-5">Let’s Talk.</h5>
             <!--{Array.from({length: 3}).map(() => <br/>)}-->
 
-            <div class="d-flex justify-content-start justify-content-md-end mb-3">
-                {socials.map((soc) => (
-                        <a href={soc.link}>
-                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/>
+            <div
+                class="d-flex justify-content-start justify-content-md-end mb-3"
+            >
+                {
+                    socials.map((soc) => (
+                        <a href={soc.link} class="social-link">
+                            {/* <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/> */}
+                            <i
+                                class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`}
+                            />
                         </a>
-                ))}
+                    ))
+                }
             </div>
-
         </div>
 
         <div class="d-none d-md-block col-md-1"></div>
 
         <div class="col-12 col-md-6 mb-4">
-            <Form></Form>
-        </div>
-
-
-        <div class="d-none d-md-block col-6 text-center">
-            <WhiteButton label="Back" link="/"></WhiteButton>
+            <Form />
         </div>
 
         <div class="d-none d-md-block col-6 text-center">
-            <ButtonSubmit></ButtonSubmit>
+            <WhiteButton label="Back" link="/" />
+        </div>
+
+        <div class="d-none d-md-block col-6 text-center">
+            <ButtonSubmit />
         </div>
 
         <div class="d-md-none col-12 text-center mb-4">
-            <ButtonSubmit></ButtonSubmit>
+            <ButtonSubmit />
         </div>
 
         <div class="d-md-none col-12 text-center">
-            <WhiteButton label="Back" link="/"></WhiteButton>
+            <WhiteButton label="Back" link="/" />
         </div>
-
-
     </div>
 
-    <br>
-    <br>
-
+    <br />
+    <br />
 </Layout>
