@@ -3,11 +3,6 @@ import WhiteButton from "../components/WhiteButton.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import Layout from "../layouts/Layout.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
-import HrDelimiter from "../components/HrDelimiter.astro";
-import Delimiter from "../components/Delimiter.astro";
-import LargeLightButton from "../components/LargeLightButton.astro";
-import BlackButton from "../components/BlackButton.astro";
-import SmallDarkButton from "../components/SmallDarkButton.astro";
 import AppointmentCard from "../components/AppointmentCard.astro";
 
 const socials: Social[] = [
@@ -42,33 +37,50 @@ const socials: Social[] = [
     <br>
     <br>
 
-    <div class="row mt-md-4">
+    <!-- pc view -->
+    <div class="d-none d-md-flex row mt-4">
 
-        <!-- pc view -->
-        <div class="col-12 col-md-5 d-none d-md-block">
+        <div class="col-5">
+            <h1 class="text-end">Book an</h1>
+            <h1 class="text-end mb-5">Appointment</h1>
+        </div>
 
-            <h1 class="text-md-end">Book an</h1>
-            <h1 class="text-md-end mb-5 mb-md-5">Appointment</h1>
+        <!--<div class="col-6 offset-1">-->
+        <!--    <div class="d-flex align-items-center justify-content-center">-->
+        <!--        <h4 class="d-inline-flex align-items-center">-->
+        <!--            <i class="ph ph-calendar-blank me-2"></i>-->
+        <!--            Select Appointment-->
+        <!--        </h4>-->
+        <!--    </div>-->
+        <!--</div>-->
 
+        <div class="col-6 offset-1 justify-content-end">
+            <h4 class="text-center"><i>Icon </i>Select</h4>
+        </div>
+
+        <div class="col-5">
             <h5 class="text-end">More comfortable talking?</h5>
             <h5 class="text-end">No problem. Schedule a 30-min intro</h5>
             <h5 class="text-end">call with Thalassis to chat about your</h5>
             <h5 class="text-end">inquiry.</h5>
-
-            <div class="d-flex justify-content-start justify-content-md-end mb-3 mt-4">
+            <div class="d-flex justify-content-end mb-3 mt-4">
                 {socials.map((soc) => (
                         <a href={soc.link}>
-                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/>
+                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-0 m-3 ms-3"/>
                         </a>
                 ))}
             </div>
         </div>
 
-        <div class="d-none d-md-block col-md-1"></div>
+        <div class="col-6 offset-1">
+            <AppointmentCard></AppointmentCard>
+        </div>
+    </div>
 
+    <!-- mobile view -->
+    <div class="row d-md-none">
 
-        <!-- mobile view -->
-        <div class="col-12 col-md-5 d-md-none">
+        <div class="col-12">
 
             <h1>Book an</h1>
             <h1 class="mb-5">Appointment</h1>
@@ -80,22 +92,20 @@ const socials: Social[] = [
             <h2>your inquiry.</h2>
         </div>
 
-        <div class="col-12 d-md-none mt-4">
-            <div class="d-flex justify-content-start justify-content-md-end mb-3">
+        <div class="col-12 mt-4">
+            <div class="d-flex justify-content-start mb-3">
                 {socials.map((soc) => (
                         <a href={soc.link}>
-                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/>
+                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-3"/>
                         </a>
                 ))}
             </div>
         </div>
 
 
-        <!-- pc view offset -->
+        <div class="col-12">
 
-        <div class="col-12 col-md-6">
-
-            <div class="d-flex d-md-none align-items-center justify-content-center mb-4 mb-md-5">
+            <div class="d-flex d-md-none align-items-center justify-content-center mb-4">
                 <h4 class="d-inline-flex align-items-center">
                     <i class="ph ph-calendar-blank me-2"></i>
                     Select Appointment

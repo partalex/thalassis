@@ -1,7 +1,6 @@
 ---
 import BlackButton from "./BlackButton.astro";
-import HrDelimiter from "./HrDelimiter.astro";
-const logoPath = "/logo/svg/THALASSIS CONSULTING LOGO-Black.svg";
+import SmallBlackButton from "./SmallBlackButton.astro";
 
 const apps: Appointment[] = [
     {
@@ -22,25 +21,28 @@ const apps: Appointment[] = [
 ];
 ---
 
-<!--<div class="container shadow" style="width: 500px">-->
-<div class="container shadow p-5">
+<div class="container shadow px-4 py-5 px-md-3 px-md-5" style="max-width: 550px">
     <div class="row row-cols-1"></div>
     {apps.map((app, index) => (
             <>
-                <div class="col g-5" key={index}>
+                <div class="col gx-4 gy-5 gx-md-3 gy-md-5">
 
                     <div class="d-flex align-items-center">
                         <div class="me-auto">
-                            <h4 class="mb-1">{app.name}</h4>
+                            <h4 style="" class="mb-1">{app.name}</h4>
                             <p class="mb-0">{app.desc}</p>
                         </div>
-                        <div>
+                        <div class="d-none d-md-block">
                             <BlackButton label="Book" link={app.link}></BlackButton>
                         </div>
+                        <div class="d-md-none">
+                            <SmallBlackButton label="Book" link={app.link}></SmallBlackButton>
+                        </div>
+
                     </div>
 
                     {index < apps.length - 1 &&
-                            <hr class="m-0 my-5"/>}
+                            <hr class="m-0 my-5 my-md-5"/>}
                 </div>
             </>
     ))}
