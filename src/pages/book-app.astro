@@ -7,12 +7,12 @@ import AppointmentCard from "../components/AppointmentCard.astro";
 
 const socials: Social[] = [
     {
-        icon: "icons/footer/LN.png",
+        icon: "linkedin-logo",
         link: "https://linkedin.com/company/thalassis-consulting",
         text: "",
     },
     {
-        icon: "icons/footer/Email.png",
+        icon: "envelope-simple-open",
         link: "mailto:hello@thalassis.co",
         text: "",
     },
@@ -20,12 +20,85 @@ const socials: Social[] = [
 ---
 
 <style>
-    .social-icon {
+    .social-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 40px;
         height: 40px;
-        object-fit: contain;
+        margin-right: 12px;
+        border-radius: 6px;
         background: black;
-        border-radius: 3px;
+        overflow: hidden;
+        padding-right: 16px;
+        border: 1px solid #ccc;
+    }
+
+    .social-icon {
+        font-size: 30px;
+        color: white;
+        line-height: 1;
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+        transition: color 1s, transform 1s;
+    }
+
+    .social-link::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        transition: top 1s;
+        z-index: 2;
+    }
+
+    .social-link:hover::before {
+        top: 0;
+    }
+
+    .social-link:hover .social-icon {
+        color: black;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    @media (max-width: 600px) {
+        .social-link::before {
+            display: none;
+            background-color: transparent;
+        }
+
+        .social-link:hover::before {
+            top: 100%;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            margin-right: 12px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
+
+        .social-link:hover .social-icon {
+            color: white;
+        }
+
+        .social-icon {
+            object-fit: contain;
+            background: black;
+            border-radius: 3px;
+            margin-right: 0px !important;
+            transition: none !important;
+        }
     }
 </style>
 
@@ -65,8 +138,8 @@ const socials: Social[] = [
             <h5 class="text-end">inquiry.</h5>
             <div class="d-flex justify-content-end mb-3 mt-4">
                 {socials.map((soc) => (
-                        <a href={soc.link}>
-                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-0 m-3 ms-3"/>
+                        <a href={soc.link} class="social-link">
+                            <i class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`} />
                         </a>
                 ))}
             </div>
