@@ -45,7 +45,7 @@ const socials: Social[] = [
         display: inline-block;
         position: relative;
         z-index: 3;
-        transition: color 1s, transform 1s; 
+        transition: color 1s, transform 1s;
     }
 
     .social-link::before {
@@ -73,57 +73,55 @@ const socials: Social[] = [
     }
 
     @media (max-width: 600px) {
-    .social-link::before {
-        display: none;
-        background-color: transparent;
-    }
+        .social-link::before {
+            display: none;
+            background-color: transparent;
+        }
 
-    .social-link:hover::before {
-        top: 100%;
-    }
+        .social-link:hover::before {
+            top: 100%;
+        }
 
-    .social-link {
-        width: 40px;
-        height: 40px;
-        background: transparent; 
-        margin-right: 12px;
-        padding-right: 0px;
-        padding-top: 0px;
-    }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            margin-right: 12px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
 
-    .social-link:hover .social-icon {
-        color: white;
-    }
+        .social-link:hover .social-icon {
+            color: white;
+        }
 
-    .social-icon {
-        object-fit: contain;
-        background: black;
-        border-radius: 3px;
-        margin-right: 0px!important;
-        transition: none !important;
+        .social-icon {
+            object-fit: contain;
+            background: black;
+            border-radius: 3px;
+            margin-right: 0px !important;
+            transition: none !important;
+        }
     }
-}
 </style>
 
 <Layout>
-    <br />
+    <br/>
 
     <CenteredButton>
-        <LargeDarkButton label="More Comfortable Talking?" link="/book-app" />
+        <LargeDarkButton label="More Comfortable Talking?" link="/book-app"/>
     </CenteredButton>
 
-    <Delimiter />
+    <Delimiter/>
     <div class="d-none d-md-block">
-        <Delimiter />
+        <Delimiter/>
     </div>
 
     <div class="row">
         <!--<div class="row mt-3 mt-md-5">-->
 
         <div class="col-12 col-md-5">
-            <h1 class="fw-bold text-start text-md-end mb-5 mb-md-5">
-                Contact Us
-            </h1>
+            <h1 class="text-start text-md-end mb-5 mb-md-5">Contact Us</h1>
 
             <h5 class="text-start text-md-end">
                 Outcomes Start With a Conversation.
@@ -131,17 +129,15 @@ const socials: Social[] = [
             <h5 class="text-start text-md-end mb-5 mb-md-5">Let’s Talk.</h5>
             <!--{Array.from({length: 3}).map(() => <br/>)}-->
 
-            <div
-                class="d-flex justify-content-start justify-content-md-end mb-3"
-            >
+            <div class="d-flex justify-content-start justify-content-md-end mb-5">
                 {
                     socials.map((soc) => (
-                        <a href={soc.link} class="social-link">
-                            {/* <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/> */}
-                            <i
-                                class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`}
-                            />
-                        </a>
+                            <a href={soc.link} class="social-link">
+                                {/* <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/> */}
+                                <i
+                                        class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`}
+                                />
+                            </a>
                     ))
                 }
             </div>
@@ -150,26 +146,26 @@ const socials: Social[] = [
         <div class="d-none d-md-block col-md-1"></div>
 
         <div class="col-12 col-md-6 mb-4">
-            <Form />
+            <Form/>
         </div>
 
         <div class="d-none d-md-block col-6 text-center">
-            <WhiteButton label="Back" link="/" />
+            <WhiteButton label="Back" link="/"/>
         </div>
 
         <div class="d-none d-md-block col-6 text-center">
-            <ButtonSubmit />
+            <ButtonSubmit/>
         </div>
 
         <div class="d-md-none col-12 text-center mb-4">
-            <ButtonSubmit />
+            <ButtonSubmit/>
         </div>
 
         <div class="d-md-none col-12 text-center">
-            <WhiteButton label="Back" link="/" />
+            <WhiteButton label="Back" link="/"/>
         </div>
     </div>
 
-    <br />
-    <br />
+    <br/>
+    <br/>
 </Layout>
