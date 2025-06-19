@@ -113,18 +113,18 @@ const gotProject = "Got a Project in Mind?";
             />
         </div>
 
-        <div class="col-12 mb-5 d-flex justify-content-center">
-            <ul class="list-unstyled socials-list mb-1 text-start ps-0" style="max-width: 350px; width: 100%;">
+        <div class="col-12 mb-5 text-center">
+            <ul class="list-unstyled socials-list mb-1 text-start ps-0 d-inline-block" style="max-width: 350px;">
                 {
-                    socials.map((item) => (
-                            <li class="mb-3 d-flex align-items-center">
-                                <a href={item.link} target="_blank" rel="noopener noreferrer"
-                                   class="text-decoration-none text-white-50 d-flex align-items-center">
-                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
-                                    <span class="social-font">{item.text}</span>
-                                </a>
-                            </li>
-                    ))
+                socials.map((item) => (
+                    <li class="mb-3 d-flex align-items-center">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none text-white-50 d-flex align-items-center">
+                        <img src={item.icon} alt="icon" class="social-icon me-3" />
+                        <span class="social-font">{item.text}</span>
+                    </a>
+                    </li>
+                ))
                 }
             </ul>
         </div>
