@@ -3,10 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Form from "../components/Form.astro";
 import CenteredButton from "../components/CenteredButton.astro";
 import LargeDarkButton from "../components/LargeDarkButton.astro";
-import BlackButton from "../components/BlackButton.astro";
 import WhiteButton from "../components/WhiteButton.astro";
 import Delimiter from "../components/Delimiter.astro";
-import LargeLightButton from "../components/LargeLightButton.astro";
 import ButtonSubmit from "../components/ButtonSubmit.astro";
 
 const socials: Social[] = [
@@ -134,10 +132,10 @@ const socials: Social[] = [
             <div class="d-flex justify-content-start justify-content-md-end mb-5">
                 {
                     socials.map((soc) => (
-                            <a href={soc.link} class="social-link">
+                            <a href={soc.link} class="social-link m-md-0 ms-md-3">
                                 {/* <img src={soc.icon} alt="icon" class="social-icon py-2 me-3 me-md-0 m-md-3 ms-md-3"/> */}
                                 <!--<i class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`} />-->
-                                <i class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`} />
+                                <i class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`}/>
                             </a>
                     ))
                 }
