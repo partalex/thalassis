@@ -122,7 +122,8 @@ const socials: Social[] = [
         <!--<div class="row mt-3 mt-md-5">-->
 
         <div class="col-12 col-md-5">
-            <h1 class="text-start text-md-end mb-5 mb-md-5">Contact Us</h1>
+            <h1 class="d-none d-md-block text-md-end mb-md-5">Contact Us</h1>
+            <h1 class="text-start mb-5 d-md-none" style="font-size: xxx-large ">Contact Us</h1>
 
             <h5 class="text-start text-md-end">
                 Outcomes Start With a Conversation.
@@ -150,19 +151,23 @@ const socials: Social[] = [
             <Form/>
         </div>
 
+        <!-- pc  view -->
         <div class="d-none d-md-block col-6 text-center">
             <WhiteButton label="Back" link="/"/>
         </div>
 
+        <!-- pc  view -->
         <div class="d-none d-md-block col-6 text-center">
             <ButtonSubmit/>
         </div>
 
-        <div class="d-md-none col-12 text-center mb-4">
+        <!-- mobile  view -->
+        <div class="d-md-none col-12 text-center mb-4 mt-2">
             <ButtonSubmit/>
         </div>
 
-        <div class="d-md-none col-12 text-center">
+        <!-- mobile  view -->
+        <div class="d-md-none col-12 text-center mt-4">
             <WhiteButton label="Back" link="/"/>
         </div>
     </div>

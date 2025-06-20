@@ -1,18 +1,15 @@
-mobile version Iphone 12 Pro (390px)
-
-todo:
-    button animacija nedostaje boreder
-    centriranje teksta za mobile footer
-
-    img u hamburgeru nije fluid
+done:
     contact us
         mobile button razmak
         razmak od social ikonica do full name
         padding za label date
     book and appontment
-        mobile prekontorlisati padding za social and select appointment
-        pc view -> select appointment i kalendar nedostaju
+        mobile prekontorlisati paddings
+        pc view -> select appointment i kalendar nedostaj
 
+    button animacija nedostaje boreder
+    centriranje teksta za mobile footer
+    img u hamburgeru nije fluid
     contact
         date
             icon

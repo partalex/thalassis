@@ -127,8 +127,15 @@ const socials: Social[] = [
         <!--    </div>-->
         <!--</div>-->
 
-        <div class="col-6 offset-1 justify-content-end">
-            <h4 class="text-center"><i>Icon </i>Select</h4>
+        <div class="col-6 offset-1  align-content-start text-center">
+            <h4 class="d-inline-flex align-items-center mt-4">
+                <i class="ph ph-calendar-blank me-2"></i>
+                Select Appointment
+            </h4>
+            <!--<h4 class="text-center">-->
+            <!--    <i class="ph ph-calendar-blank me-2"  ></i>-->
+            <!--    Select Appointment-->
+            <!--</h4>-->
         </div>
 
         <div class="col-5">
@@ -139,7 +146,7 @@ const socials: Social[] = [
             <div class="d-flex justify-content-end mb-3 mt-4">
                 {socials.map((soc) => (
                         <a href={soc.link} class="social-link">
-                            <i class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`} />
+                            <i class={`ph ph-${soc.icon} social-icon me-3 p-2 me-md-0 m-md-3 ms-md-3`}/>
                         </a>
                 ))}
             </div>
@@ -155,8 +162,8 @@ const socials: Social[] = [
 
         <div class="col-12">
 
-            <h1>Book an</h1>
-            <h1 class="mb-5">Appointment</h1>
+            <h1 style="font-size: xxx-large">Book an</h1>
+            <h1 style="font-size: xxx-large" class="mb-5">Appointment</h1>
 
             <h2>More comfortable talking?</h2>
             <h2>No problem. Schedule a</h2>
@@ -168,8 +175,9 @@ const socials: Social[] = [
         <div class="col-12 mt-4">
             <div class="d-flex justify-content-start mb-3">
                 {socials.map((soc) => (
-                        <a href={soc.link}>
-                            <img src={soc.icon} alt="icon" class="social-icon py-2 me-3"/>
+                        <a href={soc.link} class="me-3 mb-4">
+                            <i class={`ph ph-${soc.icon} social-icon p-2`}/>
+                            <!--<img src={soc.icon} alt="icon" class="social-icon py-2 me-3"/>-->
                         </a>
                 ))}
             </div>
@@ -178,7 +186,7 @@ const socials: Social[] = [
 
         <div class="col-12">
 
-            <div class="d-flex d-md-none align-items-center justify-content-center mb-4">
+            <div class="d-flex d-md-nofne align-items-center justify-content-center mb-4">
                 <h4 class="d-inline-flex align-items-center">
                     <i class="ph ph-calendar-blank me-2"></i>
                     Select Appointment
@@ -191,26 +199,28 @@ const socials: Social[] = [
         </div>
     </div>
 
-    <div class="d-none d-md-block" style="margin-block: 40px"></div>
+    <div class="d-none d-md-block" style="margin-block: 50px"></div>
 
     <div class="row my-5 my-md-4 text-center">
 
-        <!-- desktop view -->
+        <!-- pc view -->
         <div class="col-6 d-none d-md-block"></div>
 
 
+        <!-- mobile view -->
         <div class="col-6 d-none d-md-block">
             <WhiteButton label="Back" link="/"></WhiteButton>
         </div>
 
         <!-- mobile view -->
-        <div class="d-md-none col-12">
+        <div class="col-12 d-md-none">
             <WhiteButton label="Back" link="/"></WhiteButton>
         </div>
 
     </div>
 
-    <div class="d-none d-md-block" style="margin-block: 30px"></div>
+    <!-- pc view -->
+    <div class="d-none d-md-block" style="margin-block: 45px"></div>
 
 
 </Layout>
