@@ -1,3 +1,18 @@
+todo:
+    sumbit, worker
+
+   end margin social links book-app page
+
+done(last):
+    cards
+        approaches
+        services
+   carousel pc
+        lseg first picture like on mobile
+   Budget* -> padding top je veliki za pc
+   image page, size, start padding
+
+
 done:
     contact us
         mobile button razmak
@@ -10,6 +25,8 @@ done:
     button animacija nedostaje boreder
     centriranje teksta za mobile footer
     img u hamburgeru nije fluid
+
+done last_iter)
     contact
         date
             icon
