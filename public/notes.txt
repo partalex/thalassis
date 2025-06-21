@@ -1,9 +1,7 @@
-todo:
-    sumbit, worker
+done 6:
+    end margin social links book-app page
 
-   end margin social links book-app page
-
-done(last):
+done 5:
     cards
         approaches
         services
@@ -12,8 +10,7 @@ done(last):
    Budget* -> padding top je veliki za pc
    image page, size, start padding
 
-
-done:
+done 4:
     contact us
         mobile button razmak
         razmak od social ikonica do full name
@@ -26,7 +23,7 @@ done:
     centriranje teksta za mobile footer
     img u hamburgeru nije fluid
 
-done last_iter)
+done 3:
     contact
         date
             icon
@@ -64,7 +61,7 @@ done last1(iter):
         more comf talking? -> has to be more higher
 
 
-done last2(iter):
+done 2:
     icons
         contact page
         book an appointment
@@ -82,9 +79,7 @@ done last2(iter):
         pocecati break point da se pore mobile view pokaze
         left padding for nubmer
 
-
-
-done before(iters):
+done 1:
     our approach
         animation
 
