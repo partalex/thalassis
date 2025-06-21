@@ -1,10 +1,15 @@
+done 7:
+    mobile our service, not fixed width
+    our app
+        pc view: number and heading (add heading)
+
 done 6:
     end margin social links book-app page
-
-done 5:
     cards
         approaches
         services
+
+done 5:
    carousel pc
         lseg first picture like on mobile
    Budget* -> padding top je veliki za pc

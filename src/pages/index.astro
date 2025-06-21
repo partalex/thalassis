@@ -1,15 +1,15 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Services from "../components/Services.astro";
+import ServicesPc from "../components/ServicesPc.astro";
 import ApproachesDesktop from "../components/ApproachesDesktop.astro";
 import WhatWeDo from "../components/WhatWeDo.astro";
 import Carousel from "../components/Carousel.astro";
 import HrDelimiter from "../components/HrDelimiter.astro";
 import First from "../components/First.astro";
 import WhyThalassis from "../components/WhyThalassis.astro";
-import Delimiter from "../components/Delimiter.astro";
 import ApproachesMobile from "../components/ApproachesMobile.astro";
+import ServicesMobile from "../components/ServicesMobile.astro";
 ---
 <Layout>
     <!--<Welcome welcome="Hey" />-->
@@ -27,19 +27,29 @@ import ApproachesMobile from "../components/ApproachesMobile.astro";
     <HrDelimiter></HrDelimiter>
 
 
-    <Services></Services>
-    <HrDelimiter></HrDelimiter>
+    <!-- pc view -->
+    <div class="d-none d-md-block">
+        <ServicesPc></ServicesPc>
+        <HrDelimiter></HrDelimiter>
+    </div>
+
+    <!-- mobile view -->
+    <div class="d-md-none">
+        <ServicesMobile></ServicesMobile>
+        <HrDelimiter></HrDelimiter>
+    </div>
 
     <!--#1a1a1a-->
     <!--#808080-->
 
+
+    <!-- pc view -->
     <div class="d-none d-md-block">
         <ApproachesDesktop></ApproachesDesktop>
         <HrDelimiter></HrDelimiter>
     </div>
 
-
-    <!-- out approach dodati animaciju -->
+    <!-- mobile view -->
     <div class="d-md-none">
         <ApproachesMobile></ApproachesMobile>
         <HrDelimiter></HrDelimiter>
