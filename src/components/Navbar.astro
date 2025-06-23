@@ -11,6 +11,17 @@ const logoPath = "logo/png/Thalassis Consulting-01 - Black.png";
     .logo {
         height: 50px;
     }
+    @media (max-width: 424px) {
+        .logo{
+            height: 45px;
+        }
+    }
+    @media (max-width: 397px) {
+        .logo{
+            height: 40px;
+        }
+    }
+
 
     .navbar-nav .nav-item {
         width: 125px;
@@ -60,18 +71,19 @@ const logoPath = "logo/png/Thalassis Consulting-01 - Black.png";
             }
         </ul>
 
-        <div
-                class="offcanvas offcanvas-end d-md-none"
+        <!--<div class="offcanvas offcanvas-end d-md-none"-->
+        <div class="offcanvas offcanvas-end d-md-none w-100"
                 tabindex="-1"
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
         >
             <div class="offcanvas-header">
-                <a href="/"><img src={logoPath} alt="Logo" class="img-fluid p-5 ps-4" style="max-width: 320px"/></a>
+                <a href="/"><img src={logoPath} alt="Logo" class="img-fluid p-5 px-3" style="max-width: 310px"/></a>
 
                 <button
                         type="button"
                         class="btn-close text-reset"
+                        style="margin-left: 1rem;"
                         data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
             </div>
