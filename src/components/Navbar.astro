@@ -1,8 +1,8 @@
 ---
 const navLinks: NavLink[] = [
-    { href: "/#about", name: "About Us" },
-    { href: "/case-studies", name: "Case Studies" },
-    { href: "/contact", name: "Contact Us" },
+    {href: "/#about", name: "About Us"},
+    {href: "/case-studies", name: "Case Studies"},
+    {href: "/contact", name: "Contact Us"},
 ];
 const logoPath = "logo/png/Thalassis Consulting-01 - Black.png";
 ---
@@ -30,44 +30,20 @@ const logoPath = "logo/png/Thalassis Consulting-01 - Black.png";
         }
     }
 
-    .offcanvas {
-        width: 100% !important;
-    }
-
-    .offcanvas-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; 
-        gap: 2rem; 
-        padding-top: 2rem;
-    }
-
-    .offcanvas-body .nav-item {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .offcanvas-body .nav-link {
-        white-space: nowrap;
-        font-weight: 600;
-        font-size: 1.5rem;
-        
-    }
 </style>
 
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid mb-5 mt-5 ps-0">
         <a class="navbar-brand ps-3 ps-md-0" href="/">
-            <img src={logoPath} alt="Logo" class="logo" />
+            <img src={logoPath} alt="Logo" class="logo"/>
         </a>
 
         <button
-            class="navbar-toggler d-md-none"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
+                class="navbar-toggler d-md-none"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
         >
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -75,63 +51,59 @@ const logoPath = "logo/png/Thalassis Consulting-01 - Black.png";
         <ul class="navbar-nav ms-auto gap-1 d-none d-md-flex w-10">
             {
                 navLinks.map((link) => (
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link" style = "color:Black!important;" href={link.href}>
-                            {link.name}
-                        </a>
-                    </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link" style="color:Black!important;" href={link.href}>
+                                {link.name}
+                            </a>
+                        </li>
                 ))
             }
         </ul>
 
         <div
-            class="offcanvas offcanvas-end d-md-none"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
+                class="offcanvas offcanvas-end d-md-none"
+                tabindex="-1"
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
         >
             <div class="offcanvas-header">
-                <a href="/"><img src={logoPath} alt="Logo" class="img-fluid p-5 ps-4"  style="max-width: 320px" /></a>
+                <a href="/"><img src={logoPath} alt="Logo" class="img-fluid p-5 ps-4" style="max-width: 320px"/></a>
 
                 <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                        type="button"
+                        class="btn-close text-reset"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-center flex-grow-1">
-                    {
-                        navLinks.map((link) => (
-                            <li class="nav-item">
-                                <a class="nav-link" href={link.href}>
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
+            <div class="d-flex flex-column justify-content-center align-items-center h-50 ">
+                {
+                    navLinks.map((link) => (
+                            <a class="nav-link py-4" style="font-weight: 600; font-size: 1.5rem" href={link.href}>
+                                {link.name}
+                            </a>
+                    ))
+                }
             </div>
         </div>
     </div>
 </nav>
 
 <script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
-    // ✅ Defensive check
-    if (typeof bootstrap !== "undefined") {
-      const offcanvasElement = document.getElementById("offcanvasNavbar");
-      const navLinks = document.querySelectorAll(".offcanvas .nav-link");
-      const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+    window.addEventListener("DOMContentLoaded", () => {
+        // ✅ Defensive check
+        if (typeof bootstrap !== "undefined") {
+            const offcanvasElement = document.getElementById("offcanvasNavbar");
+            const navLinks = document.querySelectorAll(".offcanvas .nav-link");
+            const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
 
-      navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          offcanvasInstance.hide();
-        });
-      });
-    } else {
-      console.warn("⚠️ Bootstrap JS is not loaded. Offcanvas links won't close automatically.");
-    }
-  });
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    offcanvasInstance.hide();
+                });
+            });
+        } else {
+            console.warn("⚠️ Bootstrap JS is not loaded. Offcanvas links won't close automatically.");
+        }
+    });
 </script>
 
