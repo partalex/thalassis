@@ -67,7 +67,7 @@ const gotProject = "Got a Project in Mind?";
         <div class="row pt-5">
             <div class="col-4 text-light text-center">
                 <h5 class="text-center project-font">{gotProject}</h5>
-                <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+                <LightFullButton darkMode="false" label="Let’s Talk" link="/book-app"/>
             </div>
 
             <div class="col-4 d-flex justify-content-center">
@@ -95,7 +95,7 @@ const gotProject = "Got a Project in Mind?";
                 />
                 <Delimiter/>
                 <Delimiter/>
-                    <p class="p-small text-center text-white">{copyright}</p>
+                <p class="p-small text-center text-white">{copyright}</p>
             </div>
         </div>
     </div>
@@ -116,21 +116,21 @@ const gotProject = "Got a Project in Mind?";
         <div class="col-12 mb-5 text-center">
             <ul class="list-unstyled socials-list mb-1 text-start ps-0 d-inline-block" style="max-width: 350px;">
                 {
-                socials.map((item) => (
-                    <li class="mb-3 d-flex align-items-center">
-                    <a href={item.link} target="_blank" rel="noopener noreferrer"
-                        class="text-decoration-none text-white d-flex align-items-center">
-                        <img src={item.icon} alt="icon" class="social-icon me-3" />
-                        <span class="social-font">{item.text}</span>
-                    </a>
-                    </li>
-                ))
+                    socials.map((item) => (
+                            <li class="mb-3 d-flex align-items-center">
+                                <a href={item.link} target="_blank" rel="noopener noreferrer"
+                                   class="text-decoration-none text-white d-flex align-items-center">
+                                    <img src={item.icon} alt="icon" class="social-icon me-3"/>
+                                    <span class="social-font">{item.text}</span>
+                                </a>
+                            </li>
+                    ))
                 }
             </ul>
         </div>
         <div class="col-12 mb-5">
             <h5 class="text-light mb-3 text-center project-font">{gotProject}</h5>
-            <LightFullButton darkMode="false" label="Let’s Talk" link="/"/>
+            <LightFullButton darkMode="false" label="Let’s Talk" link="/book-app">
         </div>
 
         <div class="col-12 pb-4">
