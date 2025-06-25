@@ -302,4 +302,14 @@ swipe.on("swipeleft", next);
 swipe.on("swiperight", prev);
 
 renderCarousel();
+
+// Auto-rotate carousel every 3 seconds
+let autoRotate = setInterval(next, 1500);
+
+// Pause auto-rotate on mouse enter, resume on mouse leave
+const sectionSlider = document.querySelector('.section-slider');
+sectionSlider.addEventListener('mouseenter', () => clearInterval(autoRotate));
+sectionSlider.addEventListener('mouseleave', () => {
+    autoRotate = setInterval(next, 1500);
+});
 </script>
