@@ -1,5 +1,16 @@
 ---
-
+const timelines: string[] = [
+    "Fixed",
+    "Flexible",
+    "Ongoing"
+];
+const budgets: string[] = [
+    "<50k",
+    "50-150k",
+    "150k-250k",
+    "250k-500k",
+    "500k+"
+]
 ---
 
 <style>
@@ -11,27 +22,22 @@
         font-weight: 100;
     }
 
-    /* something is wrong with font or size */
-    .form-select, option {
-        font-weight: 200;
-        font-family: "Source Sans 3", sans-serif;
-        color: black;
-    }
-
-    /* not working */
-    option:hover{
+    .dropdown-menu .dropdown-item:hover,
+    .dropdown-menu .dropdown-item:focus {
+        //font-weight: 200;
+        //font-family: "Source Sans 3", sans-serif;
         background-color: black;
         color: white;
+        font-weight: lighter;
     }
 
-</style>
 
+</style>
 <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
 />
-
-<form method="POST" action="api/submit">
+<form method="POST">
     <div class="mb-3">
         <label for="fullName" class="form-label like-p ms-3">Full Name*</label>
         <input
@@ -64,13 +70,25 @@
         />
     </div>
     <div class="mb-3">
-        <label for="timeline" class="form-label ms-3">Timeline*</label>
-        <select class="form-select" id="timeline" required>
-            <option selected disabled value="">e.g. Fixed</option>
-            <option>Fixed</option>
-            <option>Flexible</option>
-            <option>Ongoing</option>
-        </select>
+        <label for="timelineDropdown" class="form-label ms-3">Timeline*</label>
+        <div class="dropdown">
+            <button class="btn border dropdown-toggle w-100 text-start" style="font-weight: 100" type="button"
+                    id="timelineDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">e.g. Fixed
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="timelineDropdown">
+                {timelines.map((item) => (
+                        <li>
+                            <button type="button" class="dropdown-item" style="font-weight: 100"
+                                    onclick={`selectTimeline('${item}')`}>
+                                {item}
+                            </button>
+                        </li>
+                ))}
+            </ul>
+        </div>
+        <input type="hidden" name="timeline" id="timelineHidden">
     </div>
     <div class="row mb-3">
         <div class="col-md-6 mb-3 mb-md-0">
@@ -99,14 +117,25 @@
         </div>
     </div>
     <div class="mb-3">
-        <label for="budget" class="form-label ms-3">Budget*</label>
-        <select class="form-select" id="budget" required>
-            <option selected disabled value="">e.g. 150k-250k</option>
-            <option>{`<50k`}</option>
-            <option>50-150k</option>
-            <option>250k-500k</option>
-            <option>500k+</option>
-        </select>
+        <label for="budgetDropdown" class="form-label ms-3">Budget*</label>
+        <div class="dropdown">
+            <button class="btn border dropdown-toggle w-100 text-start" style="font-weight: 100" type="button"
+                    id="budgetDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">e.g. 150k-250k
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="budgetDropdown">
+                {budgets.map((item) => (
+                        <li>
+                            <button type="button" class="dropdown-item" style="font-weight: 100"
+                                    onclick={`selectBudget('${item}')`}>
+                                {item}
+                            </button>
+                        </li>
+                ))}
+            </ul>
+        </div>
+        <input type="hidden" name="budget" id="budgetHidden">
     </div>
     <div class="mb-3">
         <label for="note" class="form-label ms-3">Note</label>
@@ -116,9 +145,9 @@
                 rows="5"
                 placeholder="Write your message"></textarea>
     </div>
-</form>
 
-<script type="module">
+</form>
+<script type="module" is:inline>
     import flatpickr from "https://cdn.skypack.dev/flatpickr";
 
     const startInput = document.getElementById("startDate");
@@ -145,4 +174,74 @@
     endIcon.addEventListener("click", () => {
         endPicker.open();
     });
+
+    // Timeline dropdown handler
+    window.selectTimeline = function (value) {
+        document.getElementById('timelineDropdown').textContent = value;
+        document.getElementById('timelineHidden').value = value;
+    };
+
+    // Budget dropdown handler
+    window.selectBudget = function (value) {
+        document.getElementById('budgetDropdown').textContent = value;
+        document.getElementById('budgetHidden').value = value;
+    };
+
+    // check if empty function
+    function isEmpty(value) {
+        return value === null || value === undefined || value.trim() === '';
+    }
+
+    function alertIfEmpty(value, fieldName) {
+        if (isEmpty(value)) {
+            alert(`${fieldName} is required.`);
+            return true;
+        }
+        return false;
+    }
+
+    const submitBtn = document.getElementById('submitButton');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('emailAddress').value;
+            const company = document.getElementById('companyName').value;
+            const timeline = document.getElementById('timelineHidden').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const budget = document.getElementById('budgetHidden').value;
+            const note = document.getElementById('note').value;
+
+
+            if (
+                alertIfEmpty(fullName, 'Full Name') ||
+                alertIfEmpty(email, 'Email Address') ||
+                alertIfEmpty(company, 'Company Name') ||
+                alertIfEmpty(timeline, 'Timeline') ||
+                alertIfEmpty(startDate, 'Start Date') ||
+                alertIfEmpty(endDate, 'End Date') ||
+                alertIfEmpty(budget, 'Budget')
+            )
+                return;
+
+            // console.log('Full Name:', fullName);
+            // console.log('Email:', email);
+            // console.log('Company:', company);
+            // console.log('Timeline:', timeline);
+            // console.log('Start Date:', startDate);
+            // console.log('End Date:', endDate);
+            // console.log('Budget:', budget);
+            // console.log('Note:', note);
+
+
+            if (!confirm('Are you sure you want to submit the form?'))
+                return;
+
+            // setTimeout(() => {
+            //     confirm('Form submitted successfully!')
+            // });
+            window.location.href = '/';
+        });
+    }
 </script>
